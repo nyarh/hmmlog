@@ -1,7 +1,20 @@
 ---
 import Icon from './Icon.astro';
+import Attachments from './Attachments.astro';
+
+interface Props {postId: string; attachments: string[]}
+const {postId, attachments} = Astro.props;
+const marker = '<!-- attachments -->';
+const html = attachments.length ? await Astro.slots.render('default') : '';
+const position = html.indexOf(marker);
 ---
-<div class="prose"><slot/></div>
+<div class="prose">
+  {attachments.length ? <>
+    <Fragment set:html={position < 0 ? html : html.slice(0, position)}/>
+    <Attachments postId={postId} names={attachments}/>
+    {position >= 0 && <Fragment set:html={html.slice(position + marker.length)}/>}
+  </> : <slot/>}
+</div>
 <template id="code-copy-control">
   <button type="button" class="copy-code" aria-label="코드 복사" title="코드 복사">
     <span class="copy-symbol"><Icon name="copy" size={17}/></span>

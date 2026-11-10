@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ArticleBody from '../../components/ArticleBody.astro';
-import Attachments from '../../components/Attachments.astro';
 import Sidebar from '../../components/Sidebar.astro';
 import {render} from 'astro:content';
 import {posts,dateText,categoryUrl} from '../../lib/blog';
@@ -13,7 +12,6 @@ const sections=headings.filter(h=>h.depth===2);
 <Base title={post.data.title} description={post.data.description} article={post}><div class="columns"><article class="article">
 <nav class="crumb" aria-label="현재 위치"><a href="/">홈</a> / <a href={categoryUrl(post.data.category)}>{post.data.category}</a></nav>
 <h1>{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>흠</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
-<ArticleBody><Content/></ArticleBody>
-{post.data.attachments.length > 0 && <Attachments postId={post.id} names={post.data.attachments}/>}
+<ArticleBody attachments={post.data.attachments} postId={post.id}><Content/></ArticleBody>
 <a class="back" href="/">← 전체 글</a></article>
 <Sidebar items={await posts()}>{sections.length>0&&<section slot="top" class="widget toc"><h2>이 글의 목차</h2>{sections.map(h=><a href={'#'+h.slug}>{h.text}</a>)}</section>}</Sidebar></div></Base>

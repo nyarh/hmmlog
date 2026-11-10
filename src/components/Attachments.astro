@@ -11,8 +11,7 @@ const files = names.map(name => {
   return {name, href, bytes, type:extname(name).slice(1).toUpperCase()};
 });
 ---
-<section class="attachments" aria-labelledby="attachment-title">
-  <h2 id="attachment-title">첨부 파일</h2>
+<section class="attachments" id="attachment-title" aria-label="첨부 파일">
   {files.map(file => <a class="file-card" href={file.href} download={file.name}>
     <span class="file-icon"><Icon name="post" size={23}/></span>
     <span class="file-info">
@@ -23,8 +22,7 @@ const files = names.map(name => {
   </a>)}
 </section>
 <style>
-  .attachments {margin:2rem 0}
-  h2 {margin:0 0 .65rem;font-size:1rem}
+  .attachments {margin:0 0 1rem;scroll-margin-top:calc(var(--header) + 12px);line-height:1.5}
   .file-card {display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text)}
   .file-card:is(:hover,:focus-visible) {border-color:var(--accent)}
   .file-icon,.download-action {display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
