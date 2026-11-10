@@ -1,0 +1,8 @@
+---
+import Icon from './Icon.astro';
+import {groups,categoryUrl,email,type Post} from '../lib/blog';
+const {items}=Astro.props as {items:Post[]};
+---
+<aside aria-label="블로그 위젯"><section class="widget"><h2><Icon name="folder"/>카테고리</h2>{groups(items).map(c=><a class="catlink" href={categoryUrl(c)}><span><i/>{c}</span><small>{items.filter(p=>p.data.category===c).length}</small></a>)}</section><slot/>
+<section class="widget connect"><h2><Icon name="mail"/>문의 / 요청</h2><a href={`mailto:${email}`}>{email}<Icon name="outward" size={15}/></a></section>
+<a class="feed" href="/rss.xml"><span><Icon name="rss" size={16}/> RSS 피드</span><Icon name="outward" size={14}/></a></aside>

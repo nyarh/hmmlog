@@ -1,0 +1,20 @@
+---
+const {kind='stack',hero=false}=Astro.props;
+const tops = [[140,37],[140,57],[140,77]];
+---
+<svg class:list={['art',{heroArt:hero}]} aria-hidden="true" viewBox="0 0 280 168" fill="none">
+{kind==='stack' ? <g stroke="#483c33" stroke-linejoin="round" stroke-width="1.2">
+{hero && <g stroke="#c8bbab" stroke-width=".7"><path d="m7 104 65-35 41 22m59-37 32-17 26 14 36-19M47 146l28-15 16 9 29-15m44 10 29 16 57-30m-55-11 26 14 42-23"/><circle cx="7" cy="104" r="2"/><circle cx="266" cy="32" r="2"/><circle cx="250" cy="121" r="2"/></g>}
+{[...tops].reverse().map(([x,y],i)=><g transform={`translate(${x} ${y-5})`}>
+<path d="m-77 35 77-43 77 43v10L0 90l-77-45z" fill={['#dc9b70','#e6bd9c','#d4885c'][i]}/>
+<path d="M0 79v11l77-45V35z" fill={['#ad6848','#b49b80','#aa593c'][i]}/>
+<path d="m-77 35 77-44 77 44L0 79z" fill={['#f1c5a5','#f4e7cd','#de9168'][i]}/>
+{Array.from({length:11},(_,k)=><path d={`m${-68+k*6} ${44+k*3.43}v4`} stroke="#604734" stroke-width="1"/>)}
+</g>)}
+<g transform="matrix(1 .57 -1 .57 140 31)" stroke-width="1.4">
+<rect x="0" y="0" width="47" height="47" rx="2" fill="#f0b894"/>
+<rect x="4" y="4" width="39" height="39" rx="1" stroke-dasharray="2 2"/>
+<path d="m15 18-6 6 6 6m17-12 6 6-6 6m-5-16-7 19" stroke-width="2.5"/>
+{Array.from({length:7},(_,i)=><path d={`M${i*5+8} -5v5m0 47v6M-6 ${i*5+8}h6m47 0h6`}/>)}</g>
+</g> : kind==='tree' ? <g stroke="#3f6963" stroke-width="2.5" stroke-linejoin="round"><path d="M103 58v64h40m-40-34h40" /><path d="M80 35h24l6 7h27v23H80z" fill="#8eb8aa"/><path d="M143 77h16l5 5h25v20h-46zm0 35h16l5 5h25v20h-46z" fill="#bdd4c3"/></g> : kind==='code' ? <g stroke="#6c6286" stroke-width="2.4"><rect x="68" y="36" width="145" height="96" rx="4" fill="#cdc5dc"/><path d="M69 55h143"/><path d="M80 46h3m6 0h3m6 0h3"/><path d="m113 76-16 15 16 15m51-30 16 15-16 15m-18-39-13 49" stroke-width="5"/></g> : <g stroke="#586b87" fill="#bacbdc" stroke-width="2.3"><path d="m91 57 27-15 27 15v31l-27 16-27-16zm54 32 27-16 27 16v31l-27 15-27-15zm-55 1 27-16 27 16v31l-27 15-27-15z"/>{[[91,57],[145,89],[90,90]].map(([x,y])=><path d={`m${x} ${y} 27 16 27-16m-27 16v31`}/>)}</g>}
+</svg>

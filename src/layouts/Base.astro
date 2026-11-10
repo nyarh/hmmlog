@@ -1,0 +1,11 @@
+---
+import '../styles/main.css';
+import Icon from '../components/Icon.astro';
+import {email} from '../lib/blog';
+const { title='흠', description='흠의 개발 블로그. 웹 개발과 블로그 구현에 관한 글을 모읍니다.', article, active='posts', noindex=false }=Astro.props;
+const url=new URL(Astro.url.pathname,Astro.site).href;
+const pageTitle=title==='흠'?title:title+' · 흠';
+const schema=article?{'@type':'BlogPosting',headline:title,description,datePublished:article.data.date.toISOString(),author:{'@type':'Organization',name:'흠',url:Astro.site?.href},mainEntityOfPage:url}: {'@type':'WebPage',name:pageTitle,description,url};
+---
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{pageTitle}</title><meta name="description" content={description}/><link rel="canonical" href={url}/>{noindex&&<meta name="robots" content="noindex"/>}<meta property="og:locale" content="ko_KR"/><meta property="og:site_name" content="흠"/><meta property="og:type" content={article?'article':'website'}/><meta property="og:url" content={url}/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta name="twitter:card" content="summary"/><link rel="icon" href="/favicon.svg"/><link rel="alternate" type="application/rss+xml" title="흠 RSS" href="/rss.xml"/><script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org',...schema}).replace(/</g,'\\u003c')}/></head>
+<body><a class="skip" href="#main">본문으로</a><header><div class="bar shell"><a href="/" class="brand" aria-label="흠 홈"><span class="logo" aria-hidden="true">&gt;_</span><b>흠</b></a><span class="domain">hmmlog.com</span><nav aria-label="주 메뉴"><a class:list={[{on:active==='posts'}]} href="/">글 목록</a><a class:list={[{on:active==='categories'}]} href="/categories/">카테고리</a><a href={`mailto:${email}`}>문의 <Icon name="outward" size={13}/></a></nav></div></header><main id="main" class="shell"><slot/></main><footer class="shell"><span>© {new Date().getUTCFullYear()} 흠</span><a href="/rss.xml"><Icon name="rss" size={14}/> RSS</a></footer></body></html>

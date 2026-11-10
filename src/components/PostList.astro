@@ -1,0 +1,9 @@
+---
+import {dateText,postUrl,type Post} from '../lib/blog';
+import Art from './Art.astro';
+import Icon from './Icon.astro';
+interface Props {items:Post[]}
+const {items}=Astro.props;
+---
+<div class="list">{items.map(p=><a class="row" href={postUrl(p)}>
+<div class:list={['thumb',p.data.art]}><Art kind={p.data.art}/></div><div class="summary"><div class="meta"><time datetime={p.data.date.toISOString()}>{dateText(p.data.date)}</time><span class="dot">·</span><span>{p.data.category}</span></div><h3>{p.data.title}</h3><p>{p.data.description}</p></div><span class="rowArrow"><Icon name="arrow" size={18}/></span></a>)}</div>
