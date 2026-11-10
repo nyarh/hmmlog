@@ -8,6 +8,7 @@ const posts = defineCollection({
       .transform(value => value.split('/').map(part => part.trim()).filter(Boolean).join('/') || '미분류')
       .refine(path => !path.split('/').some(part => part === '.' || part === '..'), '유효한 카테고리 이름을 입력하세요.'),
     art: z.enum(['stack','tree','code','blocks']).default('stack'),
+    attachments: z.array(z.string().regex(/^[^./\\][^/\\]*$/)).default([]),
   }),
 });
 export const collections = { posts };

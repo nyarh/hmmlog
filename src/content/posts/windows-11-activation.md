@@ -3,6 +3,8 @@ title: Windows 11 정품 인증 배치 파일 실행하기
 description: 윈도우11정품인증.cmd의 KMS 서버 설정을 확인하고, 관리자 권한으로 실행한 뒤 인증 상태를 확인하는 방법입니다.
 date: 2026-11-10T14:24:00+09:00
 art: code
+attachments:
+  - 윈도우11정품인증.cmd
 ---
 
 ## 실행 전 확인

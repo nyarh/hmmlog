@@ -1,0 +1,40 @@
+---
+import {statSync} from 'node:fs';
+import {extname, join} from 'node:path';
+import Icon from './Icon.astro';
+
+interface Props {postId: string; names: string[]}
+const {postId, names} = Astro.props;
+const files = names.map(name => {
+  const href = '/attachments/' + [...postId.split('/'), name].map(encodeURIComponent).join('/');
+  const bytes = statSync(join('public','attachments',postId,name)).size;
+  return {name, href, bytes, type:extname(name).slice(1).toUpperCase()};
+});
+---
+<section class="attachments" aria-labelledby="attachment-title">
+  <h2 id="attachment-title">첨부 파일</h2>
+  {files.map(file => <a class="file-card" href={file.href} download={file.name}>
+    <span class="file-icon"><Icon name="post" size={23}/></span>
+    <span class="file-info">
+      <strong>{file.name}</strong>
+      <small>{file.type && file.type + ' · '}{file.bytes.toLocaleString('ko-KR')}바이트</small>
+    </span>
+    <span class="download-action"><Icon name="download" size={16}/>다운로드</span>
+  </a>)}
+</section>
+<style>
+  .attachments {margin:2rem 0}
+  h2 {margin:0 0 .65rem;font-size:1rem}
+  .file-card {display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text)}
+  .file-card:is(:hover,:focus-visible) {border-color:var(--accent)}
+  .file-icon,.download-action {display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
+  .file-icon {width:40px;height:44px;background:var(--active);color:var(--accent)}
+  .file-info {display:grid;gap:4px;overflow-wrap:anywhere}
+  strong {font-size:.95rem}
+  small {font-size:.75rem;color:var(--muted)}
+  .download-action {gap:7px;padding:9px 12px;background:var(--accent);color:var(--bg);font-size:.8125rem;font-weight:700;white-space:nowrap}
+  @media(max-width:480px) {
+    .file-card {grid-template-columns:auto minmax(0,1fr)}
+    .download-action {grid-column:1 / -1}
+  }
+</style>
