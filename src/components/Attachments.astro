@@ -12,25 +12,44 @@ const files = names.map(name => {
 });
 ---
 <section class="attachments" id="attachment-title" aria-label="첨부 파일">
-  {files.map(file => <a class="file-card" href={file.href} download={file.name}>
+  {files.map(file => <div class="file-card">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"/>
+    </svg>
     <span class="file-icon"><Icon name="post" size={23}/></span>
     <span class="file-info">
       <strong>{file.name}</strong>
       <small>{file.type && file.type + ' · '}{file.bytes.toLocaleString('ko-KR')}바이트</small>
     </span>
-    <span class="download-action"><Icon name="download" size={16}/>다운로드</span>
-  </a>)}
+    <a class="download-action" href={file.href} download={file.name} aria-label={file.name + ' 다운로드'}>
+      <Icon name="download" size={16}/>다운로드
+    </a>
+  </div>)}
 </section>
 <style>
   .attachments {margin:0 0 1rem;scroll-margin-top:calc(var(--header) + 12px);line-height:1.5}
-  .file-card {display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text)}
-  .file-card:is(:hover,:focus-visible) {border-color:var(--accent)}
+  .file-card {position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);cursor:default}
+  .card-outline {position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);pointer-events:none}
+  .card-outline rect {
+    width:calc(100% - 2px);height:calc(100% - 2px);
+    fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:1 1;
+    stroke-dashoffset:1;opacity:0;
+    transition:opacity .24s ease-out,stroke-dashoffset 0s linear .24s;
+  }
+  .file-card:is(:hover,:has(:focus-visible)) .card-outline rect {
+    stroke-dashoffset:0;opacity:1;
+    transition:stroke-dashoffset .55s ease-in-out,opacity .1s linear;
+  }
   .file-icon,.download-action {display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
   .file-icon {width:40px;height:44px;background:var(--active);color:var(--accent)}
   .file-info {display:grid;gap:4px;overflow-wrap:anywhere}
   strong {font-size:.95rem}
   small {font-size:.75rem;color:var(--muted)}
-  .download-action {gap:7px;padding:9px 12px;background:var(--accent);color:var(--bg);font-size:.8125rem;font-weight:700;white-space:nowrap}
+  .download-action {gap:7px;padding:9px 12px;background:var(--accent);color:var(--bg);font-size:.8125rem;font-weight:700;white-space:nowrap;cursor:pointer;transition:background-color .16s ease,box-shadow .16s ease}
+  .download-action:is(:hover,:focus-visible) {background:color-mix(in srgb,var(--accent) 80%,var(--text));box-shadow:0 2px 8px color-mix(in srgb,var(--accent) 30%,transparent);color:var(--bg)}
+  @media(prefers-reduced-motion:reduce) {
+    .card-outline rect,.file-card:is(:hover,:has(:focus-visible)) .card-outline rect,.download-action {transition:none}
+  }
   @media(max-width:480px) {
     .file-card {grid-template-columns:auto minmax(0,1fr)}
     .download-action {grid-column:1 / -1}
