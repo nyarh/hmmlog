@@ -1,6 +1,6 @@
 ---
 title: 페이지마다 다른 SEO 메타데이터
-description: 대표 URL, 검색 설명, 구조화 데이터를 글의 정보에서 생성합니다.
+description: 글별 대표 URL과 검색 설명 및 구조화 데이터 생성
 date: 2026-11-10
 art: code
 ---

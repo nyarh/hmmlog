@@ -1,6 +1,6 @@
 ---
 title: Windows 11 설치 중 로컬 계정 만들기
-description: Microsoft 계정 로그인 화면에서 Shift + F10으로 명령 프롬프트를 열고 로컬 계정을 만드는 방법입니다.
+description: Windows 11 설치 화면에서 명령 프롬프트를 이용한 로컬 계정 생성
 date: 2026-11-10T13:58:00+09:00
 art: code
 ---

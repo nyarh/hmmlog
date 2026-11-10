@@ -22,10 +22,22 @@ const files = names.map(name => {
       <small>{file.type && file.type + ' · '}{file.bytes.toLocaleString('ko-KR')}바이트</small>
     </span>
     <a class="download-action" href={file.href} download={file.name} aria-label={file.name + ' 다운로드'}>
-      <Icon name="download" size={16}/>다운로드
+      <span class="download-icon"><Icon name="download" size={16}/></span>
+      <span class="check-icon"><Icon name="check" size={16}/></span>
+      다운로드
     </a>
   </div>)}
 </section>
+<script>
+  for (const link of document.querySelectorAll<HTMLAnchorElement>('.download-action[download]')) {
+    let resetTimer: number;
+    link.addEventListener('click', () => {
+      window.clearTimeout(resetTimer);
+      link.dataset.requested = 'true';
+      resetTimer = window.setTimeout(() => { delete link.dataset.requested; }, 1800);
+    });
+  }
+</script>
 <style>
   .attachments {margin:0 0 1rem;scroll-margin-top:calc(var(--header) + 12px);line-height:1.5}
   .file-card {position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);cursor:default}
@@ -47,6 +59,8 @@ const files = names.map(name => {
   small {font-size:.75rem;color:var(--muted)}
   .download-action {gap:7px;padding:9px 12px;background:var(--accent);color:var(--bg);font-size:.8125rem;font-weight:700;white-space:nowrap;cursor:pointer;transition:background-color .16s ease,box-shadow .16s ease}
   .download-action:is(:hover,:focus-visible) {background:color-mix(in srgb,var(--accent) 80%,var(--text));box-shadow:0 2px 8px color-mix(in srgb,var(--accent) 30%,transparent);color:var(--bg)}
+  .download-icon,.download-action[data-requested] .check-icon {display:grid}
+  .check-icon,.download-action[data-requested] .download-icon {display:none}
   @media(prefers-reduced-motion:reduce) {
     .card-outline rect,.file-card:is(:hover,:has(:focus-visible)) .card-outline rect,.download-action {transition:none}
   }

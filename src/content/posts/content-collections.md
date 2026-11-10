@@ -1,6 +1,6 @@
 ---
 title: 콘텐츠 컬렉션으로 글 관리하기
-description: 글의 메타데이터를 한곳에서 정의하고 기본 카테고리를 지정합니다.
+description: Astro 콘텐츠 컬렉션의 필수 필드 검증과 기본 카테고리 설정
 date: 2026-11-10
 art: tree
 ---

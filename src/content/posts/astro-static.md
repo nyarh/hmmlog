@@ -1,6 +1,6 @@
 ---
 title: Astro로 정적 블로그 만들기
-description: Markdown으로 쓴 글이 HTML 페이지로 만들어지는 과정을 정리합니다.
+description: Astro로 Markdown 글을 정적 HTML로 빌드하고 배포하는 과정
 date: 2026-11-10
 art: stack
 ---
