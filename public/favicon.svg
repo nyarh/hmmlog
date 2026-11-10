@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" lang="ko" width="32" height="32" viewBox="0 0 40 40">
-  <rect width="40" height="40" rx="8" fill="#282637"/>
-  <text x="20" y="32" text-anchor="middle" fill="#bdabff" font-size="35" font-weight="750"
+  <style>
+    text { fill: #252532; }
+    @media (prefers-color-scheme: dark) {
+      text { fill: #eeeef1; }
+    }
+  </style>
+  <text x="20" y="32" text-anchor="middle" font-size="35" font-weight="750"
         font-family="Inter, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif">흠</text>
 </svg>
