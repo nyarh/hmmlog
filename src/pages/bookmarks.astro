@@ -1,6 +1,0 @@
----
-import Base from '../layouts/Base.astro';
-import PostList from '../components/PostList.astro';
-import {posts} from '../lib/blog';
----
-<Base title="북마크" active="bookmarks" noindex><section class="inner" data-bookmarks><h1>북마크</h1><p id="empty" role="status">저장한 글이 없습니다.</p><PostList items={await posts()}/></section></Base>

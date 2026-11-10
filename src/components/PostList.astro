@@ -1,11 +1,10 @@
 ---
 import {dateText,postUrl,type Post} from '../lib/blog';
-import Icon from './Icon.astro';
 interface Props {items:Post[]}
 const {items}=Astro.props;
 ---
-<div class="list">{items.map(p=><article class="row" data-entry data-id={p.id} data-search={[p.data.title,p.data.description,p.data.category].join(' ').toLowerCase()}>
+<div class="list">{items.map(p=><article class="row" data-entry data-search={[p.data.title,p.data.description,p.data.category].join(' ').toLowerCase()}>
 <a class={'thumb '+p.data.art} href={postUrl(p)} aria-label={p.data.title} tabindex="-1"><img alt="" src={'/covers/'+p.data.art+'.svg'} loading="lazy"/></a>
 <div class="summary"><div class="meta"><span>{p.data.category}</span><i>·</i><time datetime={p.data.date.toISOString()}>{dateText(p.data.date)}</time></div>
 <h3><a href={postUrl(p)}>{p.data.title}</a></h3><p>{p.data.description}</p></div>
-<button class="save" data-save={p.id} aria-label={p.data.title+' 북마크'} aria-pressed="false" title="북마크"><Icon name="bookmark" size={17}/></button></article>)}</div>
+</article>)}</div>

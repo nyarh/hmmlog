@@ -7,30 +7,35 @@ const url=new URL(Astro.url.pathname,Astro.site).href;
 const pageTitle=title==='흠'?title:title+' · 흠';
 const schema=article?{'@type':'BlogPosting',headline:title,description,datePublished:article.data.date.toISOString(),author:{'@type':'Organization',name:'흠',url:Astro.site?.href},mainEntityOfPage:url}: {'@type':'WebPage',name:pageTitle,description,url};
 ---
-<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{pageTitle}</title><meta name="description" content={description}/><link rel="canonical" href={url}/>{noindex&&<meta name="robots" content="noindex"/>}<meta property="og:locale" content="ko_KR"/><meta property="og:site_name" content="흠"/><meta property="og:type" content={article?'article':'website'}/><meta property="og:url" content={url}/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta name="twitter:card" content="summary"/><link rel="icon" href="/favicon.svg"/><link rel="alternate" type="application/rss+xml" title="흠 RSS" href="/rss.xml"/><script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org',...schema}).replace(/</g,'\\u003c')}/><script is:inline>try { if(localStorage.getItem('hmmlog-theme')==='light')document.documentElement.dataset.theme='light'; } catch {}</script></head>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{pageTitle}</title><meta name="description" content={description}/><link rel="canonical" href={url}/>{noindex&&<meta name="robots" content="noindex"/>}<meta property="og:locale" content="ko_KR"/><meta property="og:site_name" content="흠"/><meta property="og:type" content={article?'article':'website'}/><meta property="og:url" content={url}/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta name="twitter:card" content="summary"/><link rel="icon" href="/favicon.svg"/><link rel="alternate" type="application/rss+xml" title="흠 RSS" href="/rss.xml"/><script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org',...schema}).replace(/</g,'\\u003c')}/><script is:inline>
+try {
+  const root = document.documentElement;
+  if (localStorage.getItem('hmmlog-theme') === 'light') root.dataset.theme = 'light';
+  const size = localStorage.getItem('hmmlog-text-size');
+  if (['small', 'normal', 'large', 'larger'].includes(size)) root.dataset.textSize = size;
+} catch {}
+</script></head>
 
 <body>
 <a class="skip" href="#main">본문으로</a>
-<header class="topbar"><button class="tool" id="menu" aria-controls="rail" aria-expanded="false" aria-label="메뉴 펼치기"><Icon name="menu" size={20}/></button>
+<header class="topbar">
 <a class="brand" href="/"><span class="brandmark"><Icon name="layers" size={23}/></span>흠</a>
 <form action="/search/" role="search"><button aria-label="검색"><Icon name="search"/></button><input type="search" name="q" aria-label="블로그 검색" placeholder="블로그 검색" autocomplete="off"/></form>
-<div class="tools"><button class="tool" id="theme" aria-label="밝은 테마" aria-pressed="false" title="테마 전환"><Icon name="sun"/></button><a class="tool" href="/bookmarks/" aria-label="북마크" title="북마크"><Icon name="bookmark"/><span id="mark-count"></span></a></div>
+<div class="tools"><button class="tool" id="theme" aria-label="밝은 테마" aria-pressed="false" title="테마 전환"><Icon name="sun"/></button><label class="size-control" title="글자 크기">
+  <span aria-hidden="true">Aa</span>
+  <select id="text-size" aria-label="글자 크기">
+    <option value="small">작게</option><option value="normal" selected>기본</option>
+    <option value="large">크게</option><option value="larger">아주 크게</option>
+  </select>
+</label></div>
 </header>
 <nav class="rail" id="rail" aria-label="주 메뉴">
-{[{key:'posts',label:'홈',href:'/',icon:'home'},{key:'categories',label:'카테고리',href:'/categories/',icon:'grid'},{key:'bookmarks',label:'북마크',href:'/bookmarks/',icon:'bookmark'},{key:'mail',label:'문의',href:'mailto:'+email,icon:'mail'},{key:'rss',label:'RSS',href:'/rss.xml',icon:'rss'}].map(entry=><a href={entry.href} title={entry.label} aria-label={entry.label} class:list={[{on:active===entry.key}]}><Icon name={entry.icon} size={20}/><span>{entry.label}</span></a>)}
+{[{key:'posts',label:'홈',href:'/',icon:'home'},{key:'categories',label:'카테고리',href:'/categories/',icon:'grid'},{key:'mail',label:'문의',href:'mailto:'+email,icon:'mail'},{key:'rss',label:'RSS',href:'/rss.xml',icon:'rss'}].map(entry=><a href={entry.href} title={entry.label} aria-label={entry.label} class:list={[{on:active===entry.key, utilities:entry.key==='mail'}]}><Icon name={entry.icon} size={20}/><span>{entry.label}</span></a>)}
 </nav>
 <div class="workarea"><main id="main" class="shell"><slot/></main>
 <footer class="shell"><span>© {new Date().getUTCFullYear()} 흠 · hmmlog.com</span><a href={`mailto:${email}`}>{email}</a></footer></div>
 <script>
 const root=document.documentElement;
-const menu=document.querySelector<HTMLButtonElement>('#menu')!;
-function setMenu(open:boolean){
-  root.classList.toggle('expanded',open);
-  menu.setAttribute('aria-expanded',String(open));
-  menu.setAttribute('aria-label',open?'메뉴 접기':'메뉴 펼치기');
-}
-menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
-document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
 const theme=document.querySelector<HTMLButtonElement>('#theme')!;
 const themeState=()=>theme.setAttribute('aria-pressed',String(root.dataset.theme==='light'));
 themeState();
@@ -39,36 +44,10 @@ theme.addEventListener('click',()=>{
   try{localStorage.setItem('hmmlog-theme',root.dataset.theme)}catch{}
   themeState();
 });
-let saved=new Set<string>();
-function loadSaved(){
-  try {
-    const ids=JSON.parse(localStorage.getItem('hmmlog-saved')??'[]');
-    if(Array.isArray(ids))saved=new Set(ids.filter(id=>typeof id==='string'));
-  }catch{}
-}
-const saves=document.querySelectorAll<HTMLButtonElement>('[data-save]');
-function sync(){
-  const count=document.querySelector('#mark-count')!;
-  count.textContent=saved.size?String(saved.size):'';
-  saves.forEach(button=>button.setAttribute('aria-pressed',String(saved.has(button.dataset.save!))));
-  const library=document.querySelector('[data-bookmarks]');
-  if(library){
-    let shown=0;
-    library.querySelectorAll<HTMLElement>('[data-entry]').forEach(row=>{
-      row.hidden=!saved.has(row.dataset.id!);
-      if(!row.hidden)shown++;
-    });
-    document.getElementById('empty')!.hidden=shown>0;
-  }
-}
-loadSaved();sync();
-saves.forEach(button=>button.addEventListener('click',()=>{
-  loadSaved();
-  const id=button.dataset.save!;
-  if(saved.has(id))saved.delete(id);else saved.add(id);
-  try{localStorage.setItem('hmmlog-saved',JSON.stringify([...saved]))}catch{}
-  sync();
-}));
-window.addEventListener('pageshow',()=>{loadSaved();sync()});
-window.addEventListener('storage',()=>{loadSaved();sync()});
+const sizeControl = document.querySelector<HTMLSelectElement>('#text-size')!;
+sizeControl.value = root.dataset.textSize || 'normal';
+sizeControl.addEventListener('change', () => {
+  root.dataset.textSize = sizeControl.value;
+  try { localStorage.setItem('hmmlog-text-size', sizeControl.value); } catch {}
+});
 </script></body></html>
