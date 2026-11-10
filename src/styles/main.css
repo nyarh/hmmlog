@@ -177,17 +177,35 @@ footer.shell {margin-top:36px;border-top:1px solid var(--line);display:flex;just
 .byline {margin:22px 0;padding-bottom:20px;border-bottom:1px solid var(--line)}
 .prose {font-size:1rem;line-height:1.9;overflow-wrap:anywhere;color:var(--soft);margin-bottom:32px}
 .prose a[href] {
+  display:inline-block;
+  position:relative;
+  max-inline-size:100%;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
   color:var(--accent);
-  background-image:linear-gradient(currentColor,currentColor);
-  background-position:left bottom;
-  background-repeat:no-repeat;
-  background-size:0% 1px;
-  -webkit-box-decoration-break:clone;
-  box-decoration-break:clone;
-  transition:background-size .22s ease-out;
 }
-.prose a[href]:is(:hover,:focus-visible) {background-size:100% 1px}
-@media (prefers-reduced-motion:reduce) {.prose a[href] {transition:none}}
+.prose a[href]:is(:hover,:focus-visible)::before,
+.prose a[href]:is(:hover,:focus-visible)::after {
+  content:"";
+  position:absolute;
+  inset-inline:0;
+  inset-block-end:.14em;
+  height:2px;
+  border-radius:2px;
+  background:currentColor;
+  pointer-events:none;
+}
+.prose a[href]::before {opacity:.25}
+.prose a[href]:is(:hover,:focus-visible)::after {animation:link-progress 1.4s linear infinite}
+@keyframes link-progress {
+  0% {clip-path:inset(0 100% 0 0 round 2px)}
+  40% {clip-path:inset(0 50% 0 10% round 2px)}
+  75% {clip-path:inset(0 4% 0 67% round 2px)}
+  100% {clip-path:inset(0 0 0 100% round 2px)}
+}
+@media (prefers-reduced-motion:reduce) {
+  .prose a[href]:is(:hover,:focus-visible)::after {animation:none}
+}
 @media (forced-colors:active) {.prose a[href] {text-decoration:underline}}
 .code-block {display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;margin:1em 0;border-radius:6px;background:#24292e}
 .code-block pre {min-width:0;margin:0}
