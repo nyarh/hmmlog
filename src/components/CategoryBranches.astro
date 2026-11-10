@@ -10,6 +10,6 @@ const {nodes, root = false} = Astro.props;
       {root && <Icon name={node.name === '미분류' ? 'archive' : 'folder'} size={20}/>}
       <span>{node.name}</span><small>{node.items.length}</small>
     </a>
-    {node.children.length > 0 && <Astro.self nodes={node.children}/>}
+    {node.children.length > 0 && <div class="category-subtree"><Astro.self nodes={node.children}/></div>}
   </li>)}
 </ul>

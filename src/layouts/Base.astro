@@ -22,15 +22,15 @@ try {
 <body>
 <a class="skip" href="#main">본문으로</a>
 <header class="topbar">
-<a class="brand" href="/"><span class="brandmark"><Icon name="layers" size={23}/></span>흠</a>
+<a class="brand" href="/"><span class="brandmark"><Icon name="layers" size={20}/></span><span>흠</span></a>
 <form action="/search/" role="search"><button aria-label="검색"><Icon name="search"/></button><input type="search" name="q" aria-label="블로그 검색" placeholder="블로그 검색" autocomplete="off"/></form>
 <div class="tools"><button class="tool" id="theme" aria-label="밝은 테마" aria-pressed="false" title="테마 전환"><Icon name="sun"/></button><TextSizeDialog/></div>
 </header>
 <nav class="rail" aria-label="카테고리 탐색">
   <CategoryBranches nodes={categories} root/>
   <div class="rail-utilities">
-    <a href={'mailto:'+email}><Icon name="mail"/><span>문의</span></a>
-    <a href="/rss.xml"><Icon name="rss"/><span>RSS</span></a>
+    <a href={'mailto:'+email} title="문의" aria-label="문의"><Icon name="mail" size={20}/><span>문의</span></a>
+    <a href="/rss.xml" title="RSS" aria-label="RSS"><Icon name="rss" size={20}/><span>RSS</span></a>
   </div>
 </nav>
 <div class="workarea"><main id="main" class="shell"><slot/></main>
