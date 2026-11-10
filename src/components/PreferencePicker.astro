@@ -20,14 +20,14 @@ const options = isTheme
   <button type="button" class:list={['tool', {'font-trigger':!isTheme}]}
           aria-label={label+' 설정'} title={label+' 설정'} aria-haspopup="dialog"
           aria-expanded="false" aria-controls={panelId}>
-    {isTheme ? themes.map(([value, , icon])=>
+    {isTheme ? themes.filter(([value]) => value !== 'system').map(([value, , icon])=>
       <span aria-hidden="true" data-theme-icon={value}><Icon name={icon}/></span>
     ) : 'Aa'}
   </button>
   <div id={panelId} class:list={['preference-panel', {'theme-panel':isTheme}]} role="dialog" aria-label={label} hidden>
     <div class={isTheme ? 'theme-options' : 'size-options'}>
       {options.map(([value,text,icon])=><button type="button" data-value={value} aria-pressed="false">
-        {isTheme ? <Icon name={icon} size={21}/> : <span aria-hidden="true">가</span>}{text}
+        {isTheme ? <><Icon name={icon} size={21}/><span>{text}</span></> : <><span aria-hidden="true">가</span>{text}</>}
       </button>)}
     </div>
   </div>
