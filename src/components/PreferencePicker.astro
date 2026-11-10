@@ -5,8 +5,13 @@ const {setting} = Astro.props;
 const isTheme = setting === 'theme';
 const label = isTheme ? '테마' : '글자 크기';
 const panelId = setting + '-dialog';
+const themes = [
+  ['system', '시스템 설정 따르기', 'monitor'],
+  ['light', '밝은 테마', 'sun'],
+  ['dark', '어두운 테마', 'moon'],
+];
 const options = isTheme
-  ? [['system', '시스템 설정 따르기'], ['light', '밝은 테마'], ['dark', '어두운 테마']]
+  ? themes
   : [['small', '작게'], ['normal', '기본'], ['large', '크게'], ['larger', '아주 크게']];
 ---
 <div class="preference-picker" data-setting={setting}
@@ -15,12 +20,14 @@ const options = isTheme
   <button type="button" class:list={['tool', {'font-trigger':!isTheme}]}
           aria-label={label+' 설정'} title={label+' 설정'} aria-haspopup="dialog"
           aria-expanded="false" aria-controls={panelId}>
-    {isTheme ? <Icon name="sun"/> : 'Aa'}
+    {isTheme ? themes.map(([value, , icon])=>
+      <span aria-hidden="true" data-theme-icon={value}><Icon name={icon}/></span>
+    ) : 'Aa'}
   </button>
   <div id={panelId} class:list={['preference-panel', {'theme-panel':isTheme}]} role="dialog" aria-label={label} hidden>
     <div class={isTheme ? 'theme-options' : 'size-options'}>
-      {options.map(([value,text])=><button type="button" data-value={value} aria-pressed="false">
-        {!isTheme && <span aria-hidden="true">가</span>}{text}
+      {options.map(([value,text,icon])=><button type="button" data-value={value} aria-pressed="false">
+        {isTheme ? <Icon name={icon} size={21}/> : <span aria-hidden="true">가</span>}{text}
       </button>)}
     </div>
   </div>
