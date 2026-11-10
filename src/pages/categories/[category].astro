@@ -1,8 +1,0 @@
----
-import Base from '../../layouts/Base.astro';
-import PostList from '../../components/PostList.astro';
-import {posts,groups} from '../../lib/blog';
-export async function getStaticPaths(){const items=await posts();return groups(items).map(category=>({params:{category},props:{items:items.filter(p=>p.data.category===category)}}))}
-const {category}=Astro.params;const {items}=Astro.props;
----
-<Base title={category} active="categories"><div class="inner"><a class="back" href="/categories/">← 카테고리</a><h1>{category} <small>{items.length}</small></h1><PostList items={items}/></div></Base>

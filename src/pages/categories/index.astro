@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
-import {posts,groups,categoryUrl} from '../../lib/blog';
-const items=await posts();
+import {posts,categoryTree,categoryUrl} from '../../lib/blog';
+const roots=categoryTree(await posts());
 ---
-<Base title="카테고리" active="categories"><div class="inner"><a class="back" href="/">← 글 목록</a><h1>카테고리</h1>{groups(items).map(c=><a class="categoryTile" href={categoryUrl(c)}><Icon name="folder"/>{c}<small>{items.filter(p=>p.data.category===c).length}개의 글</small><Icon name="arrow"/></a>)}</div></Base>
+<Base title="카테고리"><div class="inner"><a class="back" href="/">← 글 목록</a><h1>카테고리</h1>{roots.map(node=><a class="categoryTile" href={categoryUrl(node.path)}><Icon name="folder"/>{node.name}<small>{node.items.length}개의 글</small><Icon name="arrow"/></a>)}</div></Base>

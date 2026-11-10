@@ -31,7 +31,7 @@ if (slides.length > 1 && rotation) {
   function schedule() {
     window.clearTimeout(timer);
     if (!paused && !document.hidden && !stage.contains(document.activeElement)) {
-      timer = window.setTimeout(() => show((current + 1) % slides.length), 15000);
+      timer = window.setTimeout(() => show((current + 1) % slides.length), 10000);
     }
   }
   function show(index: number) {

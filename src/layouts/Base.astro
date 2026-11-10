@@ -1,8 +1,11 @@
 ---
 import '../styles/main.css';
 import Icon from '../components/Icon.astro';
-import {email} from '../lib/blog';
-const { title='흠', description='흠의 개발 블로그. 웹 개발과 블로그 구현에 관한 글을 모읍니다.', article, active='posts', noindex=false }=Astro.props;
+import {email, categoryTree, posts} from '../lib/blog';
+import CategoryBranches from '../components/CategoryBranches.astro';
+import TextSizeDialog from '../components/TextSizeDialog.astro';
+const categories = categoryTree(await posts());
+const { title='흠', description='흠의 개발 블로그. 웹 개발과 블로그 구현에 관한 글을 모읍니다.', article, noindex=false }=Astro.props;
 const url=new URL(Astro.url.pathname,Astro.site).href;
 const pageTitle=title==='흠'?title:title+' · 흠';
 const schema=article?{'@type':'BlogPosting',headline:title,description,datePublished:article.data.date.toISOString(),author:{'@type':'Organization',name:'흠',url:Astro.site?.href},mainEntityOfPage:url}: {'@type':'WebPage',name:pageTitle,description,url};
@@ -21,16 +24,14 @@ try {
 <header class="topbar">
 <a class="brand" href="/"><span class="brandmark"><Icon name="layers" size={23}/></span>흠</a>
 <form action="/search/" role="search"><button aria-label="검색"><Icon name="search"/></button><input type="search" name="q" aria-label="블로그 검색" placeholder="블로그 검색" autocomplete="off"/></form>
-<div class="tools"><button class="tool" id="theme" aria-label="밝은 테마" aria-pressed="false" title="테마 전환"><Icon name="sun"/></button><label class="size-control" title="글자 크기">
-  <span aria-hidden="true">Aa</span>
-  <select id="text-size" aria-label="글자 크기">
-    <option value="small">작게</option><option value="normal" selected>기본</option>
-    <option value="large">크게</option><option value="larger">아주 크게</option>
-  </select>
-</label></div>
+<div class="tools"><button class="tool" id="theme" aria-label="밝은 테마" aria-pressed="false" title="테마 전환"><Icon name="sun"/></button><TextSizeDialog/></div>
 </header>
-<nav class="rail" id="rail" aria-label="주 메뉴">
-{[{key:'posts',label:'홈',href:'/',icon:'home'},{key:'categories',label:'카테고리',href:'/categories/',icon:'grid'},{key:'mail',label:'문의',href:'mailto:'+email,icon:'mail'},{key:'rss',label:'RSS',href:'/rss.xml',icon:'rss'}].map(entry=><a href={entry.href} title={entry.label} aria-label={entry.label} class:list={[{on:active===entry.key, utilities:entry.key==='mail'}]}><Icon name={entry.icon} size={20}/><span>{entry.label}</span></a>)}
+<nav class="rail" aria-label="카테고리 탐색">
+  <CategoryBranches nodes={categories} root/>
+  <div class="rail-utilities">
+    <a href={'mailto:'+email}><Icon name="mail"/><span>문의</span></a>
+    <a href="/rss.xml"><Icon name="rss"/><span>RSS</span></a>
+  </div>
 </nav>
 <div class="workarea"><main id="main" class="shell"><slot/></main>
 <footer class="shell"><span>© {new Date().getUTCFullYear()} 흠 · hmmlog.com</span><a href={`mailto:${email}`}>{email}</a></footer></div>
@@ -43,11 +44,5 @@ theme.addEventListener('click',()=>{
   root.dataset.theme=root.dataset.theme==='light'?'dark':'light';
   try{localStorage.setItem('hmmlog-theme',root.dataset.theme)}catch{}
   themeState();
-});
-const sizeControl = document.querySelector<HTMLSelectElement>('#text-size')!;
-sizeControl.value = root.dataset.textSize || 'normal';
-sizeControl.addEventListener('change', () => {
-  root.dataset.textSize = sizeControl.value;
-  try { localStorage.setItem('hmmlog-text-size', sizeControl.value); } catch {}
 });
 </script></body></html>

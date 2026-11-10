@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import {posts, categoryTree, allCategories, categoryUrl} from '../../lib/blog';
+export async function getStaticPaths() {
+  return allCategories(categoryTree(await posts())).map(node => ({
+    params: {category:node.path}, props: {node},
+  }));
+}
+const {node} = Astro.props;
+---
+<Base title={node.path}><div class="inner">
+  <a class="back" href="/categories/">← 카테고리</a>
+  <h1>{node.path.split('/').join(' / ')} <small>{node.items.length}</small></h1>
+  {node.children.length > 0 && <nav class="subcategories" aria-label="하위 카테고리">
+    {node.children.map(child => <a class="chip" href={categoryUrl(child.path)}>{child.name} <small>{child.items.length}</small></a>)}
+  </nav>}
+  <PostList items={node.items}/>
+</div></Base>

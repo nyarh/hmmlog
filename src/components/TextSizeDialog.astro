@@ -1,0 +1,41 @@
+---
+const sizes = [
+  ['small', '작게'], ['normal', '기본'], ['large', '크게'], ['larger', '아주 크게'],
+];
+---
+<button class="tool font-trigger" type="button" aria-label="글자 크기 설정" aria-haspopup="dialog" aria-controls="size-dialog" title="글자 크기 설정">Aa</button>
+<dialog id="size-dialog" aria-labelledby="size-heading">
+  <div class="size-heading">
+    <h2 id="size-heading">글자 크기</h2>
+    <form method="dialog"><button type="submit" aria-label="닫기">×</button></form>
+  </div>
+  <div class="size-options">
+    {sizes.map(([value,label])=><button type="button" data-size={value} aria-pressed="false">
+      <span aria-hidden="true">가</span>{label}
+    </button>)}
+  </div>
+</dialog>
+<script>
+const dialog = document.querySelector<HTMLDialogElement>('#size-dialog')!;
+const trigger = document.querySelector<HTMLButtonElement>('.font-trigger')!;
+const options = dialog.querySelectorAll<HTMLButtonElement>('[data-size]');
+const root = document.documentElement;
+
+trigger.addEventListener('click', () => {
+  const size = root.dataset.textSize || 'normal';
+  options.forEach(option => option.setAttribute('aria-pressed', String(option.dataset.size === size)));
+  dialog.showModal();
+  dialog.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
+});
+options.forEach(option => option.addEventListener('click', () => {
+  const size = option.dataset.size!;
+  root.dataset.textSize = size;
+  try { localStorage.setItem('hmmlog-text-size', size); } catch {}
+  dialog.close();
+}));
+dialog.addEventListener('click', event => {
+  if (event.target !== dialog) return;
+  const box = dialog.getBoundingClientRect();
+  if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+});
+</script>
