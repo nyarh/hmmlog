@@ -1,0 +1,49 @@
+---
+import Icon from './Icon.astro';
+---
+<div class="prose"><slot/></div>
+<template id="code-copy-control">
+  <button type="button" class="copy-code" aria-label="코드 복사" title="코드 복사">
+    <span class="copy-symbol"><Icon name="copy" size={17}/></span>
+    <span class="copied-symbol"><Icon name="check" size={17}/></span>
+  </button>
+</template>
+<span class="sr" role="status" id="copy-status"></span>
+
+<script>
+const template = document.querySelector<HTMLTemplateElement>('#code-copy-control')!;
+const status = document.getElementById('copy-status')!;
+for (const code of document.querySelectorAll<HTMLElement>('.prose pre > code')) {
+  const pre = code.parentElement!;
+  const block = document.createElement('div');
+  block.className = 'code-block';
+  pre.before(block);
+  block.append(pre, template.content.cloneNode(true));
+  const button = block.querySelector('button')!;
+  let resetTimer: number;
+
+  button.addEventListener('click', async () => {
+    window.clearTimeout(resetTimer);
+    status.textContent = '';
+    try {
+      await navigator.clipboard.writeText(code.textContent ?? '');
+      button.dataset.copied = 'true';
+      button.title = '복사됨';
+      status.textContent = '코드를 복사했습니다.';
+      resetTimer = window.setTimeout(() => {
+        delete button.dataset.copied;
+        button.title = '코드 복사';
+      }, 1800);
+    } catch {
+      delete button.dataset.copied;
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(code);
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+      button.title = '선택된 코드를 복사하세요';
+      status.textContent = '자동 복사가 차단되었습니다. 선택된 코드를 직접 복사하세요.';
+    }
+  });
+}
+</script>
