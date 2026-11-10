@@ -1,7 +1,8 @@
 :root {
-  color-scheme: dark;
-  --bg:#191b20; --panel:#202228; --text:#eeeef1; --soft:#b1b2bd; --muted:#999ba9;
-  --line:#34363f; --accent:#bda8ff; --active:#343043; --mono:Consolas,"IBM Plex Mono",monospace;
+  color-scheme: light dark;
+  --bg:light-dark(#fafafa,#191b20); --panel:light-dark(#fff,#202228);
+  --text:light-dark(#252532,#eeeef1); --soft:light-dark(#494b58,#b1b2bd); --muted:light-dark(#676978,#999ba9);
+  --line:light-dark(#dedfe6,#34363f); --accent:light-dark(#6649aa,#bda8ff); --active:light-dark(#ece7f6,#343043); --mono:Consolas,"IBM Plex Mono",monospace;
   --rail:68px; --header:66px;
   --rail-inset:10px; --link-inset:13px; --label-gap:12px;
   --text-scale:1;
@@ -12,7 +13,8 @@
 :root[data-text-size="small"] {--text-scale:.875}
 :root[data-text-size="large"] {--text-scale:1.125}
 :root[data-text-size="larger"] {--text-scale:1.25}
-:root[data-theme="light"] {color-scheme:light;--bg:#fafafa;--panel:#fff;--text:#252532;--soft:#494b58;--muted:#676978;--line:#dedfe6;--accent:#6649aa;--active:#ece7f6}
+:root[data-theme="light"] {color-scheme:light}
+:root[data-theme="dark"] {color-scheme:dark}
 * {box-sizing:border-box}
 body,h1,h2,h3,p,ol {margin:0}
 a {color:inherit;text-decoration:none}

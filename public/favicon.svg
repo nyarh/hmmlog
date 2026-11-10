@@ -1,10 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" lang="ko" width="32" height="32" viewBox="0 0 40 40">
+  <title>흠</title>
   <style>
-    text { fill: #252532; }
+    g { fill: #252532; }
     @media (prefers-color-scheme: dark) {
-      text { fill: #eeeef1; }
+      g { fill: #eeeef1; }
     }
   </style>
-  <text x="20" y="32" text-anchor="middle" font-size="35" font-weight="750"
-        font-family="Inter, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif">흠</text>
+  <g transform="translate(2.5 -5.15)" fill-rule="evenodd">
+    <path d="M4.94 13.48V10.2h10.42V7.67h4.24v2.53h10.46v3.28Z"/>
+    <path d="M17.5 23.84C10.17 23.84 6.51 22.28 6.51 19.16S10.17 14.44 17.5 14.44C24.8 14.44 28.45 16.01 28.45 19.16S24.8 23.84 17.5 23.84Z
+             M17.5 17.45C13.09 17.45 10.89 18.02 10.89 19.16c0 .59.51 1.02 1.55 1.28s2.72.39 5.06.39 4.02-.13 5.04-.39 1.54-.69 1.54-1.28c0-1.14-2.19-1.71-6.58-1.71Z"/>
+    <path d="M2.2 25.43h30.6v3.45H2.2Z"/>
+    <path d="M6.55 32.74h21.9v9.9H6.55Z M10.82 36.15h13.36v3.14H10.82Z"/>
+  </g>
 </svg>

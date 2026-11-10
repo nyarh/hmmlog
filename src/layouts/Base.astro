@@ -10,10 +10,11 @@ const url=new URL(Astro.url.pathname,Astro.site).href;
 const pageTitle=title==='흠'?title:title+' · 흠';
 const schema=article?{'@type':'BlogPosting',headline:title,description,datePublished:article.data.date.toISOString(),author:{'@type':'Organization',name:'흠',url:Astro.site?.href},mainEntityOfPage:url}: {'@type':'WebPage',name:pageTitle,description,url};
 ---
-<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{pageTitle}</title><meta name="description" content={description}/><link rel="canonical" href={url}/>{noindex&&<meta name="robots" content="noindex"/>}<meta property="og:locale" content="ko_KR"/><meta property="og:site_name" content="흠"/><meta property="og:type" content={article?'article':'website'}/><meta property="og:url" content={url}/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta name="twitter:card" content="summary"/><link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=3"/><link rel="alternate" type="application/rss+xml" title="흠 RSS" href="/rss.xml"/><script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org',...schema}).replace(/</g,'\\u003c')}/><script is:inline>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{pageTitle}</title><meta name="description" content={description}/><link rel="canonical" href={url}/>{noindex&&<meta name="robots" content="noindex"/>}<meta property="og:locale" content="ko_KR"/><meta property="og:site_name" content="흠"/><meta property="og:type" content={article?'article':'website'}/><meta property="og:url" content={url}/><meta property="og:title" content={pageTitle}/><meta property="og:description" content={description}/><meta name="twitter:card" content="summary"/><link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg?v=4"/><link rel="alternate" type="application/rss+xml" title="흠 RSS" href="/rss.xml"/><script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org',...schema}).replace(/</g,'\\u003c')}/><script is:inline>
 try {
   const root = document.documentElement;
-  if (localStorage.getItem('hmmlog-theme') === 'light') root.dataset.theme = 'light';
+  const savedTheme = localStorage.getItem('hmmlog-theme');
+  if (savedTheme === 'light' || savedTheme === 'dark') root.dataset.theme = savedTheme;
   const size = localStorage.getItem('hmmlog-text-size');
   if (['small', 'normal', 'large', 'larger'].includes(size)) root.dataset.textSize = size;
 } catch {}
@@ -36,13 +37,26 @@ try {
 <div class="workarea"><main id="main" class="shell"><slot/></main>
 <footer class="shell"><span>© {new Date().getUTCFullYear()} 흠 · hmmlog.com</span><a href={`mailto:${email}`}>{email}</a></footer></div>
 <script>
-const root=document.documentElement;
-const theme=document.querySelector<HTMLButtonElement>('#theme')!;
-const themeState=()=>theme.setAttribute('aria-pressed',String(root.dataset.theme==='light'));
-themeState();
-theme.addEventListener('click',()=>{
-  root.dataset.theme=root.dataset.theme==='light'?'dark':'light';
-  try{localStorage.setItem('hmmlog-theme',root.dataset.theme)}catch{}
-  themeState();
+const root = document.documentElement;
+const themeButton = document.querySelector<HTMLButtonElement>('#theme')!;
+const browserDark = matchMedia('(prefers-color-scheme: dark)');
+const currentTheme = () => root.dataset.theme || (browserDark.matches ? 'dark' : 'light');
+
+function syncButton() {
+  themeButton.setAttribute('aria-pressed', String(currentTheme() === 'light'));
+}
+themeButton.addEventListener('click', () => {
+  const selected = currentTheme() === 'light' ? 'dark' : 'light';
+  root.dataset.theme = selected;
+  try { localStorage.setItem('hmmlog-theme', selected); } catch {}
+  syncButton();
 });
+browserDark.addEventListener('change', syncButton);
+window.addEventListener('storage', event => {
+  if (event.key !== 'hmmlog-theme' && event.key !== null) return;
+  if (event.newValue === 'light' || event.newValue === 'dark') root.dataset.theme = event.newValue;
+  else delete root.dataset.theme;
+  syncButton();
+});
+syncButton();
 </script></body></html>
