@@ -26,8 +26,7 @@ button {cursor:pointer;border:0;background:none}
 .topbar {height:var(--header);position:sticky;top:0;z-index:4;display:flex;align-items:center;padding:0 30px 0 16px;gap:16px;background:var(--bg);border-bottom:1px solid var(--line)}
 .tool,.topbar form[role="search"] button {width:36px;height:36px;display:grid;place-items:center;color:var(--soft);border-radius:7px;position:relative}
 .tool:hover {color:var(--accent);background:var(--active)}
-.brand {display:flex;align-items:center;gap:8px;font-weight:750;font-size:1.4375rem;letter-spacing:-.06em}
-.brandmark {color:var(--accent);display:flex}
+.brand {display:grid;place-items:center;min-height:44px;font-weight:750;font-size:1.4375rem}
 .topbar form[role="search"] {display:flex;align-items:center;width:min(220px,30vw);min-width:0;margin-left:auto;border-bottom:1px solid var(--line)}
 .topbar input {background:transparent;border:0;padding:8px 0;font-size:0.875rem;min-width:0;width:100%}
 .topbar input::placeholder {color:var(--muted)}
@@ -56,8 +55,8 @@ button {cursor:pointer;border:0;background:none}
 .rail-utilities {margin-top:auto;border-top:1px solid var(--line);padding-top:7px}
 .subcategories {margin-bottom:14px}
 @media(min-width:761px) {
-  .topbar {padding-inline-start:calc(var(--rail-inset) + var(--link-inset))}
-  .brand {gap:var(--label-gap)}
+  .topbar {padding-inline-start:var(--rail-inset)}
+  .brand {width:calc(20px + 2 * var(--link-inset));flex:none}
   .rail {
     --detail-opacity:0;
     --detail-visibility:hidden;
