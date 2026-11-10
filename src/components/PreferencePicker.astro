@@ -1,0 +1,88 @@
+---
+import Icon from './Icon.astro';
+interface Props {setting: 'theme' | 'textSize'}
+const {setting} = Astro.props;
+const isTheme = setting === 'theme';
+const label = isTheme ? '테마' : '글자 크기';
+const panelId = setting + '-dialog';
+const options = isTheme
+  ? [['system', '시스템 설정 따르기'], ['light', '밝은 테마'], ['dark', '어두운 테마']]
+  : [['small', '작게'], ['normal', '기본'], ['large', '크게'], ['larger', '아주 크게']];
+---
+<div class="preference-picker" data-setting={setting}
+     data-storage-key={isTheme ? 'hmmlog-theme' : 'hmmlog-text-size'}
+     data-default={isTheme ? 'system' : 'normal'}>
+  <button type="button" class:list={['tool', {'font-trigger':!isTheme}]}
+          aria-label={label+' 설정'} title={label+' 설정'} aria-haspopup="dialog"
+          aria-expanded="false" aria-controls={panelId}>
+    {isTheme ? <Icon name="sun"/> : 'Aa'}
+  </button>
+  <div id={panelId} class:list={['preference-panel', {'theme-panel':isTheme}]} role="dialog" aria-label={label} hidden>
+    <div class={isTheme ? 'theme-options' : 'size-options'}>
+      {options.map(([value,text])=><button type="button" data-value={value} aria-pressed="false">
+        {!isTheme && <span aria-hidden="true">가</span>}{text}
+      </button>)}
+    </div>
+  </div>
+</div>
+
+<script>
+const root = document.documentElement;
+for (const picker of document.querySelectorAll<HTMLElement>('.preference-picker')) {
+  const setting = picker.dataset.setting!;
+  const key = picker.dataset.storageKey!;
+  const fallback = picker.dataset.default!;
+  const trigger = picker.querySelector<HTMLButtonElement>('button[aria-controls]')!;
+  const panel = picker.querySelector<HTMLElement>('[role="dialog"]')!;
+  const options = [...panel.querySelectorAll<HTMLButtonElement>('[data-value]')];
+
+  function markSelected() {
+    const value = root.dataset[setting] || fallback;
+    options.forEach(option => option.setAttribute('aria-pressed', String(option.dataset.value === value)));
+  }
+  function apply(value: string | null) {
+    if (value && value !== 'system' && options.some(option => option.dataset.value === value)) {
+      root.dataset[setting] = value;
+    } else {
+      delete root.dataset[setting];
+    }
+    markSelected();
+  }
+  function close(restoreFocus = false) {
+    panel.hidden = true;
+    trigger.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) trigger.focus();
+  }
+  trigger.addEventListener('click', () => {
+    if (!panel.hidden) return close();
+    markSelected();
+    panel.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    panel.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
+  });
+  options.forEach(option => option.addEventListener('click', () => {
+    const value = option.dataset.value!;
+    apply(value);
+    try {
+      if (value === 'system') localStorage.removeItem(key);
+      else localStorage.setItem(key, value);
+    } catch {}
+    close(true);
+  }));
+  picker.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !panel.hidden) {
+      event.preventDefault();
+      close(true);
+    }
+  });
+  picker.addEventListener('focusout', event => {
+    if (event.relatedTarget instanceof Node && !picker.contains(event.relatedTarget)) close();
+  });
+  document.addEventListener('pointerdown', event => {
+    if (!panel.hidden && event.target instanceof Node && !picker.contains(event.target)) close();
+  });
+  window.addEventListener('storage', event => {
+    if (event.key === key || event.key === null) apply(event.newValue);
+  });
+}
+</script>
