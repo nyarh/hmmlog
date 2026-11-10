@@ -1,8 +1,14 @@
 ---
 import Icon from './Icon.astro';
-import {groups,categoryUrl,email,type Post} from '../lib/blog';
+import {groups,categoryUrl,email,postUrl,dateText,type Post} from '../lib/blog';
 const {items}=Astro.props as {items:Post[]};
 ---
-<aside aria-label="블로그 위젯"><section class="widget"><h2><Icon name="folder"/>카테고리</h2>{groups(items).map(c=><a class="catlink" href={categoryUrl(c)}><span><i/>{c}</span><small>{items.filter(p=>p.data.category===c).length}</small></a>)}</section><slot/>
-<section class="widget connect"><h2><Icon name="mail"/>문의 / 요청</h2><a href={`mailto:${email}`}>{email}<Icon name="outward" size={15}/></a></section>
-<a class="feed" href="/rss.xml"><span><Icon name="rss" size={16}/> RSS 피드</span><Icon name="outward" size={14}/></a></aside>
+<aside aria-label="블로그 위젯" class="widgets">
+  <slot name="top"/>
+  <section class="widget"><h2>최근 글</h2><ol class="recent">
+    {items.slice(0,4).map((p,i)=><li><span>{String(i+1).padStart(2,'0')}</span><a href={postUrl(p)}><small>{dateText(p.data.date)}</small><strong>{p.data.title}</strong></a></li>)}
+  </ol></section>
+  <section class="widget"><h2>카테고리</h2>{groups(items).map(c=><a class="chip" href={categoryUrl(c)}>{c} <small>{items.filter(p=>p.data.category===c).length}</small></a>)}</section>
+  <slot/>
+  <section class="widget"><h2>문의 / 요청</h2><a class="contact" href={`mailto:${email}`}>{email} <Icon name="outward" size={15}/></a></section>
+</aside>

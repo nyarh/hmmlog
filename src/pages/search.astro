@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import {posts} from '../lib/blog';
+---
+<Base title="글 검색" active="search" noindex><section class="inner"><h1>글 검색</h1><p id="results" role="status"></p><PostList items={await posts()}/></section></Base>
+<script>
+const term=(new URLSearchParams(location.search).get('q')??'').trim();
+const input=document.querySelector<HTMLInputElement>('[name=q]');
+if(input)input.value=term;
+let count=0;
+document.querySelectorAll<HTMLElement>('[data-entry]').forEach(row=>{
+  row.hidden=!row.dataset.search?.includes(term.toLowerCase());
+  if(!row.hidden)count++;
+});
+const status=document.querySelector('#results');
+if(status)status.textContent=term?'“'+term+'” 검색 결과 '+count+'편':'전체 글 '+count+'편';
+</script>
