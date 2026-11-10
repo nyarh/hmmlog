@@ -176,6 +176,7 @@ footer.shell {margin-top:36px;border-top:1px solid var(--line);display:flex;just
 .back,.crumb {font-size:0.8125rem;color:var(--muted)}.crumb {display:flex;gap:9px}.lead {font-size:1.0625rem}
 .byline {margin:22px 0;padding-bottom:20px;border-bottom:1px solid var(--line)}
 .prose {font-size:1rem;line-height:1.9;overflow-wrap:anywhere;color:var(--soft);margin-bottom:32px}
+.prose img {display:block;max-width:100%;height:auto}
 .prose a[href]:not([download]) {
   display:inline-block;
   position:relative;
