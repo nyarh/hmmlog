@@ -184,27 +184,26 @@ footer.shell {margin-top:36px;border-top:1px solid var(--line);display:flex;just
   overflow-wrap:anywhere;
   color:var(--accent);
 }
-.prose a[href]:is(:hover,:focus-visible)::before,
-.prose a[href]:is(:hover,:focus-visible)::after {
+.prose a[href]::after {
   content:"";
   position:absolute;
   inset-inline:0;
   inset-block-end:.14em;
-  height:2px;
-  border-radius:2px;
+  height:1px;
   background:currentColor;
   pointer-events:none;
+  opacity:0;
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:opacity .24s ease-out,transform 0s linear .24s;
 }
-.prose a[href]::before {opacity:.25}
-.prose a[href]:is(:hover,:focus-visible)::after {animation:link-progress 1.4s linear infinite}
-@keyframes link-progress {
-  0% {clip-path:inset(0 100% 0 0 round 2px)}
-  40% {clip-path:inset(0 50% 0 10% round 2px)}
-  75% {clip-path:inset(0 4% 0 67% round 2px)}
-  100% {clip-path:inset(0 0 0 100% round 2px)}
+.prose a[href]:is(:hover,:focus-visible)::after {
+  opacity:1;
+  transform:scaleX(1);
+  transition:transform .22s ease-out,opacity .1s linear;
 }
 @media (prefers-reduced-motion:reduce) {
-  .prose a[href]:is(:hover,:focus-visible)::after {animation:none}
+  .prose a[href]::after,.prose a[href]:is(:hover,:focus-visible)::after {transition:none}
 }
 @media (forced-colors:active) {.prose a[href] {text-decoration:underline}}
 .code-block {display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;margin:1em 0;border-radius:6px;background:#24292e}
