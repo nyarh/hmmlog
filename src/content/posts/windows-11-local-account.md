@@ -7,16 +7,16 @@ art: code
 
 ## 설치 중 계정 만들기
 
-Windows 11 초기 설정에서 **Microsoft 계정 로그인 화면**이 나오면 `Shift + F10`을 눌러 명령 프롬프트(cmd)를 엽니다. 아래 명령을 입력하고 `Enter`를 누릅니다.
+Windows 11 빌드에 따라 초기 설정 중에 로컬 계정을 만들 수 있다. **Microsoft 계정 로그인 화면**에서 `Shift + F10`을 누르면 명령 프롬프트가 열린다. 여기에 아래 명령을 입력하고 `Enter`를 누른다.
 
 ```bat
 start ms-cxh:localonly
 ```
 
-로컬 계정 생성 창이 열리면 이 PC에서 사용할 **사용자 이름**을 입력합니다. 화면 안내에 따라 암호를 설정하고 남은 설치 단계를 마칩니다.
+로컬 계정 생성 창이 뜨면 이 PC에서 쓸 **사용자 이름**을 입력한다. 이어서 화면 안내에 따라 암호를 정하고 남은 설치 단계를 마친다.
 
 ## 계정 생성 창이 열리지 않을 때
 
-이 명령의 동작 여부는 Windows 11 빌드에 따라 다릅니다. Microsoft는 일부 Insider Preview 빌드에서 초기 설정 중 로컬 계정을 만드는 명령을 제거한다고 안내했습니다. [Windows Insider 변경 사항](https://blogs.windows.com/windows-insider/2025/10/06/announcing-windows-11-insider-preview-build-26220-6772-dev-channel/)
+명령을 입력해도 창이 뜨지 않는다면 설치 중인 빌드에서 이 기능을 지원하지 않을 수 있다. Microsoft는 일부 Insider Preview 빌드에서 초기 설정 중 로컬 계정을 만드는 명령을 제거한다고 안내했다. [Windows Insider 변경 사항](https://blogs.windows.com/windows-insider/2025/10/06/announcing-windows-11-insider-preview-build-26220-6772-dev-channel/)
 
-명령이 동작하지 않으면 Microsoft 계정으로 초기 설정을 마친 뒤, **설정 → 계정 → 사용자 정보 → 대신 로컬 계정으로 로그인**을 선택해 전환할 수 있습니다. [Microsoft 계정 전환 안내](https://support.microsoft.com/ko-kr/accounts-billing/manage/change-from-a-local-account-to-a-microsoft-account-in-windows)
+이 경우에는 Microsoft 계정으로 설치를 마친 뒤 로컬 계정으로 바꿀 수 있다. Windows **설정 → 계정 → 사용자 정보**에서 **대신 로컬 계정으로 로그인**을 선택한다. [Microsoft 계정 전환 안내](https://support.microsoft.com/ko-kr/accounts-billing/manage/change-from-a-local-account-to-a-microsoft-account-in-windows)
