@@ -5,15 +5,15 @@ date: 2026-11-10T16:52:00+09:00
 art: blocks
 ---
 
-어느 날부터인가 Windows에 “앱을 다운로드하여 이 'gbtdllib' 링크를 여세요”라는 팝업이 뜨기 시작했습니다.
+어느 날부터 Windows에 “앱을 다운로드하여 이 'gbtdllib' 링크를 여세요”라는 팝업이 떴다. 창에는 Microsoft Store에서 앱을 찾아보라는 안내가 나왔다.
 
 <img src="/images/posts/gbtdllib-popup.png" width="743" height="404" alt="gbtdllib 링크를 열 수 있는 앱이 없다며 Microsoft Store 검색을 제안하는 Windows 팝업" />
 
 ## GIGABYTE Control Center 재설치
 
-제 PC에서 이 팝업의 원인은 **GIGABYTE Control Center**(GCC)였습니다. 아래 순서로 GCC를 삭제하고 다시 설치했습니다.
+내 PC에서 이 팝업이 뜬 원인은 **GIGABYTE Control Center**(GCC)였다.
 
-1. Windows **설정 → 앱 → 설치된 앱**에서 **GIGABYTE Control Center**를 찾아 **제거**를 선택합니다.
-2. GCC 설치 파일을 내려받아 다시 설치합니다. [GIGABYTE Control Center 공식 다운로드](https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/)
+1. Windows **설정 → 앱 → 설치된 앱**에서 **GIGABYTE Control Center**를 찾아 **제거**를 눌렀다.
+2. GIGABYTE 공식 사이트에서 설치 파일을 내려받아 GCC를 다시 설치했다. [GIGABYTE Control Center 공식 다운로드](https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/)
 
-재설치를 마친 뒤에는 `gbtdllib` 팝업이 더 이상 뜨지 않았습니다.
+그 뒤로는 `gbtdllib` 팝업이 뜨지 않았다.
