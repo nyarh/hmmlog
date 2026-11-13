@@ -1,95 +1,58 @@
 ---
 import Icon from './Icon.astro';
-interface Props {setting: 'theme' | 'textSize'}
-const {setting} = Astro.props;
-const isTheme = setting === 'theme';
-const label = isTheme ? '테마' : '글자 크기';
-const panelId = setting + '-dialog';
 const themes = [
   ['system', '시스템 설정 따르기', 'monitor'],
   ['light', '밝은 테마', 'sun'],
   ['dark', '어두운 테마', 'moon'],
 ];
-const options = isTheme
-  ? themes
-  : [['small', '작게'], ['normal', '기본'], ['large', '크게'], ['larger', '아주 크게']];
+const sizes = [['small', '작게'], ['normal', '기본'], ['large', '크게'], ['larger', '아주 크게']];
 ---
-<div class="preference-picker" data-setting={setting}
-     data-storage-key={isTheme ? 'hmmlog-theme' : 'hmmlog-text-size'}
-     data-default={isTheme ? 'system' : 'normal'}>
-  <button type="button" class:list={['tool', {'font-trigger':!isTheme}]}
-          aria-label={label+' 설정'} title={label+' 설정'} aria-haspopup="dialog"
-          aria-expanded="false" aria-controls={panelId}>
-    {isTheme ? themes.filter(([value]) => value !== 'system').map(([value, , icon])=>
-      <span aria-hidden="true" data-theme-icon={value}><Icon name={icon}/></span>
-    ) : 'Aa'}
-  </button>
-  <div id={panelId} class:list={['preference-panel', {'theme-panel':isTheme}]} role="dialog" aria-label={label} hidden>
-    <div class={isTheme ? 'theme-options' : 'size-options'}>
-      {options.map(([value,text,icon])=><button type="button" data-value={value} aria-pressed="false">
-        {isTheme ? <><Icon name={icon} size={21}/><span>{text}</span></> : <><span aria-hidden="true">가</span>{text}</>}
-      </button>)}
-    </div>
-  </div>
+<button type="button" class="tool" popovertarget="preferences" aria-label="설정" title="설정">
+  <Icon name="settings"/>
+</button>
+<div id="preferences" class="preference-panel" popover="auto" role="dialog" aria-label="설정">
+  <fieldset data-setting="theme" data-storage-key="hmmlog-theme" data-default="system">
+    <legend>테마</legend>
+    <div class="theme-options">{themes.map(([value, label, icon]) =>
+      <button type="button" data-value={value} aria-pressed="false"><Icon name={icon} size={21}/><span>{label}</span></button>
+    )}</div>
+  </fieldset>
+  <fieldset data-setting="textSize" data-storage-key="hmmlog-text-size" data-default="normal">
+    <legend>글자 크기</legend>
+    <div class="size-options">{sizes.map(([value, label]) =>
+      <button type="button" data-value={value} aria-pressed="false"><span aria-hidden="true">가</span>{label}</button>
+    )}</div>
+  </fieldset>
 </div>
 
 <script>
-const root = document.documentElement;
-for (const picker of document.querySelectorAll<HTMLElement>('.preference-picker')) {
-  const setting = picker.dataset.setting!;
-  const key = picker.dataset.storageKey!;
-  const fallback = picker.dataset.default!;
-  const trigger = picker.querySelector<HTMLButtonElement>('button[aria-controls]')!;
-  const panel = picker.querySelector<HTMLElement>('[role="dialog"]')!;
-  const options = [...panel.querySelectorAll<HTMLButtonElement>('[data-value]')];
-
-  function markSelected() {
-    const value = root.dataset[setting] || fallback;
-    options.forEach(option => option.setAttribute('aria-pressed', String(option.dataset.value === value)));
-  }
-  function apply(value: string | null) {
-    if (value && value !== 'system' && options.some(option => option.dataset.value === value)) {
-      root.dataset[setting] = value;
-    } else {
-      delete root.dataset[setting];
+  const root = document.documentElement;
+  for (const group of document.querySelectorAll<HTMLFieldSetElement>('#preferences fieldset')) {
+    const setting = group.dataset.setting!;
+    const key = group.dataset.storageKey!;
+    const options = [...group.querySelectorAll<HTMLButtonElement>('[data-value]')];
+    function apply(value?: string | null) {
+      if (value && value !== 'system' && options.some(option => option.dataset.value === value)) {
+        root.dataset[setting] = value;
+      } else {
+        delete root.dataset[setting];
+      }
+      const selected = root.dataset[setting] || group.dataset.default;
+      for (const option of options) option.setAttribute('aria-pressed', String(option.dataset.value === selected));
     }
-    markSelected();
-  }
-  function close(restoreFocus = false) {
-    panel.hidden = true;
-    trigger.setAttribute('aria-expanded', 'false');
-    if (restoreFocus) trigger.focus();
-  }
-  trigger.addEventListener('click', () => {
-    if (!panel.hidden) return close();
-    markSelected();
-    panel.hidden = false;
-    trigger.setAttribute('aria-expanded', 'true');
-    panel.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
-  });
-  options.forEach(option => option.addEventListener('click', () => {
-    const value = option.dataset.value!;
-    apply(value);
-    try {
-      if (value === 'system') localStorage.removeItem(key);
-      else localStorage.setItem(key, value);
-    } catch {}
-    close(true);
-  }));
-  picker.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && !panel.hidden) {
-      event.preventDefault();
-      close(true);
+    apply(root.dataset[setting]);
+    for (const option of options) {
+      option.addEventListener('click', () => {
+        const value = option.dataset.value!;
+        apply(value);
+        try {
+          if (value === 'system') localStorage.removeItem(key);
+          else localStorage.setItem(key, value);
+        } catch {}
+      });
     }
-  });
-  picker.addEventListener('focusout', event => {
-    if (event.relatedTarget instanceof Node && !picker.contains(event.relatedTarget)) close();
-  });
-  document.addEventListener('pointerdown', event => {
-    if (!panel.hidden && event.target instanceof Node && !picker.contains(event.target)) close();
-  });
-  window.addEventListener('storage', event => {
-    if (event.key === key || event.key === null) apply(event.newValue);
-  });
-}
+    window.addEventListener('storage', event => {
+      if (event.key === key || event.key === null) apply(event.newValue);
+    });
+  }
 </script>

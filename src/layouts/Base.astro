@@ -23,7 +23,7 @@ try {
 <header class="topbar">
 <a class="brand" href="/"><span>{siteName}</span></a>
 <HeaderSearch/>
-<div class="tools"><PreferencePicker setting="theme"/><PreferencePicker setting="textSize"/></div>
+<div class="tools"><PreferencePicker/></div>
 </header>
 <main id="main" class="shell"><slot/></main>
 <footer class="shell"><span>© {new Date().getUTCFullYear()} {siteName} · hmmlog.com</span><nav aria-label="블로그 안내"><a href="/categories/">카테고리</a><a href="/rss.xml">RSS</a><a href={`mailto:${email}`}>{email}</a></nav></footer>
