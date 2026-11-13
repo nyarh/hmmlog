@@ -101,7 +101,7 @@ main.shell {padding-top:30px;min-height:calc(100vh - 150px)}
 .post-toc ul {list-style:none;margin:0;padding:0}
 .post-toc li {padding-inline-start:calc(var(--depth) * .625rem)}
 .post-toc a {display:block;padding:.35rem .25rem;color:var(--soft);font-size:.875rem;line-height:1.5;overflow-wrap:anywhere}
-.post-toc a:is(:hover,:focus-visible) {color:var(--accent)}
+.post-toc a:is(:hover,:focus-visible,[aria-current="location"]) {color:var(--accent)}
 .post-body :is(h2,h3,h4,h5,h6)[id] {scroll-margin-block-start:calc(var(--header) + 1rem)}
 .category-posts {margin-block:4rem 1.25rem;padding-top:1rem;border-top:1px solid var(--line)}
 .category-posts h2 {font-size:1.125rem}

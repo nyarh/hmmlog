@@ -54,4 +54,46 @@ const sections = headings.filter(heading => heading.depth >= 2);
     observer.observe(heading);
   }
   new ResizeObserver(observeHeading).observe(header);
+
+  const toc = document.querySelector<HTMLElement>('.post-toc');
+  if (toc) {
+    const sections = Array.from(toc.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'), link => ({
+      link,
+      heading: document.getElementById(link.getAttribute('href')!.slice(1))!,
+    }));
+    let active: HTMLAnchorElement | undefined;
+    let frame = 0;
+
+    function updateSection() {
+      frame = 0;
+      const offset = parseFloat(getComputedStyle(sections[0].heading).scrollMarginBlockStart) + 1;
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.heading.getBoundingClientRect().top > offset) break;
+        current = section;
+      }
+      // A short final section may never reach the header.
+      const page = document.documentElement;
+      if (window.scrollY > 0 && window.scrollY + page.clientHeight >= page.scrollHeight - 1) {
+        current = sections.find(section => section.heading.matches(':target') &&
+          section.heading.getBoundingClientRect().top >= offset - 2) ?? sections[sections.length - 1];
+      }
+      if (current.link === active) return;
+      active?.removeAttribute('aria-current');
+      current.link.setAttribute('aria-current', 'location');
+      active = current.link;
+    }
+    function scheduleUpdate() {
+      if (!frame) frame = requestAnimationFrame(updateSection);
+    }
+
+    window.addEventListener('scroll', scheduleUpdate, {passive: true});
+    window.addEventListener('hashchange', scheduleUpdate);
+    window.addEventListener('pageshow', scheduleUpdate);
+    window.addEventListener('resize', scheduleUpdate);
+    const resize = new ResizeObserver(scheduleUpdate);
+    resize.observe(document.querySelector('.post-body')!);
+    resize.observe(header);
+    scheduleUpdate();
+  }
 </script>
