@@ -1,10 +1,8 @@
 ---
 import '../styles/main.css';
 import Icon from '../components/Icon.astro';
-import {email, categoryTree, posts} from '../lib/blog';
-import CategoryBranches from '../components/CategoryBranches.astro';
+import {email} from '../lib/blog';
 import PreferencePicker from '../components/PreferencePicker.astro';
-const categories = categoryTree(await posts());
 const { title='흠', description='흠의 개발 블로그. 웹 개발과 블로그 구현에 관한 글을 모읍니다.', article, noindex=false }=Astro.props;
 const url=new URL(Astro.url.pathname,Astro.site).href;
 const pageTitle=title==='흠'?title:title+' · 흠';
@@ -27,13 +25,6 @@ try {
 <form action="/search/" role="search"><button aria-label="검색"><Icon name="search"/></button><input type="search" name="q" aria-label="블로그 검색" placeholder="블로그 검색" autocomplete="off"/></form>
 <div class="tools"><PreferencePicker setting="theme"/><PreferencePicker setting="textSize"/></div>
 </header>
-<nav class="rail" aria-label="카테고리 탐색">
-  <CategoryBranches nodes={categories} root/>
-  <div class="rail-utilities">
-    <a href={'mailto:'+email} title="문의" aria-label="문의"><Icon name="mail" size={20}/><span>문의</span></a>
-    <a href="/rss.xml" title="RSS" aria-label="RSS"><Icon name="rss" size={20}/><span>RSS</span></a>
-  </div>
-</nav>
-<div class="workarea"><main id="main" class="shell"><slot/></main>
-<footer class="shell"><span>© {new Date().getUTCFullYear()} 흠 · hmmlog.com</span><a href={`mailto:${email}`}>{email}</a></footer></div>
+<main id="main" class="shell"><slot/></main>
+<footer class="shell"><span>© {new Date().getUTCFullYear()} 흠 · hmmlog.com</span><nav aria-label="블로그 안내"><a href="/categories/">카테고리</a><a href="/rss.xml">RSS</a><a href={`mailto:${email}`}>{email}</a></nav></footer>
 </body></html>

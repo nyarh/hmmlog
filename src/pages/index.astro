@@ -2,12 +2,11 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import PostList from '../components/PostList.astro';
-import Sidebar from '../components/Sidebar.astro';
 import {posts,postUrl} from '../lib/blog';
 const items=await posts();
 const slides=items.slice(0,4);
 ---
-<Base><div class="columns"><div class="stream">
+<Base><div class="stream">
 <h1 class="sr">흠 개발 블로그</h1>
 {slides.length>0&&<section class="showcase" aria-label="추천 글">
 <div class="slide-stage">{slides.map((post,i)=><a class={'feature '+post.data.art} data-slide data-current={i===0?'true':'false'} inert={i!==0} href={postUrl(post)}>
@@ -17,7 +16,7 @@ const slides=items.slice(0,4);
 {slides.length>1&&<div class="pager">{slides.map((p,i)=><button data-pick={i} aria-label={p.data.title+' 보기'} aria-pressed={i===0}></button>)}<button class="rotation" aria-label="자동 전환 일시정지" title="자동 전환 일시정지"><span aria-hidden="true"></span></button></div>}
 </section>}
 <section><div class="sectionHead"><h2>전체 글 <small>{items.length}</small></h2><span>최신순</span></div><PostList items={items}/></section>
-</div><Sidebar items={items}/></div></Base>
+</div></Base>
 <script>
 const slides = [...document.querySelectorAll<HTMLElement>('[data-slide]')];
 const dots = [...document.querySelectorAll<HTMLButtonElement>('[data-pick]')];

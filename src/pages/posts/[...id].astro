@@ -1,17 +1,29 @@
 ---
 import Base from '../../layouts/Base.astro';
 import ArticleBody from '../../components/ArticleBody.astro';
-import Sidebar from '../../components/Sidebar.astro';
 import {render} from 'astro:content';
-import {posts,dateText,categoryUrl} from '../../lib/blog';
-export async function getStaticPaths(){return (await posts()).map(post=>({params:{id:post.id},props:{post}}))}
-const {post}=Astro.props;
-const {Content,headings}=await render(post);
-const sections=headings.filter(h=>h.depth===2);
+import {posts,postUrl,dateText,categoryUrl} from '../../lib/blog';
+export async function getStaticPaths() {
+  const items = await posts();
+  return items.map((post, index) => ({
+    params: { id: post.id },
+    props: { post, previous: items[index + 1], next: items[index - 1] },
+  }));
+}
+const {post, previous, next} = Astro.props;
+const {Content} = await render(post);
 ---
-<Base title={post.data.title} description={post.data.description} article={post}><div class="columns"><article class="article">
+<Base title={post.data.title} description={post.data.description} article={post}><article class="article">
 <nav class="crumb" aria-label="현재 위치"><a href="/">홈</a> / <a href={categoryUrl(post.data.category)}>{post.data.category}</a></nav>
 <h1>{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>흠</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
 <ArticleBody attachments={post.data.attachments} postId={post.id}><Content/></ArticleBody>
-<a class="back" href="/">← 전체 글</a></article>
-<Sidebar items={await posts()}>{sections.length>0&&<section slot="top" class="widget toc"><h2>이 글의 목차</h2>{sections.map(h=><a href={'#'+h.slug}>{h.text}</a>)}</section>}</Sidebar></div></Base>
+{(previous || next) && <nav class="post-neighbors" aria-label="이전 글과 다음 글">
+  {previous && <a rel="prev" href={postUrl(previous)}>
+    <span>← 이전 글</span><strong>{previous.data.title}</strong>
+  </a>}
+  {next && <a rel="next" href={postUrl(next)}>
+    <span>다음 글 →</span><strong>{next.data.title}</strong>
+  </a>}
+</nav>}
+<a class="back" href="/">← 전체 글</a>
+</article></Base>
