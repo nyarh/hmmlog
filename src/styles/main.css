@@ -31,11 +31,16 @@ button {cursor:pointer;border:0;background:none}
 .brand {flex:none;display:grid;place-items:center;min-height:44px;font-weight:750;font-size:1.4375rem}
 .header-post {
   position:absolute;inset-inline:max(120px,6rem);text-align:center;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   color:var(--soft);font-size:.9375rem;font-weight:600;
   opacity:0;transition:opacity .22s ease-in-out;
 }
-.header-post[data-visible] {opacity:1}
+.header-post:not([inert]) {opacity:1}
+.header-post:is(:hover,:focus-visible) {color:var(--accent)}
+#post-title {scroll-margin-block-start:calc(var(--header) + 1rem)}
+@media(prefers-reduced-motion:no-preference) {
+  :root:has(#post-title:target) {scroll-behavior:smooth}
+}
 @media(max-width:760px) {.header-post {inset-inline:max(94px,5rem)}}
 @media(prefers-reduced-motion:reduce) {.header-post {transition:none}}
 .topbar input {background:transparent;border:0;padding:8px 0;font-size:0.875rem;min-width:0;width:100%}

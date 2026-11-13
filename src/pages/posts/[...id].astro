@@ -20,7 +20,7 @@ const {Content} = await render(post);
 ---
 <Base title={post.data.title} description={post.data.description} article={post}><article class="article">
 <nav class="crumb" aria-label="현재 위치"><a href="/">홈</a> / <a href={categoryUrl(post.data.category)}>{post.data.category}</a></nav>
-<h1>{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>{siteName}</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
+<h1 id="post-title" tabindex="-1">{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>{siteName}</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
 <ArticleBody attachments={post.data.attachments} postId={post.id}><Content/></ArticleBody>
 {related.length > 0 && <section class="category-posts" aria-labelledby="category-posts-title">
   <h2 id="category-posts-title">카테고리의 다른 글</h2>
@@ -30,7 +30,7 @@ const {Content} = await render(post);
 </article></Base>
 
 <script>
-  const heading = document.querySelector<HTMLHeadingElement>('.article h1')!;
+  const heading = document.querySelector<HTMLHeadingElement>('#post-title')!;
   const header = document.querySelector<HTMLElement>('.topbar')!;
   const headerPost = header.querySelector<HTMLElement>('.header-post')!;
   let observer: IntersectionObserver;
@@ -38,7 +38,7 @@ const {Content} = await render(post);
     observer?.disconnect();
     const headerHeight = header.getBoundingClientRect().height;
     observer = new IntersectionObserver(([entry]) => {
-      headerPost.toggleAttribute('data-visible', entry.boundingClientRect.bottom <= headerHeight);
+      headerPost.inert = entry.isIntersecting || entry.boundingClientRect.bottom > headerHeight;
     }, {rootMargin: '-' + headerHeight + 'px 0px 0px', threshold: 0});
     observer.observe(heading);
   }
