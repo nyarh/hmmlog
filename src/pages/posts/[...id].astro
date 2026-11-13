@@ -28,3 +28,19 @@ const {Content} = await render(post);
 </section>}
 <a class="back" href="/">← 전체 글</a>
 </article></Base>
+
+<script>
+  const heading = document.querySelector<HTMLHeadingElement>('.article h1')!;
+  const header = document.querySelector<HTMLElement>('.topbar')!;
+  const headerPost = header.querySelector<HTMLElement>('.header-post')!;
+  let observer: IntersectionObserver;
+  function observeHeading() {
+    observer?.disconnect();
+    const headerHeight = header.getBoundingClientRect().height;
+    observer = new IntersectionObserver(([entry]) => {
+      headerPost.hidden = entry.boundingClientRect.bottom > headerHeight;
+    }, {rootMargin: '-' + headerHeight + 'px 0px 0px', threshold: 0});
+    observer.observe(heading);
+  }
+  new ResizeObserver(observeHeading).observe(header);
+</script>

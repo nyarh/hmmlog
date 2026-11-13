@@ -22,6 +22,7 @@ try {
 <a class="skip" href="#main">본문으로</a>
 <header class="topbar">
 <a class="brand" href="/"><span>{siteName}</span></a>
+{article && <div class="header-post" hidden><span aria-hidden="true">|</span><span class="header-post-title" title={title}>{title}</span></div>}
 <div class="tools"><PreferencePicker/><SiteMenu/></div>
 </header>
 <main id="main" class="shell"><slot/></main>
