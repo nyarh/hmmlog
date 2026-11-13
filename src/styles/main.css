@@ -70,7 +70,7 @@ button {cursor:pointer;border:0;background:none}
 .shell {width:min(1336px,100%);margin:auto;padding-left:clamp(24px,3vw,52px);padding-right:clamp(24px,3vw,52px)}
 main.shell {padding-top:30px;min-height:calc(100vh - 150px)}
 .stream {max-width:920px;margin-inline:auto}
-.article {max-width:50rem;margin-inline:auto}
+.article {max-width:max(920px,50rem);margin-inline:auto}
 .post-neighbors {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-block:2rem 1.25rem;padding-top:1rem;border-top:1px solid var(--line)}
 .post-neighbors a {display:grid;align-content:start;gap:.35rem;padding:.8rem 1rem;border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow-wrap:anywhere}
 .post-neighbors a:is(:hover,:focus-visible) {border-color:var(--accent);color:var(--accent)}
