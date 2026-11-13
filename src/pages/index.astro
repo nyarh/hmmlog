@@ -2,12 +2,12 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import PostList from '../components/PostList.astro';
-import {posts,postUrl} from '../lib/blog';
+import {posts,postUrl,siteName} from '../lib/blog';
 const items=await posts();
 const slides=items.slice(0,4);
 ---
 <Base><div class="stream">
-<h1 class="sr">흠 개발 블로그</h1>
+<h1 class="sr">{siteName} 개발 블로그</h1>
 {slides.length>0&&<section class="showcase" aria-label="추천 글">
 <div class="slide-stage">{slides.map((post,i)=><a class={'feature '+post.data.art} data-slide data-current={i===0?'true':'false'} inert={i!==0} href={postUrl(post)}>
 <img class="orbit" src={'/covers/'+post.data.art+'.svg'} alt=""/>

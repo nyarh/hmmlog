@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ArticleBody from '../../components/ArticleBody.astro';
 import {render} from 'astro:content';
-import {posts,postUrl,dateText,categoryUrl} from '../../lib/blog';
+import {posts,postUrl,dateText,categoryUrl,siteName} from '../../lib/blog';
 export async function getStaticPaths() {
   const items = await posts();
   return items.map((post, index) => ({
@@ -15,7 +15,7 @@ const {Content} = await render(post);
 ---
 <Base title={post.data.title} description={post.data.description} article={post}><article class="article">
 <nav class="crumb" aria-label="현재 위치"><a href="/">홈</a> / <a href={categoryUrl(post.data.category)}>{post.data.category}</a></nav>
-<h1>{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>흠</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
+<h1>{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>{siteName}</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
 <ArticleBody attachments={post.data.attachments} postId={post.id}><Content/></ArticleBody>
 {(previous || next) && <nav class="post-neighbors" aria-label="이전 글과 다음 글">
   {previous && <a rel="prev" href={postUrl(previous)}>

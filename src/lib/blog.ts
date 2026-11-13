@@ -40,4 +40,5 @@ export function categoryTree(items: Post[]): CategoryNode[] {
 export function allCategories(nodes: CategoryNode[]): CategoryNode[] {
   return nodes.flatMap(node => [node, ...allCategories(node.children)]);
 }
-export const email = 'me@hmmlog.com';
+export const siteName = '흠로그';
+export const email = 'nyarh@hmmlog.com';
