@@ -1,11 +1,13 @@
 ---
-title: HDMI·DisplayPort로 연결했을 때 소리가 몇 초 늦게 나오는 문제
+title: 소리가 몇 초 늦게 나오는 문제 해결법
 description: NVIDIA 오디오 재생 지연 해결을 위한 레지스트리 설정과 Sound Keeper 사용법
 date: 2026-11-14
 art: code
 ---
 
-내 PC는 HDMI/DisplayPort로 소리를 출력한다. 한동안 아무 소리도 재생하지 않다가 영상을 틀면 처음 몇 초 동안 소리가 들리지 않았다. 내 경우에는 레지스트리에서 NVIDIA 오디오 장치의 절전 설정을 바꾸자 영상을 틀었을 때 바로 소리가 났다.
+내 PC는 NVIDIA 그래픽카드에 모니터를 HDMI로 연결하고 모니터 내장 스피커로 소리를 듣는다. 한동안 아무 소리도 재생하지 않다가 영상을 틀면 처음 몇 초 동안 소리가 들리지 않았다.
+
+레지스트리에서 NVIDIA 오디오 장치의 절전 설정을 바꾸자 영상을 틀었을 때 바로 소리가 났다. 다른 제조사의 그래픽카드에서는 이 방법을 확인하지 않았다.
 
 ## NVIDIA 오디오 장치 찾기
 
@@ -15,7 +17,7 @@ art: code
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bfc1-08002be10318}
 ```
 
-왼쪽에 있는 `0000`, `0001`, `0002` 같은 번호를 하나씩 선택한다. 오른쪽의 **DriverDesc** 데이터가 **NVIDIA High Definition Audio**인 곳을 찾는다. 아래 예시에서는 `0001`이지만 번호는 PC마다 다르다.
+왼쪽에 있는 `0000`, `0001`, `0002` 같은 번호를 하나씩 선택한다. 오른쪽의 **DriverDesc** 데이터가 **NVIDIA High Definition Audio**인 곳을 찾는다. 아래 예시에서는 `0001`이지만 번호는 PC마다 다르다. [NVIDIA 공식 안내와 스크린샷 원문](https://nvidia.custhelp.com/app/answers/detail/a_id/5441)
 
 <img src="/images/posts/nvidia-hd-audio-device.jpg" width="891" height="390" alt="NVIDIA 공식 예시. 0001 키의 DriverDesc에 NVIDIA High Definition Audio가 표시된 모습" />
 
@@ -35,7 +37,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bf
 
 ## 드라이버 업데이트 후 다시 설정하기
 
-**NVIDIA 그래픽 드라이버를 업데이트하면 위에서 바꾼 세 값이 기본값으로 돌아갈 수 있다.** 이 방법을 계속 쓰려면 드라이버를 업데이트할 때마다 `DriverDesc`로 장치를 다시 찾는다. `PowerSettings`에서 세 값을 열어 첫 바이트가 초기화된 항목만 다시 `00`으로 바꾼다. [NVIDIA 공식 안내와 스크린샷 원문](https://nvidia.custhelp.com/app/answers/detail/a_id/5441)
+**NVIDIA 그래픽 드라이버를 업데이트하면 위에서 바꾼 세 값이 기본값으로 돌아갈 수 있다.** 그때는 위 방법으로 다시 설정하면 된다.
 
 ## Sound Keeper로 오디오 출력 유지하기
 
