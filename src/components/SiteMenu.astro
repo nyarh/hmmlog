@@ -8,13 +8,12 @@ const searchLabel = siteName + ' 검색';
 <button type="button" class="tool" id="menu-button" aria-label="메뉴" title="메뉴" aria-controls="site-menu" aria-haspopup="dialog">
   <Icon name="menu"/>
 </button>
-<dialog id="site-menu" aria-label="메뉴">
+<dialog id="site-menu" aria-label="메뉴" autofocus>
   <div class="menu-top">
     <form action="/search/" role="search">
       <Icon name="search" size={18}/>
       <input type="search" name="q" aria-label={searchLabel} placeholder={searchLabel} autocomplete="off"/>
     </form>
-    <button type="button" class="tool" aria-label="메뉴 닫기" autofocus><Icon name="close"/></button>
   </div>
   <nav class="menu-categories" aria-label="카테고리">
     <h2><a href="/categories/">카테고리</a></h2>
@@ -28,25 +27,33 @@ const searchLabel = siteName + ' 검색';
 
 <style>
   dialog {position:fixed;inset:0 0 0 auto;width:min(22rem,calc(100vw - 32px));height:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;border-inline-start:1px solid var(--line);background:var(--panel);color:var(--text)}
-  dialog[open] {display:flex;flex-direction:column;animation:menu-enter .22s ease-out}
-  dialog::backdrop {background:rgb(0 0 0 / .45)}
+  dialog,dialog::backdrop {
+    transition:transform .22s ease-in-out,opacity .22s ease-in-out,display .22s allow-discrete,overlay .22s allow-discrete;
+  }
+  dialog {transform:translateX(100%)}
+  dialog[open] {display:flex;flex-direction:column;transform:translateX(0)}
+  dialog::backdrop {background:rgb(0 0 0 / .45);opacity:0}
+  dialog[open]::backdrop {opacity:1}
+  @starting-style {
+    dialog[open] {transform:translateX(100%)}
+    dialog[open]::backdrop {opacity:0}
+  }
   :global(html:has(#site-menu[open])) {overflow:hidden}
   .menu-top,.menu-links {display:flex;align-items:center;gap:12px;padding:16px;border-color:var(--line);flex:none}
   .menu-top {border-bottom:1px solid var(--line)}
   .menu-top form {flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:0 10px;border:1px solid var(--line);border-radius:6px;color:var(--soft)}
   .menu-top input {color:var(--text)}
+  .menu-top input:focus {outline:none}
   .menu-categories {flex:1;min-height:0;overflow:auto;padding:18px 16px}
   h2 {font-size:.9375rem;margin-bottom:.65rem}
   .menu-links {border-top:1px solid var(--line);padding-bottom:max(16px,env(safe-area-inset-bottom));gap:24px}
   .menu-links a {display:inline-flex;gap:7px;align-items:center;font-size:.875rem}
-  @keyframes menu-enter {from {transform:translateX(100%)} to {transform:translateX(0)}}
-  @media(prefers-reduced-motion:reduce) {dialog[open] {animation:none}}
+  @media(prefers-reduced-motion:reduce) {dialog,dialog::backdrop {transition:none}}
 </style>
 <script>
   const menu = document.querySelector<HTMLDialogElement>('#site-menu')!;
   const trigger = document.querySelector<HTMLButtonElement>('#menu-button')!;
   trigger.addEventListener('click', () => menu.showModal());
-  menu.querySelector('button')!.addEventListener('click', () => menu.close());
   menu.addEventListener('click', event => {
     if (event.target === menu && event.clientX < menu.getBoundingClientRect().left) menu.close();
   });
