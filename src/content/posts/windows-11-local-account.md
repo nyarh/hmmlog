@@ -21,6 +21,9 @@ start ms-cxh:localonly
 
 <div class="source-card">
   <a href="https://blogs.windows.com/windows-insider/2025/10/06/announcing-windows-11-insider-preview-build-26220-6772-dev-channel/" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>Windows 11 Insider Preview 빌드 26220.6772 변경 사항</strong>
     <small>Windows Insider Blog · blogs.windows.com</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>
@@ -31,6 +34,9 @@ start ms-cxh:localonly
 
 <div class="source-card">
   <a href="https://support.microsoft.com/ko-kr/accounts-billing/manage/change-from-a-local-account-to-a-microsoft-account-in-windows" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>Windows에서 Microsoft 계정과 로컬 계정 간 전환</strong>
     <small>Microsoft 지원 · support.microsoft.com</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>

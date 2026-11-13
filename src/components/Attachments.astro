@@ -41,17 +41,6 @@ const files = names.map(name => {
 <style>
   .attachments {margin:0 0 1rem;scroll-margin-top:calc(var(--header) + 12px);line-height:1.5}
   .file-card {position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);cursor:default}
-  .card-outline {position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);pointer-events:none}
-  .card-outline rect {
-    width:calc(100% - 2px);height:calc(100% - 2px);
-    fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:1 1;
-    stroke-dashoffset:1;opacity:0;
-    transition:opacity .24s ease-out,stroke-dashoffset 0s linear .24s;
-  }
-  .file-card:is(:hover,:has(:focus-visible)) .card-outline rect {
-    stroke-dashoffset:0;opacity:1;
-    transition:stroke-dashoffset .55s ease-in-out,opacity .1s linear;
-  }
   .file-icon,.download-action {display:inline-flex;align-items:center;justify-content:center;border-radius:6px}
   .file-icon {width:40px;height:44px;background:var(--active);color:var(--accent)}
   .file-info {display:grid;gap:4px;overflow-wrap:anywhere}
@@ -62,7 +51,7 @@ const files = names.map(name => {
   .download-icon,.download-action[data-requested] .check-icon {display:grid}
   .check-icon,.download-action[data-requested] .download-icon {display:none}
   @media(prefers-reduced-motion:reduce) {
-    .card-outline rect,.file-card:is(:hover,:has(:focus-visible)) .card-outline rect,.download-action {transition:none}
+    .download-action {transition:none}
   }
   @media(max-width:480px) {
     .file-card {grid-template-columns:auto minmax(0,1fr)}

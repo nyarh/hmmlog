@@ -26,6 +26,9 @@
 ```html
 <div class="source-card">
   <a href="https://veg.by/en/projects/soundkeeper/" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>Sound Keeper 다운로드 및 사용법</strong>
     <small>개발자 공식 페이지 · veg.by</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>

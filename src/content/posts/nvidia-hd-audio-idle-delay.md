@@ -39,6 +39,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bf
 
 <div class="source-card">
   <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5441" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>NVIDIA 오디오 절전 설정과 레지스트리 화면</strong>
     <small>NVIDIA 지원 · nvidia.custhelp.com</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>
@@ -55,6 +58,9 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bf
 
 <div class="source-card">
   <a href="https://veg.by/en/projects/soundkeeper/" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>Sound Keeper 다운로드 및 사용법</strong>
     <small>개발자 공식 페이지 · veg.by</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>

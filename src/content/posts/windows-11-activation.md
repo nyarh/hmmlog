@@ -13,6 +13,9 @@ KMS(키 관리 서비스)는 조직에서 볼륨 라이선스로 관리하는 PC
 
 <div class="source-card">
   <a href="https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>Windows KMS 클라이언트 정품 인증 키</strong>
     <small>Microsoft Learn · learn.microsoft.com</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>

@@ -18,6 +18,9 @@ art: blocks
 
 <div class="source-card">
   <a href="https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/" target="_blank" rel="noopener">
+    <svg class="card-outline" aria-hidden="true" focusable="false">
+      <rect x="1" y="1" rx="7" pathLength="1"></rect>
+    </svg>
     <strong>GIGABYTE Control Center 다운로드</strong>
     <small>GIGABYTE · gigabyte.com</small>
     <span role="img" aria-label="새 탭에서 열기">↗</span>
