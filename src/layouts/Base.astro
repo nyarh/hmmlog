@@ -1,6 +1,6 @@
 ---
 import '../styles/main.css';
-import Icon from '../components/Icon.astro';
+import HeaderSearch from '../components/HeaderSearch.astro';
 import {email, siteName} from '../lib/blog';
 import PreferencePicker from '../components/PreferencePicker.astro';
 const { title=siteName, description=siteName+' 개발 블로그. 웹 개발과 블로그 구현에 관한 글을 모읍니다.', article, noindex=false }=Astro.props;
@@ -22,7 +22,7 @@ try {
 <a class="skip" href="#main">본문으로</a>
 <header class="topbar">
 <a class="brand" href="/"><span>{siteName}</span></a>
-<form action="/search/" role="search"><button aria-label="검색"><Icon name="search"/></button><input type="search" name="q" aria-label="블로그 검색" placeholder="블로그 검색" autocomplete="off"/></form>
+<HeaderSearch/>
 <div class="tools"><PreferencePicker setting="theme"/><PreferencePicker setting="textSize"/></div>
 </header>
 <main id="main" class="shell"><slot/></main>
