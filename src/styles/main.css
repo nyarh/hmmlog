@@ -222,7 +222,8 @@ footer.shell {margin-top:36px;border-top:1px solid var(--line);display:flex;just
 @media (prefers-reduced-motion:reduce) {
   .card-outline rect {transition:none !important}
 }
-.prose .source-card {max-inline-size:30rem;margin:1em auto}
+.prose .source-card,.prose .file-card {max-inline-size:30rem;margin-inline:auto}
+.prose .source-card {margin-block:1em}
 .prose .source-card a {
   position:relative;
   display:grid;
