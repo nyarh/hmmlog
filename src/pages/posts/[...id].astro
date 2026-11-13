@@ -38,7 +38,7 @@ const {Content} = await render(post);
     observer?.disconnect();
     const headerHeight = header.getBoundingClientRect().height;
     observer = new IntersectionObserver(([entry]) => {
-      headerPost.hidden = entry.boundingClientRect.bottom > headerHeight;
+      headerPost.toggleAttribute('data-visible', entry.boundingClientRect.bottom <= headerHeight);
     }, {rootMargin: '-' + headerHeight + 'px 0px 0px', threshold: 0});
     observer.observe(heading);
   }

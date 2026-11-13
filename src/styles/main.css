@@ -29,9 +29,15 @@ button {cursor:pointer;border:0;background:none}
 .tool {width:36px;height:36px;display:grid;place-items:center;color:var(--soft);border-radius:7px;position:relative}
 .tool:hover {color:var(--accent);background:var(--active)}
 .brand {flex:none;display:grid;place-items:center;min-height:44px;font-weight:750;font-size:1.4375rem}
-.header-post {display:flex;align-items:center;gap:.65rem;min-width:0;color:var(--soft)}
-.header-post > [aria-hidden] {color:var(--muted)}
-.header-post-title {overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.9375rem;font-weight:600}
+.header-post {
+  position:absolute;inset-inline:max(120px,6rem);text-align:center;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none;
+  color:var(--soft);font-size:.9375rem;font-weight:600;
+  opacity:0;transition:opacity .22s ease-in-out;
+}
+.header-post[data-visible] {opacity:1}
+@media(max-width:760px) {.header-post {inset-inline:max(94px,5rem)}}
+@media(prefers-reduced-motion:reduce) {.header-post {transition:none}}
 .topbar input {background:transparent;border:0;padding:8px 0;font-size:0.875rem;min-width:0;width:100%}
 .topbar input::placeholder {color:var(--muted)}
 .tools {margin-inline-start:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
