@@ -9,7 +9,15 @@ attachments:
 
 ## 실행 전 확인
 
-KMS(키 관리 서비스)는 조직에서 볼륨 라이선스로 관리하는 PC를 인증할 때 쓴다. [Microsoft KMS 클라이언트 안내](https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys)
+KMS(키 관리 서비스)는 조직에서 볼륨 라이선스로 관리하는 PC를 인증할 때 쓴다.
+
+<div class="source-card">
+  <a href="https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys">
+    <strong>Windows KMS 클라이언트 정품 인증 키</strong>
+    <small>Microsoft Learn · learn.microsoft.com</small>
+    <span aria-hidden="true">↗</span>
+  </a>
+</div>
 
 첨부한 `윈도우11정품인증.cmd`는 웹에서 쉽게 찾아볼 수 있는 KMS 클라이언트 키를 이용해 인증 절차를 한 번에 실행할 수 있도록 만든 배치 파일이다. 실행하면 PC의 Windows 에디션을 확인해 그에 맞는 키를 설치한 뒤, 파일에 지정된 외부 KMS 서버에 인증을 요청한다.
 

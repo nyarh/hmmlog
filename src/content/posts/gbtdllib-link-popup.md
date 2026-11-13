@@ -14,6 +14,14 @@ art: blocks
 내 PC에서 이 팝업이 뜬 원인은 **GIGABYTE Control Center**(GCC)였다.
 
 1. Windows **설정 → 앱 → 설치된 앱**에서 **GIGABYTE Control Center**를 찾아 **제거**를 눌렀다.
-2. GIGABYTE 공식 사이트에서 설치 파일을 내려받아 GCC를 다시 설치했다. [GIGABYTE Control Center 공식 다운로드](https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/)
+2. GIGABYTE 공식 사이트에서 설치 파일을 내려받아 GCC를 다시 설치했다.
+
+<div class="source-card">
+  <a href="https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/">
+    <strong>GIGABYTE Control Center 다운로드</strong>
+    <small>GIGABYTE · gigabyte.com</small>
+    <span aria-hidden="true">↗</span>
+  </a>
+</div>
 
 그 뒤로는 `gbtdllib` 팝업이 뜨지 않았다.
