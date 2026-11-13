@@ -16,12 +16,23 @@ export async function getStaticPaths() {
   }));
 }
 const {post, related} = Astro.props;
-const {Content} = await render(post);
+const {Content, headings} = await render(post);
+const sections = headings.filter(heading => heading.depth >= 2);
 ---
 <Base title={post.data.title} description={post.data.description} article={post}><article class="article">
 <nav class="crumb" aria-label="현재 위치"><a href="/">홈</a> / <a href={categoryUrl(post.data.category)}>{post.data.category}</a></nav>
 <h1 id="post-title" tabindex="-1">{post.data.title}</h1><p class="lead">{post.data.description}</p><div class="byline"><b>{siteName}</b> · <time datetime={post.data.date.toISOString()}>{dateText(post.data.date)}</time></div>
-<ArticleBody attachments={post.data.attachments} postId={post.id}><Content/></ArticleBody>
+<div class="post-body">
+  {sections.length > 0 && <div class="toc-space">
+    <nav class="post-toc" aria-labelledby="toc-label">
+      <h2 id="toc-label">목차</h2>
+      <ul>{sections.map(({slug, text, depth}) =>
+        <li style={{'--depth': depth - 2}}><a href={'#' + slug}>{text}</a></li>
+      )}</ul>
+    </nav>
+  </div>}
+  <ArticleBody attachments={post.data.attachments} postId={post.id}><Content/></ArticleBody>
+</div>
 {related.length > 0 && <section class="category-posts" aria-labelledby="category-posts-title">
   <h2 id="category-posts-title">카테고리의 다른 글</h2>
   <ul>{related.map(item => <li><a href={item.href}>{item.title}</a></li>)}</ul>
