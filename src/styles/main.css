@@ -207,22 +207,24 @@ footer.shell {margin-top:36px;border-top:1px solid var(--line);display:flex;just
   .prose a[href]:not([download], :where(.source-card a))::after,.prose a[href]:not([download], :where(.source-card a)):is(:hover,:focus-visible)::after {transition:none}
 }
 @media (forced-colors:active) {.prose a[href]:not([download], :where(.source-card a)) {text-decoration:underline}}
-.prose .source-card {margin:1em 0}
+.prose .source-card {max-inline-size:30rem;margin:1em 0}
 .prose .source-card a {
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
   align-items:center;
-  column-gap:1em;
+  gap:.2em 1em;
   padding:.8em 1em;
   border:1px solid var(--line);
+  border-inline-start:3px solid var(--accent);
   border-radius:6px;
   background:var(--panel);
   color:var(--text);
   line-height:1.5;
 }
 .prose .source-card a:is(:hover,:focus-visible) {border-color:var(--accent);color:var(--accent)}
+.source-card strong {word-break:keep-all}
 .source-card small {grid-column:1;color:var(--muted)}
-.source-card span {grid-column:2;grid-row:1 / 3;color:var(--accent)}
+.source-card span {grid-column:2;grid-row:1 / 3;display:grid;place-items:center;inline-size:1.75em;block-size:1.75em;border-radius:50%;background:var(--active);color:var(--accent)}
 .code-block {display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;margin:1em 0;border-radius:6px;background:#24292e}
 .code-block pre {min-width:0;margin:0}
 .copy-code {display:grid;place-items:center;width:34px;height:34px;margin:9px 9px 0 0;border-radius:5px;color:#c8cdd3}

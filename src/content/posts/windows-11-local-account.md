@@ -20,19 +20,19 @@ start ms-cxh:localonly
 명령을 입력해도 창이 뜨지 않는다면 설치 중인 빌드에서 이 기능을 지원하지 않을 수 있다. Microsoft는 일부 Insider Preview 빌드에서 초기 설정 중 로컬 계정을 만드는 명령을 제거한다고 안내했다.
 
 <div class="source-card">
-  <a href="https://blogs.windows.com/windows-insider/2025/10/06/announcing-windows-11-insider-preview-build-26220-6772-dev-channel/">
+  <a href="https://blogs.windows.com/windows-insider/2025/10/06/announcing-windows-11-insider-preview-build-26220-6772-dev-channel/" target="_blank" rel="noopener">
     <strong>Windows 11 Insider Preview 빌드 26220.6772 변경 사항</strong>
     <small>Windows Insider Blog · blogs.windows.com</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>
 
 이 경우에는 Microsoft 계정으로 설치를 마친 뒤 로컬 계정으로 바꿀 수 있다. Windows **설정 → 계정 → 사용자 정보**에서 **대신 로컬 계정으로 로그인**을 선택한다.
 
 <div class="source-card">
-  <a href="https://support.microsoft.com/ko-kr/accounts-billing/manage/change-from-a-local-account-to-a-microsoft-account-in-windows">
+  <a href="https://support.microsoft.com/ko-kr/accounts-billing/manage/change-from-a-local-account-to-a-microsoft-account-in-windows" target="_blank" rel="noopener">
     <strong>Windows에서 Microsoft 계정과 로컬 계정 간 전환</strong>
     <small>Microsoft 지원 · support.microsoft.com</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>

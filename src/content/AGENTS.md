@@ -21,14 +21,14 @@
 
 ## 공식 문서와 다운로드 페이지
 
-포스트 본문에서 공식 문서나 공식 다운로드 페이지를 소개할 때는 해당 설명 바로 아래에 페이지별 링크 카드를 둔다. 카드 전체를 클릭하면 해당 공식 페이지가 열리도록 기존 `source-card` 마크업을 사용한다. 제목에는 문서의 주제나 다운로드할 프로그램명을 적고, 그 아래에는 제공처와 도메인을 표시한다.
+포스트 본문에서 공식 문서나 공식 다운로드 페이지를 소개할 때는 해당 설명 바로 아래에 페이지별 링크 카드를 둔다. 카드 전체를 클릭하면 해당 공식 페이지가 새 탭에서 열리도록 기존 `source-card` 마크업을 사용한다. 제목에는 문서의 주제나 다운로드할 프로그램명을 적고, 그 아래에는 제공처와 도메인을 표시한다.
 
 ```html
 <div class="source-card">
-  <a href="https://veg.by/en/projects/soundkeeper/">
+  <a href="https://veg.by/en/projects/soundkeeper/" target="_blank" rel="noopener">
     <strong>Sound Keeper 다운로드 및 사용법</strong>
     <small>개발자 공식 페이지 · veg.by</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>
 ```

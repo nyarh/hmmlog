@@ -38,10 +38,10 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bf
 <img src="/images/posts/nvidia-hd-audio-edit-byte.jpg" width="1009" height="506" alt="NVIDIA 공식 예시. PerformanceIdleTime의 이진 값 편집 창에서 위치 표시 오른쪽의 첫 바이트 00이 빨간 테두리로 강조된 모습" />
 
 <div class="source-card">
-  <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5441">
+  <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5441" target="_blank" rel="noopener">
     <strong>NVIDIA 오디오 절전 설정과 레지스트리 화면</strong>
     <small>NVIDIA 지원 · nvidia.custhelp.com</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>
 
@@ -54,10 +54,10 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4d36e96c-e325-11ce-bf
 업데이트할 때마다 레지스트리를 손보는 게 번거롭다면 **Sound Keeper**를 쓸 수 있다. 실행 중에는 기본 출력 장치로 귀에 들리지 않는 신호를 계속 보내서 오디오 장치가 유휴 상태로 들어가는 것을 막는다.
 
 <div class="source-card">
-  <a href="https://veg.by/en/projects/soundkeeper/">
+  <a href="https://veg.by/en/projects/soundkeeper/" target="_blank" rel="noopener">
     <strong>Sound Keeper 다운로드 및 사용법</strong>
     <small>개발자 공식 페이지 · veg.by</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>
 

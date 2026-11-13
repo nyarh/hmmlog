@@ -17,10 +17,10 @@ art: blocks
 2. GIGABYTE 공식 사이트에서 설치 파일을 내려받아 GCC를 다시 설치했다.
 
 <div class="source-card">
-  <a href="https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/">
+  <a href="https://www.gigabyte.com/Consumer/Software/GIGABYTE-Control-Center/global/" target="_blank" rel="noopener">
     <strong>GIGABYTE Control Center 다운로드</strong>
     <small>GIGABYTE · gigabyte.com</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>
 

@@ -12,10 +12,10 @@ attachments:
 KMS(키 관리 서비스)는 조직에서 볼륨 라이선스로 관리하는 PC를 인증할 때 쓴다.
 
 <div class="source-card">
-  <a href="https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys">
+  <a href="https://learn.microsoft.com/ko-kr/windows-server/get-started/kms-client-activation-keys" target="_blank" rel="noopener">
     <strong>Windows KMS 클라이언트 정품 인증 키</strong>
     <small>Microsoft Learn · learn.microsoft.com</small>
-    <span aria-hidden="true">↗</span>
+    <span role="img" aria-label="새 탭에서 열기">↗</span>
   </a>
 </div>
 
