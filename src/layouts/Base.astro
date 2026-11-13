@@ -1,6 +1,6 @@
 ---
 import '../styles/main.css';
-import HeaderSearch from '../components/HeaderSearch.astro';
+import SiteMenu from '../components/SiteMenu.astro';
 import {email, siteName} from '../lib/blog';
 import PreferencePicker from '../components/PreferencePicker.astro';
 const { title=siteName, description=siteName+' 개발 블로그. 웹 개발과 블로그 구현에 관한 글을 모읍니다.', article, noindex=false }=Astro.props;
@@ -22,9 +22,8 @@ try {
 <a class="skip" href="#main">본문으로</a>
 <header class="topbar">
 <a class="brand" href="/"><span>{siteName}</span></a>
-<HeaderSearch/>
-<div class="tools"><PreferencePicker/></div>
+<div class="tools"><PreferencePicker/><SiteMenu/></div>
 </header>
 <main id="main" class="shell"><slot/></main>
-<footer class="shell"><span>© {new Date().getUTCFullYear()} {siteName} · hmmlog.com</span><nav aria-label="블로그 안내"><a href="/categories/">카테고리</a><a href="/rss.xml">RSS</a><a href={`mailto:${email}`}>{email}</a></nav></footer>
+<footer class="shell"><span>© {new Date().getUTCFullYear()} {siteName} · hmmlog.com</span><nav aria-label="블로그 안내"><a href="/rss.xml">RSS</a><a href={`mailto:${email}`}>{email}</a></nav></footer>
 </body></html>

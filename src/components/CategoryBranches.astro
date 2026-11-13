@@ -1,0 +1,21 @@
+---
+import {categoryUrl, type CategoryNode} from '../lib/blog';
+import Icon from './Icon.astro';
+interface Props {nodes: CategoryNode[]}
+const {nodes} = Astro.props;
+---
+<ul>
+  {nodes.map(node => <li>
+    <a href={categoryUrl(node.path)} aria-current={Astro.url.pathname === categoryUrl(node.path) ? 'page' : undefined}>
+      <Icon name="folder" size={17}/><span>{node.name}</span><small>{node.items.length}</small>
+    </a>
+    {node.children.length > 0 && <Astro.self nodes={node.children}/>}
+  </li>)}
+</ul>
+<style>
+  ul {list-style:none;margin:0;padding:0}
+  li > ul {margin-inline-start:1rem;padding-inline-start:.6rem;border-inline-start:1px solid var(--line)}
+  a {display:flex;align-items:center;gap:.65rem;padding:.6rem .4rem;border-radius:5px;overflow-wrap:anywhere}
+  a:hover,a[aria-current="page"] {color:var(--accent);background:var(--active)}
+  small {margin-inline-start:auto;color:var(--muted)}
+</style>

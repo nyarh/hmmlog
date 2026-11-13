@@ -30,7 +30,7 @@ button {cursor:pointer;border:0;background:none}
 .brand {display:grid;place-items:center;min-height:44px;font-weight:750;font-size:1.4375rem}
 .topbar input {background:transparent;border:0;padding:8px 0;font-size:0.875rem;min-width:0;width:100%}
 .topbar input::placeholder {color:var(--muted)}
-.tools {display:flex;align-items:center;gap:8px;flex-shrink:0}
+.tools {margin-inline-start:auto;display:flex;align-items:center;gap:8px;flex-shrink:0}
 
 .preference-panel {position:fixed;inset:calc(var(--header) - 4px) 30px auto auto;width:min(320px,calc(100vw - 24px));max-height:calc(100dvh - var(--header));overflow:auto;margin:0;padding:14px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);box-shadow:0 5px 18px #0003}
 .preference-panel fieldset {min-inline-size:0;margin:0;padding:0;border:0}
