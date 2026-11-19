@@ -4,10 +4,16 @@
 
 | 회차 | 파일 | 원문 범위 |
 | --- | --- | --- |
-| 1 | `src/content/posts/cpp-core-guidelines-01-reading-guide.md` | Introduction, In.0, P.2, FAQ.1~10 |
-| 2 | `src/content/posts/cpp-core-guidelines-02-intent-and-types.md` | P.1, P.3, P.4, P.11, ES.2 |
-| 3 | `src/content/posts/cpp-core-guidelines-03-checks-and-errors.md` | P.5, P.6, P.7 |
-| 4 | `src/content/posts/cpp-core-guidelines-04-libraries-and-tools.md` | P.12, P.13, ES.1, SL.1, SL.2 |
+| 1 | `src/content/posts/series/cpp-core-guidelines/01-reading-guide.md` | Introduction, In.0, P.2, FAQ.1~10 |
+| 2 | `src/content/posts/series/cpp-core-guidelines/02-intent-and-types.md` | P.1, P.3, P.4, P.11, ES.2 |
+| 3 | `src/content/posts/series/cpp-core-guidelines/03-checks-and-errors.md` | P.5, P.6, P.7 |
+| 4 | `src/content/posts/series/cpp-core-guidelines/04-libraries-and-tools.md` | P.12, P.13, ES.1, SL.1, SL.2 |
+
+## 파일 위치와 게시 주소
+
+원고는 `src/content/posts/series/cpp-core-guidelines/`에서 관리한다. 각 글의 frontmatter에 기존 게시 주소의 식별자를 `slug`로 지정했으므로 폴더 이동과 파일명 변경 후에도 URL은 같다. 예를 들어 `01-reading-guide.md`의 주소는 `/posts/cpp-core-guidelines-01-reading-guide/`다.
+
+`validation-part1.json`의 파일 경로와 해시는 최초 발행 당시의 기록이다. 현재 원고의 위치는 위 표를 기준으로 한다. 폴더 정리 과정에서는 본문을 바꾸지 않았으며, `slug`만 메타데이터에 추가했다.
 
 ## 원문
 

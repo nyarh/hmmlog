@@ -1,4 +1,5 @@
 ---
+slug: cpp-core-guidelines-02-intent-and-types
 title: C++ Core Guidelines 2. 의도와 단위를 타입으로 표현하기
 description: 이름과 타입으로 인자의 의미와 단위를 구분하는 방법
 date: 2026-11-19

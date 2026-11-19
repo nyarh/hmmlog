@@ -1,4 +1,5 @@
 ---
+slug: cpp-core-guidelines-03-checks-and-errors
 title: C++ Core Guidelines 3. 컴파일 시점 검사와 실행 중 검사
 description: static_assert와 입력 검사로 잘못된 상태를 사용 전에 차단하는 방법
 date: 2026-11-19

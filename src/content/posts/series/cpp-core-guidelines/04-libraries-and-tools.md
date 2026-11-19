@@ -1,4 +1,5 @@
 ---
+slug: cpp-core-guidelines-04-libraries-and-tools
 title: C++ Core Guidelines 4. 표준 라이브러리와 도구 활용
 description: 표준 알고리즘과 컨테이너를 선택하고 도구로 확인하는 기준
 date: 2026-11-19
