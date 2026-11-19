@@ -1,0 +1,118 @@
+﻿원문 장·절,담당 회차,회차 제목,원문 링크
+C++ Core Guidelines,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#main
+Abstract,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-abstract
+In: Introduction,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-introduction
+In.target: Target readership,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-readers
+In.aims: Aims,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-aims
+In.not: Non-aims,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-non
+In.force: Enforcement,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-force
+In.struct: The structure of this document,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-struct
+In.sec: Major sections,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-sec
+P: Philosophy,2,의도와 단위를 코드의 타입으로 표현하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-philosophy
+I: Interfaces,29,잘못 호출하기 어려운 함수 만들기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-interfaces
+F: Functions,20,함수 하나가 맡을 일과 이름 정하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-functions
+F.def: Function definitions,20,함수 하나가 맡을 일과 이름 정하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-fct-def
+F.call: Parameter passing,21,입력과 수정 의도에 따라 인자 전달하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-call
+C: Classes and class hierarchies,40,struct와 class를 불변식으로 구분하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-class
+C.concrete: Concrete types,42,값처럼 쓰기 좋은 타입 설계하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-concrete
+"C.ctor: Constructors, assignments, and destructors",43,생성자가 보장해야 하는 유효한 상태,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-ctor
+C.defop: Default Operations,48,Rule of Zero와 Rule of Five 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-defop
+C.dtor: Destructors,47,소멸자가 정리해야 하는 것과 실패 처리,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-dtor
+C.ctor: Constructors,43,생성자가 보장해야 하는 유효한 상태,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-ctor
+C.copy: Copy and move,49,복사 생성과 복사 대입의 의미 맞추기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-copy
+C.other: Other default operation rules,51,swap이 객체의 안전한 교체를 돕는 방법,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+C.con: Containers and other resource handles,54,컨테이너를 직접 만들 때 갖춰야 할 동작,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-containers
+C.lambdas: Function objects and lambdas,27,람다와 함수 객체로 작은 동작 전달하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-lambdas
+C.hier: Class hierarchies (OOP),55,상속이 필요한 관계와 구현 재사용 구분하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-hier
+C.hierclass: Designing classes in a hierarchy:,56,추상 클래스로 인터페이스 분리하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+C.hier-access: Accessing objects in a hierarchy,62,dynamic_cast와 가상 함수 사이에서 선택하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+C.over: Overloading and overloaded operators,63,연산자 오버로드와 변환의 의미 지키기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-overload
+C.union: Unions,64,union과 variant로 여러 형태의 값 표현하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-union
+Enum: Enumerations,10,관련 있는 상수를 enum class로 묶기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-enum
+R: Resource management,32,RAII로 자원 정리를 객체 수명에 연결하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-resource
+R.alloc: Allocation and deallocation,34,동적 할당과 해제를 관리 객체 안에 모으기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-alloc
+R.smart: Smart pointers,35,한 곳에서 소유할 객체에 unique_ptr 사용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-smart
+ES: Expressions and statements,5,변수가 필요한 곳과 살아 있는 범위,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-expr
+ES.dcl: Declarations,5,변수가 필요한 곳과 살아 있는 범위,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+ES.expr: Expressions,15,복잡한 식과 평가 순서 풀어 읽기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+ES.stmt: Statements,16,if와 switch로 분기 의도 드러내기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+Arithmetic,12,signed와 unsigned를 섞을 때 생기는 일,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-numbers
+Per: Performance,90,측정으로 최적화할 지점 찾기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-performance
+CP: Concurrency and parallelism,95,여러 스레드에서 공유 상태를 다룰 때 생기는 문제,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-concurrency
+CP.con: Concurrency,95,여러 스레드에서 공유 상태를 다룰 때 생기는 문제,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-con
+CP.coro: Coroutines,103,코루틴의 중단 지점과 객체 수명,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-coro
+CP.par: Parallelism,105,"volatile과 시그널, 병렬화 관련 빈칸 읽기",https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-par
+CP.mess: Message passing,101,작업 단위로 생각하고 future로 결과 받기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-mess
+CP.vec: Vectorization,105,"volatile과 시그널, 병렬화 관련 빈칸 읽기",https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-vec
+CP.free: Lock-free programming,104,락 프리와 이중 검사 잠금의 어려움,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-free
+CP.etc: Etc. concurrency rules,105,"volatile과 시그널, 병렬화 관련 빈칸 읽기",https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sscp-etc
+E: Error handling,65,오류 처리 방침과 예외를 쓸 상황 정하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-errors
+Con: Constants and immutability,7,const로 변경 가능한 범위를 줄이기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-const
+T: Templates and generic programming,77,템플릿으로 공통 동작과 자료구조 표현하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-templates
+T.gp: Generic programming,77,템플릿으로 공통 동작과 자료구조 표현하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-gp
+T.concepts: Concept rules,78,concepts로 템플릿 인자 조건 표현하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-concepts
+T.con-use: Concept use,78,concepts로 템플릿 인자 조건 표현하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-concept-use
+T.concepts.def: Concept definition rules,79,문법과 의미를 함께 담는 concept 설계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-concepts-def
+Template interfaces,81,알고리즘에 연산을 전달하는 방법,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-temp-interface
+T.def: Template definitions,83,템플릿의 이름 탐색과 커스터마이징 지점,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-temp-def
+T.temp-hier: Template and hierarchy rules:,89,"템플릿과 상속, 타입 소거를 함께 설계하기",https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-temp-hier
+T.var: Variadic template rules,86,가변 인자 템플릿과 완벽 전달 이해하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-variadic
+T.meta: Template metaprogramming (TMP),88,컴파일 시간에 타입과 값 계산하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-meta
+Other template rules,81,알고리즘에 연산을 전달하는 방법,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-temp-other
+CPL: C-style programming,110,C와 C++ 코드를 연결하는 인터페이스,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-cpl
+SF: Source files,106,헤더와 소스에 선언과 정의 배치하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-source
+SL: The Standard Library,4,표준 라이브러리와 도구를 활용하는 출발점,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-stdlib
+SL.con: Containers,70,array와 vector를 기준으로 컨테이너 고르기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-con
+SL.str: String,72,string과 string_view의 소유권과 수명,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-string
+SL.io: Iostream,75,입력 실패를 고려한 스트림 사용,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-io
+SL.regex: Regex,R1,표준 라이브러리의 추가 영역과 자료 안내,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-regex
+SL.chrono: Time,R1,표준 라이브러리의 추가 영역과 자료 안내,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-chrono
+SL.C: The C Standard Library,69,예외를 사용할 수 없는 환경의 오류 처리,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-clib
+A: Architectural ideas,112,변경이 잦은 부분과 규칙 예외를 경계 안에 모으기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-a
+NR: Non-Rules and myths,120,기존 코드의 관행을 점검하고 점진적으로 개선하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-not
+RF: References,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-references
+RF.rules: Coding rules,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-rules
+RF.books: Books with coding guidelines,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-books
+RF.C++: C++ Programming (C++11/C++14),R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-cplusplus
+RF.web: Websites,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-web
+"RS.video: Videos about ""modern C++""",R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-vid
+RF.man: Manuals,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-man
+RF.core: Core Guidelines materials,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-core
+Acknowledgements,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-ack
+Pro: Profiles,116,타입 안전성 프로필로 관련 규칙 묶어 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-profile
+Pro.safety: Type-safety profile,116,타입 안전성 프로필로 관련 규칙 묶어 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-type
+Pro.bounds: Bounds safety profile,117,범위와 수명 안전성 프로필 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-bounds
+Pro.lifetime: Lifetime safety profile,117,범위와 수명 안전성 프로필 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-lifetime
+GSL: Guidelines support library,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-gsl
+GSL.view: Views,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-views
+GSL.owner: Ownership pointers,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-ownership
+GSL.assert: Assertions,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-assertions
+GSL.util: Utilities,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-utilities
+GSL.concept: Concepts,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-gsl-concepts
+GSL.ptr: Smart pointer concepts,118,GSL의 역할과 표준 라이브러리와의 관계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-gsl-smartptrconcepts
+NL: Naming and layout suggestions,113,코드를 보완하는 주석과 설명 쓰기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-naming
+FAQ: Answers to frequently asked questions,1,C++ Core Guidelines의 목적과 읽는 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-faq
+Appendix A: Libraries,R1,표준 라이브러리의 추가 영역과 자료 안내,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-libraries
+Appendix B: Modernizing code,120,기존 코드의 관행을 점검하고 점진적으로 개선하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-modernizing
+Appendix C: Discussion,48,Rule of Zero와 Rule of Five 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-discussion
+Discussion: Define and initialize data members in the order of member declaration,45,멤버 선언 순서와 실제 초기화 순서,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-order
+"Discussion: Use of `=`, `{}`, and `()` as initializers",6,"초기화와 대입, 중괄호와 소괄호의 차이",https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-init
+"Discussion: Use a factory function if you need ""virtual behavior"" during initialization",61,생성 중 가상 호출과 팩터리 설계,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-factory
+"Discussion: Make base class destructors public and virtual, or protected and non-virtual",57,가상 소멸자와 override의 역할,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-dtor
+Discussion: Usage of noexcept,66,noexcept가 보장하는 것과 실패했을 때의 동작,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-noexcept
+"Discussion: Destructors, deallocation, and swap must never fail",66,noexcept가 보장하는 것과 실패했을 때의 동작,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-never-fail
+"Define Copy, move, and destroy consistently",48,Rule of Zero와 Rule of Five 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#sd-consistent
+"Discussion: Provide strong resource safety; that is, never leak anything that you think of as a resource",32,RAII로 자원 정리를 객체 수명에 연결하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-safety
+Discussion: Never return or throw while holding a resource not owned by a handle,32,RAII로 자원 정리를 객체 수명에 연결하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-never
+"Discussion: A ""raw"" pointer or reference is never a resource handle",33,소유하는 포인터와 빌려 쓰는 포인터 구분하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-raw
+Discussion: Never let a pointer outlive the object it points to,25,돌려준 포인터와 참조는 언제까지 유효할까,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-outlive
+Discussion: Use templates to express containers (and other resource handles),54,컨테이너를 직접 만들 때 갖춰야 할 동작,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-templates
+Discussion: Return containers by value (relying on move or copy elision for efficiency),39,std::move와 반환값 최적화 이해하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-value-return
+"Discussion: If a class is a resource handle, it needs a constructor, a destructor, and copy and/or move operations",48,Rule of Zero와 Rule of Five 적용하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-handle
+"Discussion: If a class is a container, give it an initializer-list constructor",54,컨테이너를 직접 만들 때 갖춰야 할 동작,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cr-list
+Appendix D: Supporting tools,119,정적 분석 도구로 규칙 확인하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-tools
+Tools: [Clang-tidy](https://clang.llvm.org/extra/clang-tidy/checks/list.html),119,정적 분석 도구로 규칙 확인하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#St-clangtidy
+Tools: [CppCoreCheck](https://docs.microsoft.com/en-us/visualstudio/code-quality/using-the-cpp-core-guidelines-checkers),119,정적 분석 도구로 규칙 확인하기,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#St-cppcorecheck
+Glossary,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-glossary
+To-do: Unclassified proto-rules,R3,원문 변경 이력과 미완성 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-unclassified
+Bibliography,R2,용어집과 참고 자료,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
