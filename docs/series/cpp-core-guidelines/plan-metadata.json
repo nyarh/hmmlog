@@ -15,7 +15,7 @@
   "unassigned_items": 0,
   "duplicate_primary_assignments": 0,
   "unassigned_sections": 0,
-  "status": "시리즈 안내와 1~4편 작성·검증 완료",
+  "status": "시리즈 안내와 1~19편 작성·검증 완료",
   "audience": "함수·클래스·포인터의 기본 문법을 아는 C++ 독자",
   "baseline": "C++20을 예제 기본으로 삼고 각 기능의 최소 표준 버전을 표시한다. 후속 표준과 원문의 과거 제안 및 GSL은 구분한다.",
   "editorial_policy": [
@@ -33,20 +33,47 @@
     "outline.csv",
     "rule-coverage.csv",
     "section-coverage.csv",
-    "validation.json"
+    "validation.json",
+    "validation-part2.json"
   ],
   "current_batch": [
-    1,
-    2,
-    3,
-    4
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
   ],
-  "next_episode": 5,
+  "next_episode": 20,
   "series_index": "src/content/posts/cpp-core-guidelines.md",
   "completed_episodes": [
     1,
     2,
     3,
-    4
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
   ]
 }

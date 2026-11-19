@@ -120,6 +120,4 @@ Core Guidelines의 규칙을 검사하는 정적 분석 도구도 있다. 하지
 
 자주 읽는 코드에서 정렬·검색·저장소 관리처럼 이름을 붙일 수 있는 작업 하나를 찾아보자. 이미 그 일을 표현하는 라이브러리 기능이 있는지, 사용하려면 어떤 조건을 만족해야 하는지 확인하면 된다. 다음 2부에서는 변수의 선언 위치와 초기화부터 실제 코드를 더 작게 다듬는다.
 
-[이전 글: 오류를 확인할 시점](/posts/cpp-core-guidelines-03-checks-and-errors/) · [전체 목차](/posts/cpp-core-guidelines/)
-
-다음 글은 **5편 변수가 필요한 곳과 살아 있는 범위**로 이어진다.
+[이전 글: 오류를 확인할 시점](/posts/cpp-core-guidelines-03-checks-and-errors/) · [전체 목차](/posts/cpp-core-guidelines/) · [다음 글: 변수가 필요한 곳과 살아 있는 범위](/posts/cpp-core-guidelines-05-scope-and-lifetime/)

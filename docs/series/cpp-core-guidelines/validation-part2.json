@@ -1,0 +1,533 @@
+{
+  "date": "2026-11-19",
+  "compiler": "GCC 14.2.0",
+  "platform": "Linux",
+  "options": "-std=c++20 -Wall -Wextra -Wpedantic -Wconversion -Werror",
+  "source": "Actual Markdown C++ fences; targeted variants recorded by case name",
+  "source_blob_sha": "b4065b4d7ecb11d6e13b4e3738344452ccccc252",
+  "arithmetic_boundary_results": 242,
+  "arithmetic_sanitizer": "-fsanitize=undefined -fno-sanitize-recover=all",
+  "example_checks": [
+    {
+      "case": "ep5",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep5-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep6",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep6-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep7",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep7-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep8",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep8-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep9",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep9-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep10",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep10-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep11",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep11-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep12",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep12-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep13",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep13-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep14",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep14-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep15",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep15-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep16",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep16-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep17",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep18",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep18-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep19",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep19-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep5-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep6-c++11",
+      "result": "compiled_without_warnings",
+      "standard": "c++11"
+    },
+    {
+      "case": "ep7-c++14",
+      "result": "compiled_without_warnings",
+      "standard": "c++14"
+    },
+    {
+      "case": "ep8-c++11",
+      "result": "compiled_without_warnings",
+      "standard": "c++11"
+    },
+    {
+      "case": "ep9-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep10-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep11-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep13-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep15-c++11",
+      "result": "compiled_without_warnings",
+      "standard": "c++11"
+    },
+    {
+      "case": "ep16-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep17-c++11",
+      "result": "compiled_without_warnings",
+      "standard": "c++11"
+    },
+    {
+      "case": "ep19-c++17",
+      "result": "compiled_without_warnings",
+      "standard": "c++17"
+    },
+    {
+      "case": "ep5-inaccessible-found",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep6-online",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep6-online-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep6-narrowing",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep7-const-mutation",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep8-runtime-not-constexpr",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep8-input-0",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-input-4",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-input-5",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-input-10",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-input-2147483647",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-0",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-1",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-2",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-3",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-4",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-5",
+      "result": "passed"
+    },
+    {
+      "case": "ep8-invalid-6",
+      "result": "passed"
+    },
+    {
+      "case": "ep9-deduction-table",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep9-direct-list-fails",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep10-integer",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep10-other-enum",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep10-missing-enumerator",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep11-permission",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep11-zero-and-max",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep11-zero-and-max-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep12-empty",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep12-empty-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep12-one-element",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep12-one-element-output",
+      "result": "passed"
+    },
+    {
+      "case": "integer-limits",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep13-boundaries",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep13-boundary-grid-242-results",
+      "result": "passed"
+    },
+    {
+      "case": "ep14-unchecked-list-narrowing",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep15-not-ready",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep15-not-ready-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep16-implicit-fallthrough",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep16-missing-case",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-empty-list",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-empty-list-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep17-one-item",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-one-item-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep17-zero-attempts",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-zero-attempts-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep17-normal-eof",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-normal-eof-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep17-empty-input",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-empty-input-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep17-first-token-invalid",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep17-first-token-invalid-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep18-empty-id",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep18-empty-id-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep18-empty-pending",
+      "result": "compiled_without_warnings",
+      "standard": "c++20"
+    },
+    {
+      "case": "ep18-empty-pending-output",
+      "result": "passed"
+    },
+    {
+      "case": "ep19-not-streamable",
+      "result": "expected_compile_failure",
+      "standard": "c++20"
+    }
+  ],
+  "rendered_pages": 20,
+  "internal_links_checked": 866,
+  "rendered_code_matches_markdown": true,
+  "outline_part_numbering": "passed",
+  "rule_index_items": 512,
+  "part2_assigned_rules": 69,
+  "published_episodes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "post_sha256": {
+    "src/content/posts/cpp-core-guidelines-01-reading-guide.md": "749cd7f523f42d0969151ecea999d1649381e001be0fb8496884a89dac08fe36",
+    "src/content/posts/cpp-core-guidelines-02-intent-and-types.md": "ce0d78ac934f2f7863e1c210095ecb6ece8e4eae268bebafca03d3ed97bc6fd0",
+    "src/content/posts/cpp-core-guidelines-03-checks-and-errors.md": "cfc5f92e45947d64b6e079ec5688abb8e55cff710d504e49490b9b85b9ce58ab",
+    "src/content/posts/cpp-core-guidelines-04-libraries-and-tools.md": "49aa34befaea6fc9a4a04fc05b8e2d13e2e878578baa9f7df787a462b432a507",
+    "src/content/posts/cpp-core-guidelines-05-scope-and-lifetime.md": "c1e244d5875e89dd703f194c358d506f69251c1b445545f12b8c891485a8d080",
+    "src/content/posts/cpp-core-guidelines-06-initialization.md": "946c510e5ccaac819b94f2df921bb2a270781f0df1713a0cb5c328361d7411b9",
+    "src/content/posts/cpp-core-guidelines-07-const.md": "306f9be4af323d9b212c6f54820abc59b4e21bf28e3e9f2f75358f7cf14fce1a",
+    "src/content/posts/cpp-core-guidelines-08-constexpr.md": "345823116c2d1841cff916c0219ffe814a6b56cd42bfc2f6f0f62abada8bcc64",
+    "src/content/posts/cpp-core-guidelines-09-auto.md": "62e0389927dc03e52ce9d48f8d5cdbb1e73112f334531c36aa0d6a9f022a3a41",
+    "src/content/posts/cpp-core-guidelines-10-enum-class.md": "a00fd1ed1dbbcd33702515fdd68d5c595228cdb6e37e7c6c8839493e5e3039d9",
+    "src/content/posts/cpp-core-guidelines-11-enum-values.md": "af5b6b434b4682a1521f611fd7d8e7f1057f88ae7072a9cdaea0d52738d11149",
+    "src/content/posts/cpp-core-guidelines-12-signed-and-unsigned.md": "eb3a11d85b51b9fbfa5ad38706978c97a1563fcb7aba175c503d57ac2bd8f0b7",
+    "src/content/posts/cpp-core-guidelines-13-integer-arithmetic.md": "a70395b6b70aeb03230775772b241f34b4d9b9d5f7e91ebfd9cdce1790875940",
+    "src/content/posts/cpp-core-guidelines-14-conversions.md": "ecfb640f883a4a6b2e93573e245b9f22800d970ba2a92d8094feae70d9eff9f8",
+    "src/content/posts/cpp-core-guidelines-15-expressions-and-order.md": "554b295c33041ab5a42b59bd257a5457894e1bfaa8d9896030012dcd72d9b56d",
+    "src/content/posts/cpp-core-guidelines-16-branches.md": "6472aefe473605387803a65af9e09cf8a15f3653efe38f436e8310acd4fb0649",
+    "src/content/posts/cpp-core-guidelines-17-loops.md": "3b09807db9a18ba4c7218984b0d3f59ac31e1fcff37a927f61265927ec974088",
+    "src/content/posts/cpp-core-guidelines-18-early-return.md": "db32e105fc49394adaf552bb86849d4451b192cb579eeb17c502d76afd12c924",
+    "src/content/posts/cpp-core-guidelines-19-macros-and-varargs.md": "89a5e3b90c867c9147bc0bfcba0f24fa98e138df6926b3f3312f59e360da3b6e",
+    "src/content/posts/cpp-core-guidelines.md": "9a6901e4ab1dc89d36bbeaeffb0530a507a1302c00d080bac36b58f41557093b"
+  },
+  "source_links": [
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#f-nesting",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-oper",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-always",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-auto",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-complicated",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-range",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-mix",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-narrowing",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-overflow",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-scope",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-switch-if",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-constexpr",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-compile-time",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-tools",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-const",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-enum",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-introduction",
+    "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-philosophy"
+  ],
+  "build_command": "ASTRO_TELEMETRY_DISABLED=1 pnpm --config.verify-deps-before-run=false build",
+  "build": "passed_without_warnings",
+  "official_source_anchors": "20 distinct source links checked against the fetched official source",
+  "visual_browser_review": "not_performed",
+  "prose_review": "Manual review against repository voice and humanizer-related rules; humanizer skill unavailable",
+  "previous_validation": "validation.json preserves the part 1 publication snapshot; post_sha256 here reflects current navigation and index"
+}

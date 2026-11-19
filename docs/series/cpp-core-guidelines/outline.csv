@@ -3,21 +3,21 @@
 2,1,가이드라인을 읽는 기준,의도와 단위를 코드의 타입으로 표현하기,P.1 P.3 P.4 P.11 ES.2,s-philosophy,,작성·검증 완료,src/content/posts/cpp-core-guidelines-02-intent-and-types.md,/posts/cpp-core-guidelines-02-intent-and-types/
 3,1,가이드라인을 읽는 기준,컴파일할 때 잡을 오류와 실행할 때 확인할 조건,P.5 P.6 P.7,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-03-checks-and-errors.md,/posts/cpp-core-guidelines-03-checks-and-errors/
 4,1,가이드라인을 읽는 기준,표준 라이브러리와 도구를 활용하는 출발점,P.12 P.13 ES.1 SL.1 SL.2,s-stdlib,,작성·검증 완료,src/content/posts/cpp-core-guidelines-04-libraries-and-tools.md,/posts/cpp-core-guidelines-04-libraries-and-tools/
-5,2,변수와 표현식부터 안전하게,변수가 필요한 곳과 살아 있는 범위,ES.5 ES.6 ES.12 ES.21 ES.22 ES.26 NR.1,s-expr ES.dcl: Declarations,,예정,,
-6,2,변수와 표현식부터 안전하게,"초기화와 대입, 중괄호와 소괄호의 차이",ES.10 ES.20 ES.23 ES.28 ES.64 NL.21,sd-init,,예정,,
-7,2,변수와 표현식부터 안전하게,const로 변경 가능한 범위를 줄이기,P.10 Con.1 Con.2 Con.3 Con.4 ES.25,s-const,,예정,,
-8,2,변수와 표현식부터 안전하게,constexpr로 계산 시점 표현하기,Con.5 F.4,,,예정,,
-9,2,변수와 표현식부터 안전하게,auto를 쓰면 무엇이 추론되고 무엇이 달라질까,ES.11,,,예정,,
-10,2,변수와 표현식부터 안전하게,관련 있는 상수를 enum class로 묶기,Enum.1 Enum.2 Enum.3 Enum.5 Enum.6,s-enum,,예정,,
-11,2,변수와 표현식부터 안전하게,"열거형의 연산과 값, 기반 타입 정하기",Enum.4 Enum.7 Enum.8,,,예정,,
-12,2,변수와 표현식부터 안전하게,signed와 unsigned를 섞을 때 생기는 일,ES.100 ES.101 ES.102 ES.106 ES.107,ss-numbers,,예정,,
-13,2,변수와 표현식부터 안전하게,정수의 범위와 산술 오류 다루기,ES.103 ES.104 ES.105,,,예정,,
-14,2,변수와 표현식부터 안전하게,타입 변환이 필요한 곳과 위험해지는 곳,ES.46 ES.48 ES.49 ES.50,,,예정,,
-15,2,변수와 표현식부터 안전하게,복잡한 식과 평가 순서 풀어 읽기,ES.40 ES.41 ES.43 ES.44 ES.45,ES.expr: Expressions,,예정,,
-16,2,변수와 표현식부터 안전하게,if와 switch로 분기 의도 드러내기,ES.70 ES.78 ES.79 ES.87,ES.stmt: Statements,,예정,,
-17,2,변수와 표현식부터 안전하게,범위 for와 반복 조건 선택하기,ES.71 ES.72 ES.73 ES.74 ES.75 ES.86,,,예정,,
-18,2,변수와 표현식부터 안전하게,조기 반환과 break로 제어 흐름 정리하기,F.56 ES.76 ES.77 ES.85 NR.2,,,예정,,
-19,2,변수와 표현식부터 안전하게,매크로와 C식 가변 인자의 대안 찾기,ES.30 ES.31 ES.32 ES.33 ES.34 F.55 NL.9,,,예정,,
+5,2,변수와 표현식부터 안전하게,변수가 필요한 곳과 살아 있는 범위,ES.5 ES.6 ES.12 ES.21 ES.22 ES.26 NR.1,s-expr ES.dcl: Declarations,,작성·검증 완료,src/content/posts/cpp-core-guidelines-05-scope-and-lifetime.md,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/
+6,2,변수와 표현식부터 안전하게,"초기화와 대입, 중괄호와 소괄호의 차이",ES.10 ES.20 ES.23 ES.28 ES.64 NL.21,sd-init,,작성·검증 완료,src/content/posts/cpp-core-guidelines-06-initialization.md,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/
+7,2,변수와 표현식부터 안전하게,const로 변경 가능한 범위를 줄이기,P.10 Con.1 Con.2 Con.3 Con.4 ES.25,s-const,,작성·검증 완료,src/content/posts/cpp-core-guidelines-07-const.md,https://hmmlog.com/posts/cpp-core-guidelines-07-const/
+8,2,변수와 표현식부터 안전하게,constexpr로 계산 시점 표현하기,Con.5 F.4,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-08-constexpr.md,https://hmmlog.com/posts/cpp-core-guidelines-08-constexpr/
+9,2,변수와 표현식부터 안전하게,auto를 쓰면 무엇이 추론되고 무엇이 달라질까,ES.11,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-09-auto.md,https://hmmlog.com/posts/cpp-core-guidelines-09-auto/
+10,2,변수와 표현식부터 안전하게,관련 있는 상수를 enum class로 묶기,Enum.1 Enum.2 Enum.3 Enum.5 Enum.6,s-enum,,작성·검증 완료,src/content/posts/cpp-core-guidelines-10-enum-class.md,https://hmmlog.com/posts/cpp-core-guidelines-10-enum-class/
+11,2,변수와 표현식부터 안전하게,"열거형의 연산과 값, 기반 타입 정하기",Enum.4 Enum.7 Enum.8,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-11-enum-values.md,https://hmmlog.com/posts/cpp-core-guidelines-11-enum-values/
+12,2,변수와 표현식부터 안전하게,signed와 unsigned를 섞을 때 생기는 일,ES.100 ES.101 ES.102 ES.106 ES.107,ss-numbers,,작성·검증 완료,src/content/posts/cpp-core-guidelines-12-signed-and-unsigned.md,https://hmmlog.com/posts/cpp-core-guidelines-12-signed-and-unsigned/
+13,2,변수와 표현식부터 안전하게,정수의 범위와 산술 오류 다루기,ES.103 ES.104 ES.105,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-13-integer-arithmetic.md,https://hmmlog.com/posts/cpp-core-guidelines-13-integer-arithmetic/
+14,2,변수와 표현식부터 안전하게,타입 변환이 필요한 곳과 위험해지는 곳,ES.46 ES.48 ES.49 ES.50,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-14-conversions.md,https://hmmlog.com/posts/cpp-core-guidelines-14-conversions/
+15,2,변수와 표현식부터 안전하게,복잡한 식과 평가 순서 풀어 읽기,ES.40 ES.41 ES.43 ES.44 ES.45,ES.expr: Expressions,,작성·검증 완료,src/content/posts/cpp-core-guidelines-15-expressions-and-order.md,https://hmmlog.com/posts/cpp-core-guidelines-15-expressions-and-order/
+16,2,변수와 표현식부터 안전하게,if와 switch로 분기 의도 드러내기,ES.70 ES.78 ES.79 ES.87,ES.stmt: Statements,,작성·검증 완료,src/content/posts/cpp-core-guidelines-16-branches.md,https://hmmlog.com/posts/cpp-core-guidelines-16-branches/
+17,2,변수와 표현식부터 안전하게,범위 for와 반복 조건 선택하기,ES.71 ES.72 ES.73 ES.74 ES.75 ES.86,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-17-loops.md,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/
+18,2,변수와 표현식부터 안전하게,조기 반환과 break로 제어 흐름 정리하기,F.56 ES.76 ES.77 ES.85 NR.2,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-18-early-return.md,https://hmmlog.com/posts/cpp-core-guidelines-18-early-return/
+19,2,변수와 표현식부터 안전하게,매크로와 C식 가변 인자의 대안 찾기,ES.30 ES.31 ES.32 ES.33 ES.34 F.55 NL.9,,,작성·검증 완료,src/content/posts/cpp-core-guidelines-19-macros-and-varargs.md,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/
 20,3,함수와 인터페이스,함수 하나가 맡을 일과 이름 정하기,F.1 F.2 F.3 F.8 F.9 F.10 ES.3,s-functions ss-fct-def,,예정,,
 21,3,함수와 인터페이스,입력과 수정 의도에 따라 인자 전달하기,F.15 F.16 F.17,ss-call,,예정,,
 22,3,함수와 인터페이스,반환값으로 결과를 전달하고 여러 결과 묶기,F.20 F.21 F.46,,,예정,,

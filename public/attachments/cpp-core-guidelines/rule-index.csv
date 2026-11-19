@@ -9,7 +9,7 @@ P.6,3,컴파일할 때 잡을 오류와 실행할 때 확인할 조건,작성 �
 P.7,3,컴파일할 때 잡을 오류와 실행할 때 확인할 조건,작성 완료,https://hmmlog.com/posts/cpp-core-guidelines-03-checks-and-errors/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-early
 P.8,32,RAII로 자원 정리를 객체 수명에 연결하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-leak
 P.9,90,측정으로 최적화할 지점 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-waste
-P.10,7,const로 변경 가능한 범위를 줄이기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-mutable
+P.10,7,const로 변경 가능한 범위를 줄이기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-07-const/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-mutable
 P.11,2,의도와 단위를 코드의 타입으로 표현하기,작성 완료,https://hmmlog.com/posts/cpp-core-guidelines-02-intent-and-types/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-library
 P.12,4,표준 라이브러리와 도구를 활용하는 출발점,작성 완료,https://hmmlog.com/posts/cpp-core-guidelines-04-libraries-and-tools/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-tools
 P.13,4,표준 라이브러리와 도구를 활용하는 출발점,작성 완료,https://hmmlog.com/posts/cpp-core-guidelines-04-libraries-and-tools/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-lib
@@ -36,7 +36,7 @@ I.30,112,변경이 잦은 부분과 규칙 예외를 경계 안에 모으기,예
 F.1,20,함수 하나가 맡을 일과 이름 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-package
 F.2,20,함수 하나가 맡을 일과 이름 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-logical
 F.3,20,함수 하나가 맡을 일과 이름 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-single
-F.4,8,constexpr로 계산 시점 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-constexpr
+F.4,8,constexpr로 계산 시점 표현하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-08-constexpr/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-constexpr
 F.5,90,측정으로 최적화할 지점 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-inline
 F.6,66,noexcept가 보장하는 것과 실패했을 때의 동작,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-noexcept
 F.7,33,소유하는 포인터와 빌려 쓰는 포인터 구분하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-smart
@@ -71,8 +71,8 @@ F.51,26,기본 인자와 오버로드 선택하기,예정,,본문 항목,https:/
 F.52,28,람다 캡처와 this의 수명 확인하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-reference-capture
 F.53,28,람다 캡처와 this의 수명 확인하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-value-capture
 F.54,28,람다 캡처와 this의 수명 확인하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rf-this-capture
-F.55,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#f-varargs
-F.56,18,조기 반환과 break로 제어 흐름 정리하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#f-nesting
+F.55,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#f-varargs
+F.56,18,조기 반환과 break로 제어 흐름 정리하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-18-early-return/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#f-nesting
 C.1,40,struct와 class를 불변식으로 구분하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rc-org
 C.2,40,struct와 class를 불변식으로 구분하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rc-struct
 C.3,41,멤버 공개 범위와 구현 세부사항 정리하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rc-interface
@@ -173,14 +173,14 @@ C.180,64,union과 variant로 여러 형태의 값 표현하기,예정,,본문 �
 C.181,64,union과 variant로 여러 형태의 값 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ru-naked
 C.182,64,union과 variant로 여러 형태의 값 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ru-anonymous
 C.183,64,union과 variant로 여러 형태의 값 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ru-pun
-Enum.1,10,관련 있는 상수를 enum class로 묶기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-macro
-Enum.2,10,관련 있는 상수를 enum class로 묶기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-set
-Enum.3,10,관련 있는 상수를 enum class로 묶기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-class
-Enum.4,11,"열거형의 연산과 값, 기반 타입 정하기",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-oper
-Enum.5,10,관련 있는 상수를 enum class로 묶기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-caps
-Enum.6,10,관련 있는 상수를 enum class로 묶기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-unnamed
-Enum.7,11,"열거형의 연산과 값, 기반 타입 정하기",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-underlying
-Enum.8,11,"열거형의 연산과 값, 기반 타입 정하기",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-value
+Enum.1,10,관련 있는 상수를 enum class로 묶기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-10-enum-class/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-macro
+Enum.2,10,관련 있는 상수를 enum class로 묶기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-10-enum-class/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-set
+Enum.3,10,관련 있는 상수를 enum class로 묶기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-10-enum-class/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-class
+Enum.4,11,"열거형의 연산과 값, 기반 타입 정하기",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-11-enum-values/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-oper
+Enum.5,10,관련 있는 상수를 enum class로 묶기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-10-enum-class/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-caps
+Enum.6,10,관련 있는 상수를 enum class로 묶기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-10-enum-class/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-unnamed
+Enum.7,11,"열거형의 연산과 값, 기반 타입 정하기",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-11-enum-values/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-underlying
+Enum.8,11,"열거형의 연산과 값, 기반 타입 정하기",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-11-enum-values/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#renum-value
 R.1,32,RAII로 자원 정리를 객체 수명에 연결하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rr-raii
 R.2,33,소유하는 포인터와 빌려 쓰는 포인터 구분하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rr-use-ptr
 R.3,33,소유하는 포인터와 빌려 쓰는 포인터 구분하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rr-ptr
@@ -209,69 +209,69 @@ R.37,38,shared_ptr 인자의 의미와 별칭 문제 살펴보기,예정,,본문
 ES.1,4,표준 라이브러리와 도구를 활용하는 출발점,작성 완료,https://hmmlog.com/posts/cpp-core-guidelines-04-libraries-and-tools/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-lib
 ES.2,2,의도와 단위를 코드의 타입으로 표현하기,작성 완료,https://hmmlog.com/posts/cpp-core-guidelines-02-intent-and-types/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-abstr
 ES.3,20,함수 하나가 맡을 일과 이름 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-dry
-ES.5,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-scope
-ES.6,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-cond
+ES.5,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-scope
+ES.6,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-cond
 ES.7,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-name-length
 ES.8,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-name-similar
 ES.9,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-not-caps
-ES.10,6,"초기화와 대입, 중괄호와 소괄호의 차이",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-name-one
-ES.11,9,auto를 쓰면 무엇이 추론되고 무엇이 달라질까,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-auto
-ES.12,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-reuse
-ES.20,6,"초기화와 대입, 중괄호와 소괄호의 차이",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-always
-ES.21,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-introduce
-ES.22,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-init
-ES.23,6,"초기화와 대입, 중괄호와 소괄호의 차이",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-list
+ES.10,6,"초기화와 대입, 중괄호와 소괄호의 차이",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-name-one
+ES.11,9,auto를 쓰면 무엇이 추론되고 무엇이 달라질까,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-09-auto/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-auto
+ES.12,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-reuse
+ES.20,6,"초기화와 대입, 중괄호와 소괄호의 차이",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-always
+ES.21,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-introduce
+ES.22,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-init
+ES.23,6,"초기화와 대입, 중괄호와 소괄호의 차이",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-list
 ES.24,35,한 곳에서 소유할 객체에 unique_ptr 사용하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-unique
-ES.25,7,const로 변경 가능한 범위를 줄이기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-const
-ES.26,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-recycle
+ES.25,7,const로 변경 가능한 범위를 줄이기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-07-const/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-const
+ES.26,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-recycle
 ES.27,70,array와 vector를 기준으로 컨테이너 고르기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-stack
-ES.28,6,"초기화와 대입, 중괄호와 소괄호의 차이",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-lambda-init
-ES.30,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros
-ES.31,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros2
-ES.32,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-all_caps
-ES.33,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros3
-ES.34,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-ellipses
-ES.40,15,복잡한 식과 평가 순서 풀어 읽기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-complicated
-ES.41,15,복잡한 식과 평가 순서 풀어 읽기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-parens
+ES.28,6,"초기화와 대입, 중괄호와 소괄호의 차이",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-lambda-init
+ES.30,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros
+ES.31,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros2
+ES.32,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-all_caps
+ES.33,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-macros3
+ES.34,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-ellipses
+ES.40,15,복잡한 식과 평가 순서 풀어 읽기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-15-expressions-and-order/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-complicated
+ES.41,15,복잡한 식과 평가 순서 풀어 읽기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-15-expressions-and-order/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-parens
 ES.42,24,연속된 데이터는 크기와 함께 전달하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-ptr
-ES.43,15,복잡한 식과 평가 순서 풀어 읽기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-order
-ES.44,15,복잡한 식과 평가 순서 풀어 읽기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-order-fct
-ES.45,15,복잡한 식과 평가 순서 풀어 읽기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-magic
-ES.46,14,타입 변환이 필요한 곳과 위험해지는 곳,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-narrowing
+ES.43,15,복잡한 식과 평가 순서 풀어 읽기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-15-expressions-and-order/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-order
+ES.44,15,복잡한 식과 평가 순서 풀어 읽기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-15-expressions-and-order/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-order-fct
+ES.45,15,복잡한 식과 평가 순서 풀어 읽기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-15-expressions-and-order/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-magic
+ES.46,14,타입 변환이 필요한 곳과 위험해지는 곳,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-14-conversions/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-narrowing
 ES.47,23,값이 없을 수도 있는 인자 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-nullptr
-ES.48,14,타입 변환이 필요한 곳과 위험해지는 곳,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-casts
-ES.49,14,타입 변환이 필요한 곳과 위험해지는 곳,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-casts-named
-ES.50,14,타입 변환이 필요한 곳과 위험해지는 곳,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-casts-const
+ES.48,14,타입 변환이 필요한 곳과 위험해지는 곳,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-14-conversions/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-casts
+ES.49,14,타입 변환이 필요한 곳과 위험해지는 곳,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-14-conversions/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-casts-named
+ES.50,14,타입 변환이 필요한 곳과 위험해지는 곳,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-14-conversions/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-casts-const
 ES.55,24,연속된 데이터는 크기와 함께 전달하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-range-checking
 ES.56,39,std::move와 반환값 최적화 이해하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-move
 ES.60,34,동적 할당과 해제를 관리 객체 안에 모으기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-new
 ES.61,34,동적 할당과 해제를 관리 객체 안에 모으기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-del
 ES.62,25,돌려준 포인터와 참조는 언제까지 유효할까,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-arr2
 ES.63,58,객체 잘림과 다형적 복사 다루기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-slice
-ES.64,6,"초기화와 대입, 중괄호와 소괄호의 차이",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-construct
+ES.64,6,"초기화와 대입, 중괄호와 소괄호의 차이",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-construct
 ES.65,25,돌려준 포인터와 참조는 언제까지 유효할까,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-deref
-ES.70,16,if와 switch로 분기 의도 드러내기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-switch-if
-ES.71,17,범위 for와 반복 조건 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-range
-ES.72,17,범위 for와 반복 조건 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-while
-ES.73,17,범위 for와 반복 조건 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-while-for
-ES.74,17,범위 for와 반복 조건 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-init
-ES.75,17,범위 for와 반복 조건 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-do
-ES.76,18,조기 반환과 break로 제어 흐름 정리하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-goto
-ES.77,18,조기 반환과 break로 제어 흐름 정리하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-continue
-ES.78,16,if와 switch로 분기 의도 드러내기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-break
-ES.79,16,if와 switch로 분기 의도 드러내기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-default
+ES.70,16,if와 switch로 분기 의도 드러내기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-16-branches/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-switch-if
+ES.71,17,범위 for와 반복 조건 선택하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-range
+ES.72,17,범위 for와 반복 조건 선택하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-while
+ES.73,17,범위 for와 반복 조건 선택하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-while-for
+ES.74,17,범위 for와 반복 조건 선택하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-for-init
+ES.75,17,범위 for와 반복 조건 선택하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-do
+ES.76,18,조기 반환과 break로 제어 흐름 정리하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-18-early-return/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-goto
+ES.77,18,조기 반환과 break로 제어 흐름 정리하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-18-early-return/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-continue
+ES.78,16,if와 switch로 분기 의도 드러내기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-16-branches/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-break
+ES.79,16,if와 switch로 분기 의도 드러내기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-16-branches/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-default
 ES.84,32,RAII로 자원 정리를 객체 수명에 연결하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-noname
-ES.85,18,조기 반환과 break로 제어 흐름 정리하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-empty
-ES.86,17,범위 for와 반복 조건 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-loop-counter
-ES.87,16,if와 switch로 분기 의도 드러내기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-if
-ES.100,12,signed와 unsigned를 섞을 때 생기는 일,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-mix
-ES.101,12,signed와 unsigned를 섞을 때 생기는 일,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-unsigned
-ES.102,12,signed와 unsigned를 섞을 때 생기는 일,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-signed
-ES.103,13,정수의 범위와 산술 오류 다루기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-overflow
-ES.104,13,정수의 범위와 산술 오류 다루기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-underflow
-ES.105,13,정수의 범위와 산술 오류 다루기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-zero
-ES.106,12,signed와 unsigned를 섞을 때 생기는 일,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-nonnegative
-ES.107,12,signed와 unsigned를 섞을 때 생기는 일,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-subscripts
+ES.85,18,조기 반환과 break로 제어 흐름 정리하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-18-early-return/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-empty
+ES.86,17,범위 for와 반복 조건 선택하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-17-loops/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-loop-counter
+ES.87,16,if와 switch로 분기 의도 드러내기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-16-branches/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-if
+ES.100,12,signed와 unsigned를 섞을 때 생기는 일,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-12-signed-and-unsigned/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-mix
+ES.101,12,signed와 unsigned를 섞을 때 생기는 일,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-12-signed-and-unsigned/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-unsigned
+ES.102,12,signed와 unsigned를 섞을 때 생기는 일,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-12-signed-and-unsigned/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-signed
+ES.103,13,정수의 범위와 산술 오류 다루기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-13-integer-arithmetic/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-overflow
+ES.104,13,정수의 범위와 산술 오류 다루기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-13-integer-arithmetic/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-underflow
+ES.105,13,정수의 범위와 산술 오류 다루기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-13-integer-arithmetic/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-zero
+ES.106,12,signed와 unsigned를 섞을 때 생기는 일,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-12-signed-and-unsigned/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-nonnegative
+ES.107,12,signed와 unsigned를 섞을 때 생기는 일,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-12-signed-and-unsigned/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-subscripts
 Per.1,90,측정으로 최적화할 지점 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rper-reason
 Per.2,90,측정으로 최적화할 지점 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rper-knuth
 Per.3,90,측정으로 최적화할 지점 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rper-critical
@@ -345,11 +345,11 @@ E.27,69,예외를 사용할 수 없는 환경의 오류 처리,예정,,본문 �
 E.28,69,예외를 사용할 수 없는 환경의 오류 처리,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#re-no-throw
 E.30,66,noexcept가 보장하는 것과 실패했을 때의 동작,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#re-specifications
 E.31,67,"예외 타입, 던지기와 잡기의 규칙",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#re_catch
-Con.1,7,const로 변경 가능한 범위를 줄이기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-immutable
-Con.2,7,const로 변경 가능한 범위를 줄이기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-fct
-Con.3,7,const로 변경 가능한 범위를 줄이기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-ref
-Con.4,7,const로 변경 가능한 범위를 줄이기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-const
-Con.5,8,constexpr로 계산 시점 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-constexpr
+Con.1,7,const로 변경 가능한 범위를 줄이기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-07-const/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-immutable
+Con.2,7,const로 변경 가능한 범위를 줄이기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-07-const/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-fct
+Con.3,7,const로 변경 가능한 범위를 줄이기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-07-const/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-ref
+Con.4,7,const로 변경 가능한 범위를 줄이기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-07-const/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-const
+Con.5,8,constexpr로 계산 시점 표현하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-08-constexpr/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rconst-constexpr
 T.1,77,템플릿으로 공통 동작과 자료구조 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rt-raise
 T.2,77,템플릿으로 공통 동작과 자료구조 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rt-algo
 T.3,77,템플릿으로 공통 동작과 자료구조 표현하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rt-cont
@@ -448,8 +448,8 @@ SL.C.1,69,예외를 사용할 수 없는 환경의 오류 처리,예정,,본문 
 A.1,112,변경이 잦은 부분과 규칙 예외를 경계 안에 모으기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ra-stable
 A.2,112,변경이 잦은 부분과 규칙 예외를 경계 안에 모으기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ra-lib
 A.4,109,파일과 라이브러리의 순환 의존성 끊기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ra-dag
-NR.1,5,변수가 필요한 곳과 살아 있는 범위,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-top
-NR.2,18,조기 반환과 break로 제어 흐름 정리하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-single-return
+NR.1,5,변수가 필요한 곳과 살아 있는 범위,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-05-scope-and-lifetime/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-top
+NR.2,18,조기 반환과 break로 제어 흐름 정리하기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-18-early-return/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-single-return
 NR.3,65,오류 처리 방침과 예외를 쓸 상황 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-no-exceptions
 NR.4,120,기존 코드의 관행을 점검하고 점진적으로 개선하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-lots-of-files
 NR.5,120,기존 코드의 관행을 점검하고 점진적으로 개선하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rnr-two-phase-init
@@ -462,7 +462,7 @@ NL.4,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://i
 NL.5,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-name-type
 NL.7,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-name-length
 NL.8,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-name
-NL.9,19,매크로와 C식 가변 인자의 대안 찾기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-all-caps
+NL.9,19,매크로와 C식 가변 인자의 대안 찾기,작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-19-macros-and-varargs/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-all-caps
 NL.10,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-camel
 NL.11,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-literals
 NL.15,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-space
@@ -471,7 +471,7 @@ NL.17,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://
 NL.18,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-ptr
 NL.19,114,이름과 리터럴을 읽기 쉽게 정하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-misread
 NL.20,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-stmt
-NL.21,6,"초기화와 대입, 중괄호와 소괄호의 차이",예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-dcl
+NL.21,6,"초기화와 대입, 중괄호와 소괄호의 차이",작성·검증 완료,https://hmmlog.com/posts/cpp-core-guidelines-06-initialization/,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-dcl
 NL.25,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-void
 NL.26,115,일관된 배치와 표기 선택하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-const
 NL.27,106,헤더와 소스에 선언과 정의 배치하기,예정,,본문 항목,https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rl-file-suffix

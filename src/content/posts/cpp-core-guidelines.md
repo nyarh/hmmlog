@@ -10,7 +10,7 @@ attachments:
 
 C++ 문법을 배웠다면 이제 같은 일을 하는 여러 코드 중 어떤 것을 선택할지 고민하게 된다. 이 연재는 C++ Core Guidelines를 바탕으로 선택의 이유와 적용할 조건을 작은 예제로 설명한다.
 
-**본편 120편과 참고글 3개**로 구성하며, 현재는 1부의 1~4편을 읽을 수 있다. 아래 목차에서 링크가 있는 항목은 작성된 글이고 나머지는 이어서 다룰 주제다. 글이 추가되거나 설명을 나눌 필요가 생기면 목차도 갱신한다.
+**본편 120편과 참고글 3개**로 구성하며, 현재는 1부와 2부의 1~19편을 읽을 수 있다. 아래 목차에서 링크가 있는 항목은 작성된 글이고 나머지는 이어서 다룰 주제다. 글이 추가되거나 설명을 나눌 필요가 생기면 목차도 갱신한다.
 
 ## 읽기 전에
 
@@ -38,21 +38,21 @@ C++ 문법을 배웠다면 이제 같은 일을 하는 여러 코드 중 어떤 
 
 ## 2부 변수와 표현식부터 안전하게
 
-5. 변수가 필요한 곳과 살아 있는 범위
-6. 초기화와 대입, 중괄호와 소괄호의 차이
-7. const로 변경 가능한 범위를 줄이기
-8. constexpr로 계산 시점 표현하기
-9. auto를 쓰면 무엇이 추론되고 무엇이 달라질까
-10. 관련 있는 상수를 enum class로 묶기
-11. 열거형의 연산과 값, 기반 타입 정하기
-12. signed와 unsigned를 섞을 때 생기는 일
-13. 정수의 범위와 산술 오류 다루기
-14. 타입 변환이 필요한 곳과 위험해지는 곳
-15. 복잡한 식과 평가 순서 풀어 읽기
-16. if와 switch로 분기 의도 드러내기
-17. 범위 for와 반복 조건 선택하기
-18. 조기 반환과 break로 제어 흐름 정리하기
-19. 매크로와 C식 가변 인자의 대안 찾기
+5. [변수가 필요한 곳과 살아 있는 범위](/posts/cpp-core-guidelines-05-scope-and-lifetime/)
+6. [초기화와 대입, 중괄호와 소괄호의 차이](/posts/cpp-core-guidelines-06-initialization/)
+7. [const로 변경 가능한 범위를 줄이기](/posts/cpp-core-guidelines-07-const/)
+8. [constexpr로 계산 시점 표현하기](/posts/cpp-core-guidelines-08-constexpr/)
+9. [auto를 쓰면 무엇이 추론되고 무엇이 달라질까](/posts/cpp-core-guidelines-09-auto/)
+10. [관련 있는 상수를 enum class로 묶기](/posts/cpp-core-guidelines-10-enum-class/)
+11. [열거형의 연산과 값, 기반 타입 정하기](/posts/cpp-core-guidelines-11-enum-values/)
+12. [signed와 unsigned를 섞을 때 생기는 일](/posts/cpp-core-guidelines-12-signed-and-unsigned/)
+13. [정수의 범위와 산술 오류 다루기](/posts/cpp-core-guidelines-13-integer-arithmetic/)
+14. [타입 변환이 필요한 곳과 위험해지는 곳](/posts/cpp-core-guidelines-14-conversions/)
+15. [복잡한 식과 평가 순서 풀어 읽기](/posts/cpp-core-guidelines-15-expressions-and-order/)
+16. [if와 switch로 분기 의도 드러내기](/posts/cpp-core-guidelines-16-branches/)
+17. [범위 for와 반복 조건 선택하기](/posts/cpp-core-guidelines-17-loops/)
+18. [조기 반환과 break로 제어 흐름 정리하기](/posts/cpp-core-guidelines-18-early-return/)
+19. [매크로와 C식 가변 인자의 대안 찾기](/posts/cpp-core-guidelines-19-macros-and-varargs/)
 
 ## 3부 함수와 인터페이스
 
@@ -208,6 +208,21 @@ C++ 문법을 배웠다면 이제 같은 일을 하는 여러 코드 중 어떤 
 | P.1, P.3, P.4, P.11, ES.2 | [2편 의도와 타입](/posts/cpp-core-guidelines-02-intent-and-types/) |
 | P.5, P.6, P.7 | [3편 오류를 확인할 시점](/posts/cpp-core-guidelines-03-checks-and-errors/) |
 | P.12, P.13, ES.1, SL.1, SL.2 | [4편 라이브러리와 도구 활용](/posts/cpp-core-guidelines-04-libraries-and-tools/) |
+| ES.5, ES.6, ES.12, ES.21, ES.22, ES.26, NR.1 | [5편 변수가 필요한 곳과 살아 있는 범위](/posts/cpp-core-guidelines-05-scope-and-lifetime/) |
+| ES.10, ES.20, ES.23, ES.28, ES.64, NL.21 | [6편 초기화와 대입, 중괄호와 소괄호의 차이](/posts/cpp-core-guidelines-06-initialization/) |
+| P.10, Con.1, Con.2, Con.3, Con.4, ES.25 | [7편 const로 변경 가능한 범위를 줄이기](/posts/cpp-core-guidelines-07-const/) |
+| Con.5, F.4 | [8편 constexpr로 계산 시점 표현하기](/posts/cpp-core-guidelines-08-constexpr/) |
+| ES.11 | [9편 auto를 쓰면 무엇이 추론되고 무엇이 달라질까](/posts/cpp-core-guidelines-09-auto/) |
+| Enum.1, Enum.2, Enum.3, Enum.5, Enum.6 | [10편 관련 있는 상수를 enum class로 묶기](/posts/cpp-core-guidelines-10-enum-class/) |
+| Enum.4, Enum.7, Enum.8 | [11편 열거형의 연산과 값, 기반 타입 정하기](/posts/cpp-core-guidelines-11-enum-values/) |
+| ES.100, ES.101, ES.102, ES.106, ES.107 | [12편 signed와 unsigned를 섞을 때 생기는 일](/posts/cpp-core-guidelines-12-signed-and-unsigned/) |
+| ES.103, ES.104, ES.105 | [13편 정수의 범위와 산술 오류 다루기](/posts/cpp-core-guidelines-13-integer-arithmetic/) |
+| ES.46, ES.48, ES.49, ES.50 | [14편 타입 변환이 필요한 곳과 위험해지는 곳](/posts/cpp-core-guidelines-14-conversions/) |
+| ES.40, ES.41, ES.43, ES.44, ES.45 | [15편 복잡한 식과 평가 순서 풀어 읽기](/posts/cpp-core-guidelines-15-expressions-and-order/) |
+| ES.70, ES.78, ES.79, ES.87 | [16편 if와 switch로 분기 의도 드러내기](/posts/cpp-core-guidelines-16-branches/) |
+| ES.71, ES.72, ES.73, ES.74, ES.75, ES.86 | [17편 범위 for와 반복 조건 선택하기](/posts/cpp-core-guidelines-17-loops/) |
+| F.56, ES.76, ES.77, ES.85, NR.2 | [18편 조기 반환과 break로 제어 흐름 정리하기](/posts/cpp-core-guidelines-18-early-return/) |
+| ES.30, ES.31, ES.32, ES.33, ES.34, F.55, NL.9 | [19편 매크로와 C식 가변 인자의 대안 찾기](/posts/cpp-core-guidelines-19-macros-and-varargs/) |
 
 전체 규칙 배정은 아래 CSV에서 검색할 수 있다. 준비 중인 회차는 글 주소를 비워 두었으며, 원문의 초안·미완성·삭제 상태도 표시했다. 원문 확인 기준일은 2026년 11월 19일이다.
 
