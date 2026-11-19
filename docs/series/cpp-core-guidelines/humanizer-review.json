@@ -1,0 +1,360 @@
+{
+  "date": "2026-11-19",
+  "base_commit": "ffb5afb31975da8a8373e26b6d2402f6bec1cd07",
+  "scope": "C++ Core Guidelines 시리즈 안내와 1~19편",
+  "skill": {
+    "name": "humanizer",
+    "version": "4.0.0",
+    "source_url": "https://github.com/blader/humanizer",
+    "source_commit": "a48c60c2a3f7a0f6ecc8f9b8d2b1ef71c7927155",
+    "installed_path": "/home/agent/.agents/skills/humanizer/SKILL.md",
+    "skill_sha256": "3013910ef5433dab12f0d2b86d9cf9e3421a253ef986518a68ef07aa29629bdc"
+  },
+  "method": "설치된 SKILL.md 전체를 읽고 각 글 전체 읽기, 수정할 표현 식별, 재작성, 원문 대조 및 기술적 의미·문체 재검토를 수행했다. 자동 Humanizer 변환 프로그램을 실행한 결과가 아니다.",
+  "reviewed_files": 20,
+  "changed_files": 20,
+  "reviewed_sections": 127,
+  "section_count_definition": "각 파일의 도입 1개와 H2 제목별 구간. 총 도입 20개와 H2 구간 107개.",
+  "unreviewed_sections": [],
+  "changes": [
+    "형식적인 도입을 코드에서 겪는 구체적인 문제와 연결했다.",
+    "반복되는 결론과 불필요한 대조·강조를 줄이고 설명 순서를 다듬었다.",
+    "표준 버전, 타입의 조건, 경계값과 예외 설명을 보존했다.",
+    "9편의 const auto 설명을 복사본의 변경을 막는다는 뜻으로 명확히 했다."
+  ],
+  "preservation": {
+    "frontmatter": "byte_identical",
+    "fenced_blocks": "byte_identical",
+    "inline_code": "same_contents_and_occurrence_counts",
+    "link_targets": "same_targets_and_occurrence_counts",
+    "tables": "byte_identical",
+    "source_cards": "byte_identical",
+    "rule_identifiers": "same_identifier_sets",
+    "technical_meaning": "manually_compared_with_original"
+  },
+  "files": [
+    {
+      "file": "src/content/posts/cpp-core-guidelines-01-reading-guide.md",
+      "changed": true,
+      "sections": [
+        "문법과 작성 지침의 역할",
+        "규칙은 이유와 함께 읽는다",
+        "표준 C++을 기준으로 삼는 이유",
+        "기존 코드에는 작은 변경부터 적용한다",
+        "문서의 배경과 갱신 상태",
+        "다음 글을 읽기 전에"
+      ],
+      "reviewed_sections_including_intro": 7,
+      "before_sha256": "749cd7f523f42d0969151ecea999d1649381e001be0fb8496884a89dac08fe36",
+      "after_sha256": "055b9d94b6614f0da51ee3779ecf7b5bd538240da7a36abfe23bfb20063fd5fd"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-02-intent-and-types.md",
+      "changed": true,
+      "sections": [
+        "정수 두 개가 서로 바뀌어도 컴파일된다",
+        "횟수와 시간 간격에 서로 다른 타입을 준다",
+        "이름만 바꾸는 별칭과 새 타입은 다르다",
+        "타입을 만들었다고 값까지 검증되는 것은 아니다",
+        "복잡한 변환은 경계 안에 모은다",
+        "예제 실행과 적용"
+      ],
+      "reviewed_sections_including_intro": 7,
+      "before_sha256": "ce0d78ac934f2f7863e1c210095ecb6ece8e4eae268bebafca03d3ed97bc6fd0",
+      "after_sha256": "58098bb69c681e432b73356cd7bf9cf15c9371daa5f079ddee3ffb3c51137811"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-03-checks-and-errors.md",
+      "changed": true,
+      "sections": [
+        "코드에 고정된 조건은 컴파일할 때 확인한다",
+        "외부 입력은 값을 읽은 뒤 확인한다",
+        "검사를 가능하게 하는 정보도 남겨야 한다",
+        "오류는 사용하기 전에 발견한다",
+        "실행 결과를 확인한다"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "cfc5f92e45947d64b6e079ec5688abb8e55cff710d504e49490b9b85b9ce58ab",
+      "after_sha256": "fbb8d0df5f92ad5feb34f59642af435ba0c3c7700ae935c91517f1f932d27eb7"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-04-libraries-and-tools.md",
+      "changed": true,
+      "sections": [
+        "코드에 작업 이름을 남긴다",
+        "함수의 사용 조건까지 맡길 수는 없다",
+        "표준 라이브러리부터 살펴본다",
+        "반복해서 확인할 일은 도구에 맡긴다",
+        "작은 입력에서도 기대한 동작을 확인한다"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "49aa34befaea6fc9a4a04fc05b8e2d13e2e878578baa9f7df787a462b432a507",
+      "after_sha256": "c30b465e4ceb11e4be0498bfd1b22ae606bd4591fd1dd175c3e3e4408bf60a2b"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-05-scope-and-lifetime.md",
+      "changed": true,
+      "sections": [
+        "검색 결과는 검색을 처리하는 동안만 둔다",
+        "값을 알게 된 지점에서 이름을 만든다",
+        "같은 이름과 같은 변수를 재활용하지 않는다",
+        "이름의 범위와 객체의 수명은 다르다",
+        "예제 확인"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "c1e244d5875e89dd703f194c358d506f69251c1b445545f12b8c891485a8d080",
+      "after_sha256": "66d389bb43dec2841830f26f6d00197a9ff414c50ad8535c3b252d38aa19980f"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-06-initialization.md",
+      "changed": true,
+      "sections": [
+        "선언 하나에 이름 하나를 둔다",
+        "중괄호가 막는 오류와 바꾸는 의미",
+        "여러 단계로 정해도 처음부터 const로 만든다",
+        "초기화 표기를 고르는 기준",
+        "컴파일러가 거부하는 경우도 확인한다"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "946c510e5ccaac819b94f2df921bb2a270781f0df1713a0cb5c328361d7411b9",
+      "after_sha256": "81ffaa2f848666f1371531da00385f47b23cd88700977469014e31d47e839b77"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-07-const.md",
+      "changed": true,
+      "sections": [
+        "읽는 함수와 바꾸는 함수를 구분한다",
+        "const 참조는 값을 얼린 복사본이 아니다",
+        "변경이 필요한 값까지 억지로 막지는 않는다",
+        "검증과 코드 리뷰에서 볼 곳"
+      ],
+      "reviewed_sections_including_intro": 5,
+      "before_sha256": "306f9be4af323d9b212c6f54820abc59b4e21bf28e3e9f2f75358f7cf14fce1a",
+      "after_sha256": "28100a56d0d148d0c93a2d05da0475788feabd824d33d31567e9e1c5b2866fcb"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-08-constexpr.md",
+      "changed": true,
+      "sections": [
+        "같은 함수를 두 문맥에서 사용한다",
+        "함수의 입력 조건은 여전히 필요하다",
+        "const와 constexpr, consteval의 역할",
+        "계산을 미리 해야 하는 이유를 먼저 정한다",
+        "입력과 컴파일 실패 확인"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "345823116c2d1841cff916c0219ffe814a6b56cd42bfc2f6f0f62abada8bcc64",
+      "after_sha256": "5156a223cb0d533e3fe7202ca7c7b6272a675889024d65979667654f748eb6c0"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-09-auto.md",
+      "changed": true,
+      "sections": [
+        "값을 받는 선언과 참조를 받는 선언",
+        "포인터의 const까지 전부 사라지는 것은 아니다",
+        "타입을 선택하는 곳에서는 명시한다",
+        "auto로 받은 값이 항상 독립된 복사본인 것은 아니다",
+        "확인한 범위"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "62e0389927dc03e52ce9d48f8d5cdbb1e73112f334531c36aa0d6a9f022a3a41",
+      "after_sha256": "86a6d6485655b5d1d353f98722ed5d89fcd7be5285b45a0759dd372a5dfc88f5"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-10-enum-class.md",
+      "changed": true,
+      "sections": [
+        "같은 이름도 소속에 따라 구분한다",
+        "묶음에 이름을 붙일 수 있는지 살핀다",
+        "매크로를 이름 있는 값으로 바꾼다",
+        "열거자를 다 적었다고 모든 값이 검증되지는 않는다",
+        "확인한 결과"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "a00fd1ed1dbbcd33702515fdd68d5c595228cdb6e37e7c6c8839493e5e3039d9",
+      "after_sha256": "8ca5b9b0c5ebf977ff0f770550560cbc494680980094b38516e5d316d7ba6de4"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-11-enum-values.md",
+      "changed": true,
+      "sections": [
+        "숫자가 외부 약속이라면 값을 명시한다",
+        "기반 타입의 크기와 저장 형식은 구분한다",
+        "조합 가능한 값에는 의미 있는 연산을 붙인다",
+        "확인과 점검 기준"
+      ],
+      "reviewed_sections_including_intro": 5,
+      "before_sha256": "af5b6b434b4682a1521f611fd7d8e7f1057f88ae7072a9cdaea0d52738d11149",
+      "after_sha256": "0c31ae736390dea578d339742b91ee3e55d79bff6bbbc446f0c3b32985866a53"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-12-signed-and-unsigned.md",
+      "changed": true,
+      "sections": [
+        "비교 전에 값이 변할 수 있다",
+        "unsigned의 순환은 정의되어 있지만 목적과 다를 수 있다",
+        "인덱스가 꼭 필요한지도 확인한다",
+        "비트 연산에는 unsigned가 어울린다"
+      ],
+      "reviewed_sections_including_intro": 5,
+      "before_sha256": "eb3a11d85b51b9fbfa5ad38706978c97a1563fcb7aba175c503d57ac2bd8f0b7",
+      "after_sha256": "39ebe8c461336f8bec80eb92174ac962421be375866934f053b9c8d8649a7fd0"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-13-integer-arithmetic.md",
+      "changed": true,
+      "sections": [
+        "검사식 자체도 범위를 넘지 않아야 한다",
+        "정수 나눗셈에는 두 경계가 있다",
+        "큰 타입으로 받는 것만으로 충분하지 않다",
+        "직접 검사할지 도구에 맡길지"
+      ],
+      "reviewed_sections_including_intro": 5,
+      "before_sha256": "a70395b6b70aeb03230775772b241f34b4d9b9d5f7e91ebfd9cdce1790875940",
+      "after_sha256": "5ad3a99fd7c5e610fb7e6a11e9a188855993763c9e3e8afa261626c4c04dad23"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-14-conversions.md",
+      "changed": true,
+      "sections": [
+        "범위를 확인한 다음 변환한다",
+        "중괄호와 검사 함수는 다른 곳에서 쓰인다",
+        "캐스트 이름이 알려주는 것과 알려주지 않는 것",
+        "const를 제거해도 수정 권한이 생기지 않는다",
+        "검증한 범위"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "ecfb640f883a4a6b2e93573e245b9f22800d970ba2a92d8094feae70d9eff9f8",
+      "after_sha256": "b4393125f85920087a42708b242f6714fe1e2dba59b1fb83b22591b67af7a199"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-15-expressions-and-order.md",
+      "changed": true,
+      "sections": [
+        "괄호가 정하는 것과 정하지 않는 것",
+        "인자 두 개를 왼쪽부터 계산한다고 가정하지 않는다",
+        "순서가 의미라면 문장으로 드러낸다",
+        "숫자에는 필요한 의미만 붙인다",
+        "확인 결과를 해석하는 범위"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "554b295c33041ab5a42b59bd257a5457894e1bfaa8d9896030012dcd72d9b56d",
+      "after_sha256": "d7afccec4965d037271dfee3ce5b5bb0cc7d55e112f37d61655c251415247ac2"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-16-branches.md",
+      "changed": true,
+      "sections": [
+        "case를 처리한 뒤 어디로 가는지 보이게 한다",
+        "default가 의미하는 정책을 정한다",
+        "bool과 수량을 같은 방식으로 줄이지 않는다",
+        "분기 구조를 선택할 때 남는 판단"
+      ],
+      "reviewed_sections_including_intro": 5,
+      "before_sha256": "6472aefe473605387803a65af9e09cf8a15f3653efe38f436e8310acd4fb0649",
+      "after_sha256": "c6cc37b1bc4cb1bc13908db0b5c203bcfb686989f73d0e6d043e2e7ee97a52f7"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-17-loops.md",
+      "changed": true,
+      "sections": [
+        "반복의 기준을 세 가지로 나눠 본다",
+        "원소를 복사할지 참조할지 고른다",
+        "카운터를 두 군데에서 움직이지 않는다",
+        "처음 한 번의 실행도 요구 사항이다",
+        "입력 실패의 종류까지 자동으로 구분되지는 않는다"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "3b09807db9a18ba4c7218984b0d3f59ac31e1fcff37a927f61265927ec974088",
+      "after_sha256": "e6fafeeb4a7e98c0c603494d107e324b8007ac67ff9b9939d790fa729d099e17"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-18-early-return.md",
+      "changed": true,
+      "sections": [
+        "처리할 수 없는 경우를 먼저 끝낸다",
+        "return 뒤의 else가 필요한지 살핀다",
+        "반복을 끝내는 방법은 종료 범위로 고른다",
+        "goto와 빈 문장은 의도를 숨기기 쉽다"
+      ],
+      "reviewed_sections_including_intro": 5,
+      "before_sha256": "db32e105fc49394adaf552bb86849d4451b192cb579eeb17c502d76afd12c924",
+      "after_sha256": "d92f60df1891fba065c26b5f4c7d6810aa806bf39b1703394e7961563918a65b"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines-19-macros-and-varargs.md",
+      "changed": true,
+      "sections": [
+        "괄호만 잘 쳐도 해결되지 않는 문제",
+        "이름 있는 상수와 타입 있는 함수를 사용한다",
+        "가변 인자의 타입을 보존한다",
+        "남겨야 하는 매크로는 알아볼 수 있게 한다",
+        "검증한 내용"
+      ],
+      "reviewed_sections_including_intro": 6,
+      "before_sha256": "89a5e3b90c867c9147bc0bfcba0f24fa98e138df6926b3f3312f59e360da3b6e",
+      "after_sha256": "1e7a7b82c3c0c6e110b488a2ccf841a56a066ddbb9ac7b3d1ca5b4fcd52335db"
+    },
+    {
+      "file": "src/content/posts/cpp-core-guidelines.md",
+      "changed": true,
+      "sections": [
+        "읽기 전에",
+        "1부 가이드라인을 읽는 기준",
+        "2부 변수와 표현식부터 안전하게",
+        "3부 함수와 인터페이스",
+        "4부 수명과 자원 소유권",
+        "5부 클래스와 객체의 생애",
+        "6부 상속과 다형성",
+        "7부 오류 처리와 실패 시 상태",
+        "8부 표준 라이브러리 활용",
+        "9부 템플릿과 제네릭 프로그래밍",
+        "10부 성능을 판단하고 개선하기",
+        "11부 동시성과 병렬 실행",
+        "12부 파일 구성과 라이브러리 경계",
+        "13부 읽기 좋은 코드와 실제 도입",
+        "함께 갱신할 참고글",
+        "규칙 번호로 찾아보기"
+      ],
+      "reviewed_sections_including_intro": 17,
+      "before_sha256": "9a6901e4ab1dc89d36bbeaeffb0530a507a1302c00d080bac36b58f41557093b",
+      "after_sha256": "884b39a5ec0425bbe04e6d5a097fef1b0352f4a202870b64c42aac7dc770aa5a"
+    }
+  ],
+  "validation": {
+    "build_command": "ASTRO_TELEMETRY_DISABLED=1 pnpm --config.verify-deps-before-run=false build",
+    "build": "passed",
+    "site": {
+      "rendered_pages": 20,
+      "internal_links_checked": 866,
+      "rendered_code_matches_markdown": true,
+      "outline_part_numbering": "passed",
+      "rule_index_items": 512,
+      "part2_assigned_rules": 69,
+      "published_episodes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "cpp_tests_rerun": false,
+    "cpp_tests_note": "모든 코드 블록이 바이트 단위로 같아 재실행하지 않았다. 기존 validation.json의 31건과 validation-part2.json의 97건은 최초 발행 당시의 검증 기록이다.",
+    "visual_browser_review": "not_performed"
+  }
+}

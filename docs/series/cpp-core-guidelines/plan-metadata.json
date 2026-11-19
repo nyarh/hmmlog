@@ -34,7 +34,8 @@
     "rule-coverage.csv",
     "section-coverage.csv",
     "validation.json",
-    "validation-part2.json"
+    "validation-part2.json",
+    "humanizer-review.json"
   ],
   "current_batch": [
     5,
@@ -75,5 +76,12 @@
     17,
     18,
     19
-  ]
+  ],
+  "editorial_review": {
+    "skill": "humanizer",
+    "version": "4.0.0",
+    "date": "2026-11-19",
+    "scope": "시리즈 안내와 1~19편",
+    "file": "humanizer-review.json"
+  }
 }
