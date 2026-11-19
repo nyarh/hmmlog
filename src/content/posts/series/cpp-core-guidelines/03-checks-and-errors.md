@@ -9,7 +9,7 @@ art: code
 
 배열 크기를 상수로 정했다면 빌드할 때 검사할 수 있다. 사용자가 입력한 개수는 프로그램을 실행해야 알 수 있다. 검사는 조건을 확인할 수 있는 시점과 그 값을 사용하는 위치에 맞춰 배치한다.
 
-[P.5](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-compile-time)는 컴파일 시점 검사를 우선하고, [P.6](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-run-time)은 실행 중 검사에 필요한 정보를 유지하도록 권한다. [P.7](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-early)은 잘못된 값이 문제를 일으키기 전에 발견하는 원칙이다.
+컴파일할 때 확인할 수 있는 조건은 그때 검사하는 게 좋다.<sup>[P.5](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-compile-time)</sup> 실행 중에도 값을 검사할 수 있도록 원소 수 같은 정보를 유지한다.<sup>[P.6](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-run-time)</sup> 잘못된 값은 문제를 일으키기 전에 발견해야 한다.<sup>[P.7](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-early)</sup>
 
 ## 고정된 조건은 static_assert로 검사
 
@@ -94,6 +94,6 @@ C++20의 `std::span`이 범위를 벗어난 모든 사용을 자동으로 검사
 
 입력 검사를 통과한 뒤에만 슬롯을 변경하므로 오류가 난 입력은 부분적으로 반영되지 않는다. 문자열을 읽는 곳에서 형식과 범위를 검사하고, 처리 함수에는 검사에 필요한 크기가 포함된 범위를 전달한다.
 
-P.7은 중복 검사의 비용도 다룬다. 유효한 날짜 객체를 문자열로 바꿔 전달하고 다시 해석하는 식의 반복은 피한다. 검사 비용이 크면 실제로 필요한 정보와 검사 시점을 따진다. 평균 상수 시간인 작업에 선형 시간 검사를 추가하면 인터페이스의 비용이 달라질 수 있다.
+검사를 앞당길 때는 중복으로 발생하는 비용도 고려해야 한다.<sup>[P.7](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-early)</sup> 유효한 날짜 객체를 문자열로 바꿔 전달하고 다시 해석하는 식의 반복은 피한다. 검사 비용이 크면 실제로 필요한 정보와 검사 시점을 따진다. 평균 상수 시간인 작업에 선형 시간 검사를 추가하면 인터페이스의 비용이 달라질 수 있다.
 
 이전 글: [2. 의도와 단위를 타입으로 표현하기](/posts/cpp-core-guidelines-02-intent-and-types/) · 다음 글: [4. 표준 라이브러리와 도구 활용](/posts/cpp-core-guidelines-04-libraries-and-tools/)

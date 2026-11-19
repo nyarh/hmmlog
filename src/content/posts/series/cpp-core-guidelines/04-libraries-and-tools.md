@@ -9,7 +9,7 @@ art: code
 
 표준 탐색 알고리즘에는 찾을 범위와 값을 전달한다. 직접 루프의 반복 조건과 종료 위치를 관리하는 코드가 줄고, 찾은 결과를 처리하는 부분이 드러난다.
 
-[ES.1](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-lib)과 [SL.2](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rsl-sl)는 표준 라이브러리를 우선 사용하도록 권한다. 널리 알려진 인터페이스를 사용하면 읽는 사람도 동작을 파악하기 쉽다.
+표준 라이브러리가 필요한 기능을 제공한다면 우선 사용하는 게 좋다.<sup>[ES.1](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-lib) · [SL.2](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rsl-sl)</sup> 널리 알려진 인터페이스를 사용하면 읽는 사람도 동작을 파악하기 쉽다.
 
 ## 컨테이너와 알고리즘 사용
 
@@ -52,7 +52,7 @@ ji
 
 ## 라이브러리를 선택하는 기준
 
-[SL.1](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rsl-lib)은 사용할 수 있는 라이브러리를 활용하도록 권한다. [P.13](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-lib)은 문서와 유지 관리가 갖춰진 지원 라이브러리를 선택하는 원칙이다. 직접 구현한 코드의 테스트와 유지 비용도 선택에 포함한다.
+필요에 맞는 라이브러리가 있다면 활용하는 게 좋다.<sup>[SL.1](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rsl-lib)</sup> 문서와 유지 관리가 갖춰진 라이브러리를 선택하고, 직접 구현할 때 드는 테스트와 유지 비용도 함께 고려한다.<sup>[P.13](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-lib)</sup>
 
 표준 라이브러리로 요구사항을 충족할 수 없다면 프로젝트의 기반 라이브러리나 해당 분야의 라이브러리를 검토한다. GSL(Guidelines Support Library)은 가이드라인 적용을 돕는 지원 라이브러리이며 ISO C++ 표준 라이브러리와는 구분한다.
 
@@ -62,7 +62,7 @@ ji
 
 ## 도구마다 확인하는 범위
 
-[P.12](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-tools)는 반복적인 검사를 도구에 맡기도록 권한다. 검사의 목적에 따라 도구를 선택한다.
+반복적인 검사는 도구에 맡기는 게 좋다.<sup>[P.12](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-tools)</sup> 확인하려는 오류와 검사 범위에 맞춰 도구를 선택한다.
 
 | 방법 | 확인하는 내용 | 한계 |
 | --- | --- | --- |

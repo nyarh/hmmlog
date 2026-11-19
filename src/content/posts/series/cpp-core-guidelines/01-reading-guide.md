@@ -37,7 +37,7 @@ ISO C++ 표준은 언어와 표준 라이브러리의 동작을 정의한다. Co
 - Exception과 Note: 적용 조건과 예외
 - Enforcement: 컴파일러, 분석 도구, 코드 리뷰로 확인할 수 있는 부분
 
-예를 들어 [P.2](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-cplusplus)는 ISO 표준 C++을 사용하도록 권한다. 같은 규칙에서 시스템 자원에 접근하기 위해 확장이 필요한 경우도 설명한다. 이때는 확장을 사용하는 코드를 제한된 인터페이스 안에 모으고, 다른 환경에서 교체할 수 있게 한다.
+ISO 표준 C++을 사용하는 게 좋다. 시스템 자원에 접근하기 위해 확장이 필요하다면, 확장을 사용하는 코드를 별도의 인터페이스 안에 모아 다른 환경에서 교체할 수 있게 한다.<sup>[P.2](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-cplusplus)</sup>
 
 표준 C++을 사용해도 모든 환경에서 같은 결과가 보장되지는 않는다. 정수 타입의 크기처럼 구현에 따라 달라지는 조건과 정의되지 않은 동작을 따로 확인해야 한다. 실시간 시스템처럼 동적 메모리 사용을 제한하는 환경에는 프로젝트별 규칙도 필요하다.
 
@@ -45,7 +45,7 @@ ISO C++ 표준은 언어와 표준 라이브러리의 동작을 정의한다. Co
 
 작업 중인 문제나 분석 도구의 경고에서 관련 규칙을 찾아 읽을 수 있다. 함수의 인자가 혼동되면 인터페이스와 타입 규칙을, 자원 누수가 있으면 수명과 소유권 규칙을 살펴본다. 원문은 이런 참조 방식을 염두에 두고 있어, 모든 규칙을 순서대로 외울 필요는 없다.
 
-[In.0](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#r0)은 규칙이 현재 프로그램에 미치는 영향을 이해한 뒤 적용하도록 한다. 기존 코드에서는 변경할 함수나 모듈을 정하고, 테스트로 동작을 확인하면서 적용 범위를 넓힐 수 있다. 외부 라이브러리와의 호환성 때문에 바꾸기 어려운 코드는 경계를 정해 관리한다.
+규칙은 현재 프로그램에 미치는 영향을 이해한 뒤 적용하는 게 좋다.<sup>[In.0](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#r0)</sup> 기존 코드에서는 변경할 함수나 모듈을 정하고, 테스트로 동작을 확인하면서 적용 범위를 넓힐 수 있다. 외부 라이브러리와의 호환성 때문에 바꾸기 어려운 코드는 경계를 정해 관리한다.
 
 적용할 변경은 안전성과 단순함, 현재 코드의 제약을 함께 고려해 정한다. 성능을 이유로 예외를 두려면 해당 경로의 비용을 측정하고 근거를 남긴다. 경고를 해결한 뒤에도 프로그램의 요구사항을 충족하는지 확인해야 한다.
 
@@ -63,6 +63,6 @@ Enforcement에는 검사 방법과 향후 도구가 지원하기를 바라는 �
 
 규칙은 계속 수정되며 미완성 항목도 있다. 제목만으로 뜻이 불분명하면 Discussion과 연결된 규칙을 확인한다. 개선 제안은 저장소의 기여 지침에 따라 이슈나 PR로 제출할 수 있다. 편집·유지 관리 참여는 지속적인 기여와 그 품질에 대한 인정을 바탕으로 한다.
 
-원문은 CommonMark와 HTML 앵커를 사용한다. 본문의 규칙 링크는 해당 앵커로 연결된다. 프로젝트의 배경과 표준 위원회와의 관계는 [FAQ.1~10](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-faq), 문서 읽는 방법은 [Introduction](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-introduction)에 정리돼 있다.
+원문은 CommonMark와 HTML 앵커를 사용한다.<sup>[FAQ.1~10](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-faq)</sup> 본문의 규칙 링크는 해당 앵커로 연결된다. 문서 읽는 방법은 [Introduction](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#s-introduction)에 정리돼 있다.
 
 다음 글: [2. 의도와 단위를 타입으로 표현하기](/posts/cpp-core-guidelines-02-intent-and-types/)
