@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-02-intent-and-types
 title: C++ Core Guidelines 2. 의도와 단위를 타입으로 표현하기
 description: 재시도 설정을 예로 보는 이름과 타입의 역할
-date: 2026-11-19
+date: 2026-11-19T19:13:51Z
 category: 개발/C++/Core Guidelines
 art: code
 ---

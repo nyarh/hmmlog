@@ -15,7 +15,7 @@ const slides=items.slice(0,4);
 </a>)}</div>
 {slides.length>1&&<div class="pager">{slides.map((p,i)=><button data-pick={i} aria-label={p.data.title+' 보기'} aria-pressed={i===0}></button>)}<button class="rotation" aria-label="자동 전환 일시정지" title="자동 전환 일시정지"><span aria-hidden="true"></span></button></div>}
 </section>}
-<section><div class="sectionHead"><h2>전체 글 <small>{items.length}</small></h2><span>최신순 · 시리즈는 회차순</span></div><PostList items={items}/></section>
+<section><div class="sectionHead"><h2>전체 글 <small>{items.length}</small></h2><span>최신순</span></div><PostList items={items}/></section>
 </div></Base>
 <script>
 const slides = [...document.querySelectorAll<HTMLElement>('[data-slide]')];

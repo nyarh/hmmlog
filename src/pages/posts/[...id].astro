@@ -2,14 +2,14 @@
 import Base from '../../layouts/Base.astro';
 import ArticleBody from '../../components/ArticleBody.astro';
 import {render} from 'astro:content';
-import {posts,postUrl,dateText,categoryUrl,siteName,orderSeries} from '../../lib/blog';
+import {posts,postUrl,dateText,categoryUrl,siteName} from '../../lib/blog';
 export async function getStaticPaths() {
   const items = await posts();
   return items.map((post) => ({
     params: { id: post.id },
     props: {
       post,
-      related: orderSeries(items)
+      related: items
         .filter(item => item.data.category === post.data.category && item.id !== post.id)
         .map(item => ({href: postUrl(item), title: item.data.title})),
     },

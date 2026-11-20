@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-01-reading-guide
 title: C++ Core Guidelines 1. 목적과 읽는 순서
 description: C++ Core Guidelines의 역할과 규칙을 읽고 적용하는 기준
-date: 2026-11-19
+date: 2026-11-19T19:13:50Z
 category: 개발/C++/Core Guidelines
 art: code
 ---

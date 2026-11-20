@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-03-checks-and-errors
 title: C++ Core Guidelines 3. 컴파일 시점 검사와 실행 중 검사
 description: 고정된 조건과 입력값을 각 시점에 검사하고 범위 정보를 유지하는 방법
-date: 2026-11-19
+date: 2026-11-19T19:13:52Z
 category: 개발/C++/Core Guidelines
 art: code
 ---

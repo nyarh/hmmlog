@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-06-initialization-and-assignment
 title: C++ Core Guidelines 6. 초기화와 대입, 중괄호와 소괄호의 차이
 description: 변수를 만들 때 값을 정하는 방법과 중괄호 초기화의 장점·예외
-date: 2026-11-20
+date: 2026-11-20T03:01:39Z
 category: 개발/C++/Core Guidelines
 art: code
 ---

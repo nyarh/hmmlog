@@ -2,24 +2,6 @@ import {getCollection, type CollectionEntry} from 'astro:content';
 export type Post = CollectionEntry<'posts'>;
 export const posts = async () => (await getCollection('posts')).sort((a,b) => +b.data.date - +a.data.date || a.id.localeCompare(b.id));
 
-// Reorder numbered posts within each series, keeping other posts in place.
-export function orderSeries(items: Post[]): Post[] {
-  const ordered = [...items];
-  const series = new Map<string, {index: number; post: Post; filename: string}[]>();
-  items.forEach((post, index) => {
-    const match = post.filePath?.replaceAll('\\', '/').match(/\/posts\/(.+)\/((?:\d+|R\d+)-[^/]+\.md)$/);
-    if (!match) return;
-    const entries = series.get(match[1]) ?? [];
-    entries.push({index, post, filename: match[2]});
-    series.set(match[1], entries);
-  });
-  for (const entries of series.values()) {
-    const sorted = [...entries].sort((a,b) => a.filename.localeCompare(b.filename, 'en', {numeric: true}));
-    entries.forEach(({index}, i) => { ordered[index] = sorted[i].post; });
-  }
-  return ordered;
-}
-
 export const postUrl = (post:Post) => '/posts/' + post.id + '/';
 export const dateText = (date:Date) => date.toISOString().slice(0,10).replaceAll('-','.');
 export const categoryUrl = (name:string) => '/categories/' + name.split('/').map(encodeURIComponent).join('/') + '/';

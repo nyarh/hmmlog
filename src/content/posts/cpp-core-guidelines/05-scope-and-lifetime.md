@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-05-scope-and-lifetime
 title: C++ Core Guidelines 5. 변수가 필요한 곳과 살아 있는 범위
 description: 로그 처리 예시로 보는 변수의 선언 위치, 스코프와 객체 수명
-date: 2026-11-20
+date: 2026-11-20T01:01:20Z
 category: 개발/C++/Core Guidelines
 art: code
 ---

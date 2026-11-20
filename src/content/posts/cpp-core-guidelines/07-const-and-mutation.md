@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-07-const-and-mutation
 title: C++ Core Guidelines 7. const로 변경 가능한 범위를 줄이기
 description: 지역 변수, 참조와 포인터, 멤버 함수에 const를 적용하는 기준과 예외
-date: 2026-11-20
+date: 2026-11-20T06:07:04Z
 category: 개발/C++/Core Guidelines
 art: code
 ---

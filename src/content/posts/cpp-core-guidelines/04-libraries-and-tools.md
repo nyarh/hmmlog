@@ -2,7 +2,7 @@
 slug: cpp-core-guidelines-04-libraries-and-tools
 title: C++ Core Guidelines 4. 표준 라이브러리와 도구 활용
 description: 이름 탐색을 예로 보는 라이브러리 선택과 검사 도구의 역할
-date: 2026-11-19
+date: 2026-11-19T19:13:53Z
 category: 개발/C++/Core Guidelines
 art: code
 ---
