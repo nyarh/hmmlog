@@ -106,3 +106,5 @@ constexpr auto invalid_pages = page_count(45, 0);  // 오류: 0으로 나눔
 페이지 크기를 설정에서 읽는 함수와, 전달받은 숫자로 페이지 수를 계산하는 함수를 분리하면 이런 변경을 다루기 쉽다. 설정을 읽는 쪽은 실행 중에 동작하고, `page_count`는 고정된 값과 실행 중 입력 양쪽에 사용할 수 있다.
 
 이전 글: [7. const로 변경 가능한 범위를 줄이기](/posts/cpp-core-guidelines-07-const-and-mutation/)
+
+다음 글: [9. auto를 쓰면 무엇이 추론되고 무엇이 달라질까](/posts/cpp-core-guidelines-09-auto-type-deduction/)
