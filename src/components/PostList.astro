@@ -5,7 +5,6 @@ const {items}=Astro.props;
 ---
 <div class="list">{items.map(p=><article data-entry data-search={[p.data.title,p.data.description,p.data.category].join(' ').toLowerCase()}>
 <a class="row" href={postUrl(p)} aria-label={p.data.title}>
-<div class={'thumb '+p.data.art}><img alt="" src={'/covers/'+p.data.art+'.svg'} loading="lazy"/></div>
 <div class="summary"><div class="meta"><span>{p.data.category}</span><i>·</i><time datetime={p.data.date.toISOString()}>{dateText(p.data.date)}</time></div>
 <h3>{p.data.title}</h3><p>{p.data.description}</p></div>
 </a>
