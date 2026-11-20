@@ -120,3 +120,5 @@ std::forward_iterator auto it = lines.begin();
 클래스 템플릿의 멤버 함수를 밖에서 정의할 때도 이 형태를 쓸 수 있다. 예를 들어 `Container<T>` 안에 `Iterator`라는 타입이 있다면, 반환 타입을 뒤에 두는 `auto Container<T>::first() -> Iterator` 형태로 긴 타입 이름의 반복을 줄일 수 있다.<sup>[ES.11](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#res-auto)</sup>
 
 이전 글: [8. constexpr로 계산 시점 표현하기](/posts/cpp-core-guidelines-08-constexpr-and-evaluation/)
+
+다음 글: [10. 관련 있는 상수를 enum class로 묶기](/posts/cpp-core-guidelines-10-related-constants-and-enum-class/)
