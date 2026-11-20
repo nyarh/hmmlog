@@ -95,3 +95,5 @@ if (!errors.empty()) {
 첫 예제의 `line`은 반복마다 새 줄을 담지만 역할은 계속 같다. 할당 비용을 줄이기 위해 작업 버퍼를 재사용할 수도 있다. 이때도 사용 범위를 좁게 유지하고, 이전 데이터가 다음 처리에 섞이지 않도록 내용을 지우거나 덮어쓰는 방식을 확인한다.
 
 이전 글: [4. 표준 라이브러리와 도구 활용](/posts/cpp-core-guidelines-04-libraries-and-tools/)
+
+다음 글: [6. 초기화와 대입, 중괄호와 소괄호의 차이](/posts/cpp-core-guidelines-06-initialization-and-assignment/)
