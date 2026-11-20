@@ -1,9 +1,9 @@
 ---
-import {dateText,postUrl,type Post} from '../lib/blog';
+import {dateText,postUrl,orderSeries,type Post} from '../lib/blog';
 interface Props {items:Post[]}
 const {items}=Astro.props;
 ---
-<div class="list">{items.map(p=><article class="row" data-entry data-search={[p.data.title,p.data.description,p.data.category].join(' ').toLowerCase()}>
+<div class="list">{orderSeries(items).map(p=><article class="row" data-entry data-search={[p.data.title,p.data.description,p.data.category].join(' ').toLowerCase()}>
 <a class={'thumb '+p.data.art} href={postUrl(p)} aria-label={p.data.title} tabindex="-1"><img alt="" src={'/covers/'+p.data.art+'.svg'} loading="lazy"/></a>
 <div class="summary"><div class="meta"><span>{p.data.category}</span><i>·</i><time datetime={p.data.date.toISOString()}>{dateText(p.data.date)}</time></div>
 <h3><a href={postUrl(p)}>{p.data.title}</a></h3><p>{p.data.description}</p></div>
