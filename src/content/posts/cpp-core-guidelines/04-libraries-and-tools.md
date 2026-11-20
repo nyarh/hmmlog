@@ -50,4 +50,4 @@ const bool has_user = found != users.end();
 
 전용 분석 도구를 도입할 때는 지원하는 운영체제와 컴파일러도 확인한다. 특정 도구가 없는 환경에서도 기본 빌드를 할 수 있게 구성하면, 분석 도구 때문에 코드의 사용 환경이 불필요하게 제한되는 일을 줄일 수 있다.
 
-이전 글: [3. 컴파일 시점 검사와 실행 중 검사](/posts/cpp-core-guidelines-03-checks-and-errors/) · [1부 목차](/posts/cpp-core-guidelines-01-reading-guide/)
+이전 글: [3. 컴파일 시점 검사와 실행 중 검사](/posts/cpp-core-guidelines-03-checks-and-errors/) · 다음 글: [5. 변수가 필요한 곳과 살아 있는 범위](/posts/cpp-core-guidelines-05-scope-and-lifetime/) · [1부 목차](/posts/cpp-core-guidelines-01-reading-guide/)
