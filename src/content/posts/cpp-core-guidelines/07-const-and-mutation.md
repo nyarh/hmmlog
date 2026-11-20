@@ -115,3 +115,5 @@ return labels;
 예를 들어 `const int`로 만든 정수의 값을 형 변환을 거쳐 수정하면 정의되지 않은 동작이 된다. 형 변환으로 호출이 가능해졌다는 사실은 그 함수가 읽기만 한다는 근거가 되지 않는다.
 
 이전 글: [6. 초기화와 대입, 중괄호와 소괄호의 차이](/posts/cpp-core-guidelines-06-initialization-and-assignment/)
+
+다음 글: [8. constexpr로 계산 시점 표현하기](/posts/cpp-core-guidelines-08-constexpr-and-evaluation/)
