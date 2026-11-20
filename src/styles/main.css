@@ -135,7 +135,16 @@ main.shell {padding-top:30px;min-height:calc(100vh - 150px)}
 .sectionHead h2 {font-size:1.125rem;letter-spacing:-.045em}
 .sectionHead small {font:0.75rem var(--sans);color:var(--accent);margin-left:5px}
 .sectionHead>span,.meta,.byline {color:var(--muted);font:0.75rem var(--sans)}
-.row {position:relative;display:grid;grid-template-columns:clamp(112px,13vw,177px) minmax(0,1fr);gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.row {position:relative;display:grid;grid-template-columns:clamp(112px,13vw,177px) minmax(0,1fr);gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line);transition:background-color .15s ease}
+.row:hover {color:var(--text)}
+@media (hover:hover) {
+  .row:hover {background:var(--active)}
+  .row:hover h3 {color:var(--accent)}
+}
+.row:focus-visible {background:var(--active);outline-offset:-2px}
+.row:focus-visible h3 {color:var(--accent)}
+.row:active {background:color-mix(in srgb,var(--active) 80%,var(--accent));transition:none}
+@media (prefers-reduced-motion:reduce) {.row {transition:none}}
 .thumb {display:grid;place-items:center;aspect-ratio:1.75;border-radius:6px;border:1px solid #ffffff12}.thumb img {width:84%;height:100%;position:absolute}
 .meta,.byline,.categoryTile,.back {display:flex;align-items:center;gap:8px}
 .meta i {font-style:normal}.meta span{color:var(--accent);font:0.75rem var(--sans)}
