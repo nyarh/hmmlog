@@ -140,3 +140,5 @@ const std::string title = [&from_stdin, &path] {
 정수 변수 하나를 나중에 입력받는다는 이유로 초기화하지 않는 것은 이 예외에 해당하지 않는다. 의미 있는 초기값을 정하고, 입력이 성공했는지 확인한 뒤 사용한다.
 
 이전 글: [5. 변수가 필요한 곳과 살아 있는 범위](/posts/cpp-core-guidelines-05-scope-and-lifetime/)
+
+다음 글: [7. const로 변경 가능한 범위를 줄이기](/posts/cpp-core-guidelines-07-const-and-mutation/)
