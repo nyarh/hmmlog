@@ -107,3 +107,5 @@ int divide(int numerator, int denominator)
 정수 계산을 `double`로 바꾸면 소수 부분과 정밀도를 포함해 계산의 의미가 달라진다. IEEE 754 부동소수점 환경에서는 0으로 나눈 결과가 무한대나 NaN이 될 수 있지만, 그 값이 프로그램에서 허용되는 결과인지 따로 판단해야 한다. 정수 몫을 구하려는 함수라면 입력 조건과 범위를 검사한다.
 
 이전 글: [12. signed와 unsigned를 섞을 때 생기는 일](/posts/cpp-core-guidelines-12-signed-and-unsigned/)
+
+다음 글: [14. 타입 변환이 필요한 곳과 위험해지는 곳](/posts/cpp-core-guidelines-14-type-conversions-and-casts/)
