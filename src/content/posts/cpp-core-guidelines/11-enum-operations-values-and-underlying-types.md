@@ -116,3 +116,5 @@ void schedule(Day day);
 일반 `enum`은 열거자 목록 없이 선언할 때 기반 타입을 반드시 적는다. 예를 들어 `enum LegacyMode : unsigned char;`처럼 쓴다. `enum class`도 기본값인 `int` 외의 타입을 사용한다면 첫 선언부터 그 타입을 명시한다.<sup>[열거형 선언](https://eel.is/c++draft/dcl.enum)</sup>
 
 이전 글: [10. 관련 있는 상수를 enum class로 묶기](/posts/cpp-core-guidelines-10-related-constants-and-enum-class/)
+
+다음 글: [12. signed와 unsigned를 섞을 때 생기는 일](/posts/cpp-core-guidelines-12-signed-and-unsigned/)
