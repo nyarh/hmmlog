@@ -120,3 +120,5 @@ inline void print_text(const char* text)
 외부 함수가 내용을 수정할 가능성이 있다면 변경 가능한 복사본을 전달하거나 API를 고쳐야 한다.
 
 이전 글: [13. 정수의 범위와 산술 오류 다루기](/posts/cpp-core-guidelines-13-integer-ranges-and-arithmetic-errors/)
+
+다음 글: [15. 복잡한 식과 평가 순서 풀어 읽기](/posts/cpp-core-guidelines-15-expressions-and-evaluation-order/)
