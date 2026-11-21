@@ -117,3 +117,5 @@ const char* level_name(LogLevel level)
 `enum class`를 쓴다고 모든 값이 반드시 선언한 열거자 중 하나가 되는 것은 아니다. 명시적 형 변환 등으로 이름이 붙지 않은 값이 들어올 수도 있다. 위 함수의 마지막 반환문은 그런 값에 대한 처리를 남긴 것이다. 외부 숫자를 로그 수준으로 변환할 때는 입력 경계에서 허용된 값인지 확인해야 한다.
 
 이전 글: [9. auto를 쓰면 무엇이 추론되고 무엇이 달라질까](/posts/cpp-core-guidelines-09-auto-type-deduction/)
+
+다음 글: [11. 열거형의 연산과 값, 기반 타입 정하기](/posts/cpp-core-guidelines-11-enum-operations-values-and-underlying-types/)
