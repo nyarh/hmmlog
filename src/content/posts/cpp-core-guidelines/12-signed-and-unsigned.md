@@ -128,3 +128,5 @@ for (auto it = readings.rbegin(); it != readings.rend(); ++it)
 순방향으로 값만 처리할 때는 범위 기반 `for`를, 이미 제공되는 처리 방식이 있다면 표준 알고리즘을 사용할 수 있다.
 
 이전 글: [11. 열거형의 연산과 값, 기반 타입 정하기](/posts/cpp-core-guidelines-11-enum-operations-values-and-underlying-types/)
+
+다음 글: [13. 정수의 범위와 산술 오류 다루기](/posts/cpp-core-guidelines-13-integer-ranges-and-arithmetic-errors/)
